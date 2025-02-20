@@ -1906,6 +1906,15 @@
       "Storage": {}
     }
   },
+  "Daemon_15_1": {
+    "Daemon_15_1": {
+      "AutoCombat": false,
+      "QuitTime": "02:00"
+    },
+    "Storage": {
+      "Storage": {}
+    }
+  },
   "Daemon": {
     "Daemon": {
       "EnterMap": true

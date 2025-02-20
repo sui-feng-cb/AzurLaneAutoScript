@@ -98,6 +98,7 @@
     "menu": "collapse",
     "page": "tool",
     "tasks": [
+      "Daemon_15_1",
       "Daemon",
       "OpsiDaemon",
       "Benchmark",

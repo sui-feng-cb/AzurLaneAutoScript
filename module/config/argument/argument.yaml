@@ -748,6 +748,9 @@ OpsiHazard1Leveling:
 
 # ==================== Tools ====================
 
+Daemon_15_1:
+  AutoCombat: false
+  QuitTime: 02:00
 Daemon:
   EnterMap: true
 OpsiDaemon:

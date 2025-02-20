@@ -9501,6 +9501,26 @@
       }
     }
   },
+  "Daemon_15_1": {
+    "Daemon_15_1": {
+      "AutoCombat": {
+        "type": "checkbox",
+        "value": false
+      },
+      "QuitTime": {
+        "type": "input",
+        "value": "02:00"
+      }
+    },
+    "Storage": {
+      "Storage": {
+        "type": "storage",
+        "value": {},
+        "valuetype": "ignore",
+        "display": "disabled"
+      }
+    }
+  },
   "Daemon": {
     "Daemon": {
       "EnterMap": {

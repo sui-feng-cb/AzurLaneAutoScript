@@ -439,6 +439,10 @@ class GeneratedConfig:
     OpsiHazard1Leveling_OperationCoinsPreserve = 100000
     OpsiHazard1Leveling_DoScanningDevice = False
 
+    # Group `Daemon_15_1`
+    Daemon_15_1_AutoCombat = False
+    Daemon_15_1_QuitTime = '02:00'
+
     # Group `Daemon`
     Daemon_EnterMap = True
 
