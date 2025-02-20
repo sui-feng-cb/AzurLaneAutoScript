@@ -418,6 +418,10 @@ class AzurLaneAutoScript:
         GemsFarming(config=self.config, device=self.device).run(
             name=self.config.Campaign_Name, folder=self.config.Campaign_Event, mode=self.config.Campaign_Mode)
 
+    def daemon_15_1(self):
+        from module.daemon.daemon_15_1 import AzurLaneDaemon
+        AzurLaneDaemon(config=self.config, device=self.device, task="Daemon_15_1").run()
+
     def daemon(self):
         from module.daemon.daemon import AzurLaneDaemon
         AzurLaneDaemon(config=self.config, device=self.device, task="Daemon").run()

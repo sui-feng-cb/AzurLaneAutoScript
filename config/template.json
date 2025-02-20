@@ -2086,6 +2086,18 @@
       "Storage": {}
     }
   },
+  "Daemon_15_1": {
+    "Daemon_15_1": {
+      "AutoCombat": false,
+      "QuitTime": "02:00",
+      "MoveDownTime": 1,
+      "RunCount": 0,
+      "QuitScreenshot": false
+    },
+    "Storage": {
+      "Storage": {}
+    }
+  },
   "Daemon": {
     "Daemon": {
       "EnterMap": true

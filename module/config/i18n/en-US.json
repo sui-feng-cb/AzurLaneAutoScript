@@ -258,6 +258,10 @@
       "name": "Cross Month Daily",
       "help": "    ALAS will enter OpSi 10min before OpSi reset, wait until OpSi reset but not exit OpSi. Then do the daily, obscure, abyssal and meowfficer farming to get extra gold plates. When running dailies, settings in task \"OpSiDaily\" are used, the rest function are the same.\n    IMPORTANT: Please do not touch the game while ALAS is waiting for OpSi reset."
     },
+    "Daemon_15_1": {
+      "name": "Task.Daemon_15_1.name",
+      "help": "Task.Daemon_15_1.help"
+    },
     "Daemon": {
       "name": "Normal Semi-auto",
       "help": ""
@@ -2654,6 +2658,32 @@
     "DoScanningDevice": {
       "name": "Do Siren Scanning Device",
       "help": "Exchange purple coins to operation coins, which may cause a shortage of purple coins"
+    }
+  },
+  "Daemon_15_1": {
+    "_info": {
+      "name": "Daemon_15_1._info.name",
+      "help": "Daemon_15_1._info.help"
+    },
+    "AutoCombat": {
+      "name": "Daemon_15_1.AutoCombat.name",
+      "help": "Daemon_15_1.AutoCombat.help"
+    },
+    "QuitTime": {
+      "name": "Daemon_15_1.QuitTime.name",
+      "help": "Daemon_15_1.QuitTime.help"
+    },
+    "MoveDownTime": {
+      "name": "Daemon_15_1.MoveDownTime.name",
+      "help": "Daemon_15_1.MoveDownTime.help"
+    },
+    "RunCount": {
+      "name": "Daemon_15_1.RunCount.name",
+      "help": "Daemon_15_1.RunCount.help"
+    },
+    "QuitScreenshot": {
+      "name": "Daemon_15_1.QuitScreenshot.name",
+      "help": "Daemon_15_1.QuitScreenshot.help"
     }
   },
   "Daemon": {

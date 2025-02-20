@@ -9982,6 +9982,38 @@
       }
     }
   },
+  "Daemon_15_1": {
+    "Daemon_15_1": {
+      "AutoCombat": {
+        "type": "checkbox",
+        "value": false
+      },
+      "QuitTime": {
+        "type": "input",
+        "value": "02:00"
+      },
+      "MoveDownTime": {
+        "type": "input",
+        "value": 1
+      },
+      "RunCount": {
+        "type": "input",
+        "value": 0
+      },
+      "QuitScreenshot": {
+        "type": "checkbox",
+        "value": false
+      }
+    },
+    "Storage": {
+      "Storage": {
+        "type": "storage",
+        "value": {},
+        "valuetype": "ignore",
+        "display": "disabled"
+      }
+    }
+  },
   "Daemon": {
     "Daemon": {
       "EnterMap": {
