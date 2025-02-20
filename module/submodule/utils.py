@@ -15,6 +15,7 @@ MOD_CONFIG_DICT = {}
 
 def get_available_func():
     return (
+        'Daemon_15_1',
         'Daemon',
         'OpsiDaemon',
         'EventStory',
