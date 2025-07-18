@@ -58,6 +58,10 @@
       "name": "主线图-3",
       "help": ""
     },
+    "C72MysteryFarming": {
+      "name": "7-2 三战捡垃圾",
+      "help": ""
+    },
     "GemsFarming": {
       "name": "刷紧急委托",
       "help": ""
@@ -1116,8 +1120,8 @@
   },
   "C72MysteryFarming": {
     "_info": {
-      "name": "7-2 三站拣垃圾",
-      "help": "打三战，拣完问号后撤退"
+      "name": "7-2 三战捡垃圾",
+      "help": "打三战，捡完问号后撤退"
     },
     "StepOnA3": {
       "name": "用二队踩 A3",

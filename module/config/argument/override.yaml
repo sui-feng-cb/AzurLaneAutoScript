@@ -26,6 +26,28 @@ Main2:
 Main3:
   Campaign:
     Event: campaign_main
+C72MysteryFarming:
+  Campaign:
+    Name: campaign_7_2_mystery_farming
+    Event: campaign_main
+    Mode: normal
+    UseClearMode: true
+    UseFleetLock: true
+    UseAutoSearch: false
+    Use2xBook: false
+    AmbushEvade: true
+  StopCondition:
+    MapAchievement: non_stop
+    StageIncrease: false
+    GetNewShip: false
+    ReachLevel: 0
+  Fleet:
+    Fleet1Step: 3
+    Fleet2Step: 2
+    FleetOrder:
+      display: display
+      value: fleet1_all_fleet2_standby
+      option: [ fleet1_all_fleet2_standby, fleet1_standby_fleet2_all ]
 GemsFarming:
   Campaign:
     Event:

@@ -55,6 +55,14 @@ Farm:
       - Emotion
       - HpControl
       - EnemyPriority
+    C72MysteryFarming:
+      - Scheduler
+      - C72MysteryFarming
+      - Campaign
+      - StopCondition
+      - Fleet
+      - Emotion
+      - EnemyPriority
     GemsFarming:
       - Scheduler
       - GemsFarming
