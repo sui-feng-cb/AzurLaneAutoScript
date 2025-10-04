@@ -1,10 +1,22 @@
-from module.base.timer import Timer
-from module.handler.assets import MAINTENANCE_ANNOUNCE, USE_DATA_KEY_NOTIFIED
+from datetime import timedelta
+
 from module.island.assets import *
-from module.logger import logger
+from module.ocr.ocr import Duration
 from module.ui.assets import SHOP_BACK_ARROW
 from module.ui.page import page_island_phone
 from module.ui.ui import UI
+
+
+class IslandProductionTime(Duration):
+    def after_process(self, result):
+        result = super().after_process(result)
+        if result == '0:40:00':
+            result = '01:40:00'
+        return result
+
+
+OCR_PRODUCTION_TIME = IslandProductionTime(OCR_PRODUCTION_TIME, lang='azur_lane_jp', name='OCR_PRODUCTION_TIME')
+OCR_PRODUCTION_TIME_REMAIN = Duration(OCR_PRODUCTION_TIME_REMAIN, name='OCR_PRODUCTION_TIME_REMAIN')
 
 
 class IslandUI(UI):
@@ -18,41 +30,13 @@ class IslandUI(UI):
         """
         return self.appear(ISLAND_MANAGEMENT_CHECK, offset=(20, 20), interval=interval)
 
-    def island_in_transport(self, interval=0):
-        """
-        Args:
-            interval (int):
-
-        Returns:
-            bool: if in page ISLAND_TRANSPORT_CHECK
-        """
-        return self.match_template_color(ISLAND_TRANSPORT_CHECK, offset=(20, 20), interval=interval)
-
-    def island_in_friend(self, interval=0):
-        """
-        Args:
-            interval (int):
-
-        Returns:
-            bool: if in page ISLAND_FRIEND_CHECK
-        """
-        return self.appear(ISLAND_FRIEND_CHECK, offset=(20, 20), interval=interval)
-
     def island_management_enter(self):
         """
-        Enter island management page.
-
-        Returns:
-            bool: if success
-
         Pages:
             in: page_island_phone
             out: ISLAND_MANAGEMENT_CHECK
         """
-        logger.info('Island management enter')
         self.interval_clear(ISLAND_MANAGEMENT_CHECK)
-        if self.appear(ISLAND_MANAGEMENT_LOCKED, offset=(20, 20)):
-            return False
         self.ui_click(
             click_button=ISLAND_MANAGEMENT,
             check_button=self.island_in_management,
@@ -60,143 +44,30 @@ class IslandUI(UI):
             retry_wait=2,
             skip_first_screenshot=True
         )
-        return True
 
-    def island_transport_enter(self):
-        """
-        Enter island management page.
-
-        Returns:
-            bool: if success
-
-        Pages:
-            in: page_island_phone
-            out: ISLAND_MANAGEMENT_CHECK
-        """
-        logger.info('Island transport enter')
-        self.ui_click(
-            click_button=ISLAND_TRANSPORT,
-            check_button=self.island_in_transport,
-            offset=(20, 20),
-            retry_wait=2,
-            skip_first_screenshot=True
-        )
-        return True
-
-    def island_friend_enter(self):
-        """
-        Enter island friend page.
-
-        Returns:
-            bool: if success
-
-        Pages:
-            in: page_island_phone
-            out: ISLAND_FRIEND_CHECK
-        """
-        logger.info('Island friend enter')
-        self.ui_click(
-            click_button=ISLAND_FRIEND,
-            check_button=self.island_in_friend,
-            offset=(20, 20),
-            retry_wait=2,
-            skip_first_screenshot=True
-        )
-        return True
-
-    def island_ui_back(self):
+    def island_management_quit(self):
         """
         Pages:
-            in: any page with SHOP_BACK_ARROW
+            in: ISLAND_MANAGEMENT_CHECK
             out: page_island_phone
         """
-        logger.info('Island UI back')
         self.ui_click(
             click_button=SHOP_BACK_ARROW,
-            check_button=[page_island_phone.check_button, ISLAND_FRIEND_LEAVE],
+            check_button=page_island_phone.check_button,
             offset=(20, 20),
             retry_wait=2,
             skip_first_screenshot=True
         )
 
-    def ui_ensure_management_page(self):
+    def island_product_quit(self):
         """
-        Pages:
-            in: page_island_phone or product page
-            out: ISLAND_MANAGEMENT_CHECK
+        Execute quit product page
         """
-        logger.info('UI ensure management page')
         self.interval_clear(ISLAND_MANAGEMENT_CHECK)
-        confirm_timer = Timer(1, count=2).start()
-        for _ in self.loop():
-            if self.island_in_management():
-                if confirm_timer.reached():
-                    break
-                continue
-            else:
-                confirm_timer.reset()
-
-            if self.appear_then_click(SHOP_BACK_ARROW, offset=(20, 20), interval=2):
-                continue
-
-            if self.appear_then_click(ISLAND_MANAGEMENT, offset=(20, 20), interval=2):
-                continue
-
-    def ui_ensure_friend_page(self):
-        """
-        Pages:
-            in: Any
-            out: ISLAND_FRIEND_CHECK
-        """
-        logger.info('UI ensure friend page')
-        if not self.island_in_friend():
-            self.ui_ensure(page_island_phone)
-            self.island_friend_enter()
-
-    def handle_get_items(self):
-        if self.appear_then_click(GET_ITEMS_ISLAND, offset=(20, 20), interval=2):
-            return True
-        return False
-
-    def ui_additional(self, get_ship=True):
-        # notify in page_dormmenu
-        if self.appear(MAINTENANCE_ANNOUNCE, offset=(100, 50)):
-            for _ in self.loop():
-                enabled = self.image_color_count(
-                    USE_DATA_KEY_NOTIFIED, color=(140, 207, 66), threshold=180, count=10)
-                if enabled:
-                    break
-
-                if self.appear(MAINTENANCE_ANNOUNCE, offset=(100, 50), interval=5):
-                    self.device.click(USE_DATA_KEY_NOTIFIED)
-                    continue
-
-            self.interval_clear(MAINTENANCE_ANNOUNCE)
-            self.appear_then_click(MAINTENANCE_ANNOUNCE, offset=(100, 50), interval=2)
-            return True
-        
-        # info in page_island
-        if self.appear_then_click(ISLAND_INFO_EXIT, offset=(30, 30), interval=3):
-            return True
-
-        return super().ui_additional(get_ship=False)
-
-    def move_up(self, hold_time=0):
-        p1 = (217, 507)
-        p2 = (217, 507 - 36)
-        self.device.swipe(p1, p2, hold_time=hold_time)
-
-    def move_down(self, hold_time=0):
-        p1 = (217, 507)
-        p2 = (217, 507 + 36)
-        self.device.swipe(p1, p2, hold_time=hold_time)
-
-    def move_left(self, hold_time=0):
-        p1 = (217, 507)
-        p2 = (217 - 36, 507)
-        self.device.swipe(p1, p2, hold_time=hold_time)
-
-    def move_right(self, hold_time=0):
-        p1 = (217, 507)
-        p2 = (217 + 36, 507)
-        self.device.swipe(p1, p2, hold_time=hold_time)
+        self.ui_click(
+            click_button=SHOP_BACK_ARROW,
+            check_button=self.island_in_management,
+            offset=(20, 20),
+            retry_wait=2,
+            skip_first_screenshot=True
+        )
