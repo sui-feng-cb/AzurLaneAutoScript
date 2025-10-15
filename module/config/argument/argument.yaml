@@ -485,6 +485,8 @@ Awaken:
     option: [ level120, level125 ]
   Favourite:
     value: false
+IslandTransport:
+  Enable: false
 Island1:
   Receive: false
   Option1:
