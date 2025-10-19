@@ -505,6 +505,8 @@ IslandTransport:
   SubmitPoultry: false
   SubmitMilk: false
   SubmitFreshMeat: false
+  SubmitNapaCabbage: true
+  SubmitCarrot: true
   SubmitFlex: true
   SubmitCotton: true
   SubmitStrawberries: true
