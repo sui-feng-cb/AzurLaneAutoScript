@@ -7979,6 +7979,22 @@
           8
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -7992,6 +8008,22 @@
           6,
           7,
           8
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
         ]
       },
       "Option3": {
@@ -8009,6 +8041,22 @@
           8
         ]
       },
+      "Character3": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Option4": {
         "type": "select",
         "value": 0,
@@ -8022,6 +8070,22 @@
           6,
           7,
           8
+        ]
+      },
+      "Character4": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
         ]
       }
     },
@@ -8038,12 +8102,44 @@
           1
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
         "option": [
           0,
           2
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
         ]
       },
       "Option3": {
@@ -8054,12 +8150,44 @@
           3
         ]
       },
+      "Character3": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Option4": {
         "type": "select",
         "value": 0,
         "option": [
           0,
           4
+        ]
+      },
+      "Character4": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
         ]
       }
     },
@@ -8081,6 +8209,22 @@
           6
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -8092,6 +8236,22 @@
           4,
           5,
           6
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
         ]
       },
       "Option3": {
@@ -8107,6 +8267,22 @@
           6
         ]
       },
+      "Character3": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Option4": {
         "type": "select",
         "value": 0,
@@ -8118,6 +8294,22 @@
           4,
           5,
           6
+        ]
+      },
+      "Character4": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
         ]
       }
     },
@@ -8137,6 +8329,22 @@
           4
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -8146,6 +8354,22 @@
           2,
           3,
           4
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
         ]
       },
       "Option3": {
@@ -8159,6 +8383,22 @@
           4
         ]
       },
+      "Character3": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Option4": {
         "type": "select",
         "value": 0,
@@ -8168,6 +8408,22 @@
           2,
           3,
           4
+        ]
+      },
+      "Character4": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
         ]
       }
     },
@@ -8192,7 +8448,39 @@
           9
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "Character2": {
         "type": "select",
         "value": 0,
         "option": [
@@ -8224,7 +8512,39 @@
           9
         ]
       },
+      "Character3": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Option4": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "Character4": {
         "type": "select",
         "value": 0,
         "option": [
@@ -8260,6 +8580,22 @@
           7
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -8272,6 +8608,22 @@
           5,
           6,
           7
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
         ]
       }
     },
@@ -8296,7 +8648,39 @@
           9
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "Character2": {
         "type": "select",
         "value": 0,
         "option": [
@@ -8336,6 +8720,22 @@
           11
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -8352,6 +8752,22 @@
           9,
           10,
           11
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
         ]
       }
     },
@@ -8376,7 +8792,39 @@
           9
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "Character2": {
         "type": "select",
         "value": 0,
         "option": [
@@ -8412,6 +8860,22 @@
           7
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -8424,6 +8888,22 @@
           5,
           6,
           7
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
         ]
       }
     },
@@ -8444,6 +8924,22 @@
           5
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -8454,6 +8950,22 @@
           3,
           4,
           5
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
         ]
       }
     },
@@ -8475,6 +8987,22 @@
           6
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -8486,6 +9014,22 @@
           4,
           5,
           6
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
         ]
       }
     },
@@ -8505,6 +9049,22 @@
           4
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -8514,6 +9074,22 @@
           2,
           3,
           4
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
         ]
       }
     },
@@ -8538,7 +9114,39 @@
           9
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "Character2": {
         "type": "select",
         "value": 0,
         "option": [
@@ -8576,7 +9184,39 @@
           9
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "Character2": {
         "type": "select",
         "value": 0,
         "option": [

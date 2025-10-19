@@ -146,7 +146,7 @@ class IslandProduct:
 
     def __init__(self, image, new=False):
         if new:
-            ocr = IslandProductionTime(OCR_PRODUCTION_TIME, lang='azur_lane_jp', name='OCR_PRODUCTION_TIME')
+            ocr = IslandProductionTime(OCR_PRODUCTION_TIME, lang='cnocr', name='OCR_PRODUCTION_TIME')
             self.duration = ocr.ocr(image)
         else:
             ocr = Duration(OCR_PRODUCTION_TIME_REMAIN, name='OCR_PRODUCTION_TIME_REMAIN')
@@ -292,6 +292,9 @@ class ProductItem:
 class IslandProjectRun(IslandUI):
     project = SelectedGrids([])
     total = SelectedGrids([])
+    project_retry = SelectedGrids([])
+    character = 0
+    change_manjuu = False
 
     def project_detect(self, image):
         """
@@ -401,14 +404,21 @@ class IslandProjectRun(IslandUI):
             button (Button): role button to click
             skip_first_screenshot (bool):
         """
+        if self.change_manjuu:
+            temp = ROLE_SELECT_CHECK
+        else:
+            temp = self.island_project_character_check()
+
         while 1:
             if skip_first_screenshot:
                 skip_first_screenshot = False
             else:
                 self.device.screenshot()
-            if self.appear(ROLE_SELECT_CHECK, offset=(20, 20)):
+
+            if self.appear(temp, offset=(20, 20)):
                 break
-            if self.appear(ROLE_SELECT_CONFIRM, offset=(20, 20), interval=2):
+            if self.appear(ROLE_SELECT_CONFIRM, offset=(20, 20), interval=2) or \
+                    self.appear(PROJECT_MANJUU_CHECK2, offset=(20, 20),interval=2):
                 self.device.click(button)
                 continue
 
@@ -458,15 +468,25 @@ class IslandProjectRun(IslandUI):
             if timeout.reached():
                 self.island_product_quit()
                 return False
-
+            if self.change_manjuu:
+                temp = TEMPLATE_ISLAND_MANJUU
+            else:
+                temp = self.island_project_character_choose()
             image = self.image_crop((0, 0, 910, 1280), copy=False)
-            sim, button = TEMPLATE_ISLAND_MANJUU.match_result(image)
+            sim, button = temp.match_result(image)
             if sim > 0.9:
                 self.island_select_manjuu(button)
                 return self.island_select_confirm()
             else:
-                logger.info('No manjuu found')
-                continue
+                logger.info('No character found,change manjuu')
+                sim, button = TEMPLATE_ISLAND_MANJUU.match_result(image)
+                if sim > 0.9:
+                    self.change_manjuu = True
+                    self.island_select_manjuu(button)
+                    return self.island_select_confirm()
+                else:
+                    logger.info('No manjuu found')
+                    continue
 
     def island_current_product(self):
         """
@@ -540,7 +560,7 @@ class IslandProjectRun(IslandUI):
                 self.device.click(last.button)
                 self.island_drag_next_page((0, -300), ISLAND_PRODUCT_ITEMS.area, 0.5)
 
-    def island_product_confirm(self, skip_first_screenshot=True):
+    def island_product_confirm(self):
         """
         Start the product after product selected.
 
@@ -552,19 +572,23 @@ class IslandProjectRun(IslandUI):
         success = False
         timeout = Timer(1.5, count=3).start()
         while 1:
-            if skip_first_screenshot:
-                skip_first_screenshot = False
-            else:
-                self.device.screenshot()
+            self.device.screenshot()
 
             if timeout.reached():
                 break
             if self.image_color_count(PROJECT_START, color=(151, 155, 155), threshold=221, count=200):
+                if self.appear(PROJECT_MANJUU_CHECK2, offset=(10, 10), interval=5):
+                    self.island_product_quit()
+                    self.change_manjuu = False
+                    break
+                logger.warning(f'PROJECT_START is gray, quitting and retrying')
                 self.island_product_quit()
+                self.change_manjuu = True
+                self.island_project_run_retry(names=[self.project.grids[0].name], trial=1, skip_first_screenshot=False)
                 break
 
             if not success:
-                if self.appear_then_click(ISLAND_AMOUNT_MAX, offset=(5, 5), interval=2):
+                if self.appear_then_click(ISLAND_AMOUNT_MAX, offset=(5, 5), interval=20):
                     timeout.reset()
                     continue
 
@@ -576,9 +600,10 @@ class IslandProjectRun(IslandUI):
                     continue
                 last = product
             else:
-                if self.appear_then_click(PROJECT_START, offset=(20,20), interval=2):
+                if self.appear_then_click(PROJECT_START, offset=(20,20), interval=10):
                     timeout.reset()
                     self.interval_clear(ISLAND_MANAGEMENT_CHECK)
+                    self.change_manjuu = False
                     continue
 
                 if self.info_bar_count():
@@ -666,6 +691,106 @@ class IslandProjectRun(IslandUI):
             slot_option.append(deep_get(items_data_cn, [proj_id, option]))
         return slot_option
 
+    def island_project_character_choose(self):
+
+        if self.character == 0:
+            return TEMPLATE_ISLAND_MANJUU
+        elif self.character == 1:
+            return TEMPLATE_ISLAND_SARATOGA
+        elif self.character == 2:
+            return TEMPLATE_ISLAND_NEWJERSEY
+        elif self.character == 3:
+            return TEMPLATE_ISLAND_LEMALIN
+        elif self.character == 4:
+            return TEMPLATE_ISLAND_TASHKENT
+        elif self.character == 5:
+            return PROJECT_SHIMAKAZE_CHECK
+        else:
+            return TEMPLATE_ISLAND_MANJUU
+
+    def island_project_character_set(self, index):
+
+        project = self.project[0]
+        proj_id = project.id
+        self.character = self.config.__getattribute__(f'Island{proj_id}_Character{index+1}')
+
+    def island_project_character_check(self):
+        if self.character == 0:
+            return ROLE_SELECT_CHECK
+        elif self.character == 1:
+            return PROJECT_SARATOGA_CHECK
+        elif self.character == 2:
+            return PROJECT_NEWJERSEY_CHECK
+        elif self.character == 3:
+            return PROJECT_LEMALIN_CHECK
+        elif self.character == 4:
+            return PROJECT_TASHKENT_CHECK
+        elif self.character == 5:
+            return PROJECT_SHIMAKAZE_CHECK
+        else:
+            return ROLE_SELECT_CHECK
+
+    def island_project_run_retry(self, names, trial=2, skip_first_screenshot=True):
+        """
+        Execute island run to receive and start project.
+
+        Args:
+            names (list[str]): a list of name for island receive
+            trial (int): retry times
+            skip_first_screenshot (bool):
+
+        Returns:
+            list[timedelta]: future finish timedelta
+        """
+        logger.hr('Island Project Run', level=1)
+        end = False
+        timeout = Timer(3, count=3).start()
+        while 1:
+            if skip_first_screenshot:
+                skip_first_screenshot = False
+            else:
+                self.device.screenshot()
+
+            if timeout.reached():
+                break
+
+            project_retry = self.project_detect(self.device.image)
+            if trial > 0 and not project_retry:
+                trial -= 1
+                continue
+            project_retry: SelectedGrids = project_retry.filter(
+                lambda proj: proj.name in names and proj.name not in self.project_retry.get('name'))
+            self.project = self.project.add_by_eq(project_retry)
+
+            for proj in project_retry:
+                if proj.name == names[-1]:
+                    end = True
+                proj_config = self.island_project_config(proj)
+
+                for button, option, index in zip(
+                        proj.slot_buttons.buttons, proj_config, range(len(proj_config))):
+                    if option is None:
+                        continue
+
+
+                    # retry 2 times because of a game bug
+                    for _ in range(2):
+                        ensure = not end or index != len(proj_config) - 1
+                        if self.island_project_receive_and_start(proj, button, option, ensure):
+                            break
+                timeout.reset()
+
+            if end:
+                break
+            self.island_drag_next_page((0, -500), ISLAND_PROJECT_SWIPE.area, 0.6)
+
+        # task delay
+        future_finish = sorted([f for f in self.total.get('finish_time') if f is not None])
+        logger.info(f'Project finish: {[str(f) for f in future_finish]}')
+        if not len(future_finish):
+            logger.info('No island project running')
+        return future_finish
+
     def island_project_run(self, names, trial=2, skip_first_screenshot=True):
         """
         Execute island run to receive and start project.
@@ -705,6 +830,7 @@ class IslandProjectRun(IslandUI):
 
                 for button, option, index in zip(
                         proj.slot_buttons.buttons, proj_config, range(len(proj_config))):
+                    self.island_project_character_set(index)
                     if option is None:
                         continue
                     # retry 2 times because of a game bug

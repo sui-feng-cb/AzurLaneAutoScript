@@ -504,69 +504,129 @@ Island1:
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+  Character1:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option2:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+  Character2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option3:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+  Character3:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option4:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+  Character4:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 Island2:
   Receive: false
   Option1:
     value: 0
     option: [ 0, 1 ]
+  Character1:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option2:
     value: 0
     option: [ 0, 2 ]
+  Character2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option3:
     value: 0
     option: [ 0, 3 ]
+  Character3:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option4:
     value: 0
     option: [ 0, 4 ]
+  Character4:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 Island3:
   Receive: false
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6 ]
+  Character1:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option2:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6 ]
+  Character2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option3:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6 ]
+  Character3:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option4:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6 ]
+  Character4:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 Island4:
   Receive: false
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4 ]
+  Character1:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option2:
     value: 0
     option: [ 0, 1, 2, 3, 4 ]
+  Character2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option3:
     value: 0
     option: [ 0, 1, 2, 3, 4 ]
+  Character3:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option4:
     value: 0
     option: [ 0, 1, 2, 3, 4 ]
+  Character4:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 Island5:
   Receive: false
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+  Character1:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+  Character2:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option3:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+  Character3:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option4:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+  Character4:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 Island6:
@@ -574,15 +634,27 @@ Island6:
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+  Character1:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option2:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+  Character2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 Island7:
   Receive: false
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+  Character1:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+  Character2:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 Island8:
@@ -590,15 +662,27 @@ Island8:
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
+  Character1:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option2:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
+  Character2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 Island9:
   Receive: false
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+  Character1:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+  Character2:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 Island10:
@@ -606,39 +690,69 @@ Island10:
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+  Character1:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option2:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+  Character2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 Island11:
   Receive: false
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5 ]
+  Character1:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option2:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5 ]
+  Character2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 Island12:
   Receive: false
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6 ]
+  Character1:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option2:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6 ]
+  Character2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 Island13:
   Receive: false
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4 ]
+  Character1:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option2:
     value: 0
     option: [ 0, 1, 2, 3, 4 ]
+  Character2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 Island14:
   Receive: false
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+  Character1:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+  Character2:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 Island15:
@@ -646,7 +760,13 @@ Island15:
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+  Character1:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Option2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+  Character2:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 GeneralShop:
