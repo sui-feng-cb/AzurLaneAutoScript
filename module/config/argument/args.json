@@ -7966,6 +7966,19 @@
           8
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -7981,6 +7994,19 @@
           8
         ]
       },
+      "Character2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
+        ]
+      },
       "Option3": {
         "type": "select",
         "value": 0,
@@ -7994,6 +8020,19 @@
           6,
           7,
           8
+        ]
+      },
+      "Character3": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
         ]
       },
       "Option4": {
@@ -8025,12 +8064,38 @@
           1
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
         "option": [
           0,
           2
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
         ]
       },
       "Option3": {
@@ -8041,12 +8106,38 @@
           3
         ]
       },
+      "Character3": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
+        ]
+      },
       "Option4": {
         "type": "select",
         "value": 0,
         "option": [
           0,
           4
+        ]
+      },
+      "Character4": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
         ]
       }
     },
@@ -8068,6 +8159,19 @@
           6
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -8079,6 +8183,19 @@
           4,
           5,
           6
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
         ]
       },
       "Option3": {
@@ -8094,6 +8211,19 @@
           6
         ]
       },
+      "Character3": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
+        ]
+      },
       "Option4": {
         "type": "select",
         "value": 0,
@@ -8105,6 +8235,19 @@
           4,
           5,
           6
+        ]
+      },
+      "Character4": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
         ]
       }
     },
@@ -8124,6 +8267,19 @@
           4
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -8133,6 +8289,19 @@
           2,
           3,
           4
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
         ]
       },
       "Option3": {
@@ -8146,6 +8315,19 @@
           4
         ]
       },
+      "Character3": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
+        ]
+      },
       "Option4": {
         "type": "select",
         "value": 0,
@@ -8155,6 +8337,19 @@
           2,
           3,
           4
+        ]
+      },
+      "Character4": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
         ]
       }
     },
@@ -8179,6 +8374,19 @@
           9
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -8193,6 +8401,19 @@
           7,
           8,
           9
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
         ]
       },
       "Option3": {
@@ -8211,6 +8432,19 @@
           9
         ]
       },
+      "Character3": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
+        ]
+      },
       "Option4": {
         "type": "select",
         "value": 0,
@@ -8225,6 +8459,19 @@
           7,
           8,
           9
+        ]
+      },
+      "Character4": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
         ]
       }
     },
@@ -8247,6 +8494,19 @@
           7
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -8259,6 +8519,19 @@
           5,
           6,
           7
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
         ]
       }
     },
@@ -8283,6 +8556,19 @@
           9
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -8297,6 +8583,19 @@
           7,
           8,
           9
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
         ]
       }
     },
@@ -8323,6 +8622,19 @@
           11
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -8339,6 +8651,19 @@
           9,
           10,
           11
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
         ]
       }
     },
@@ -8363,6 +8688,19 @@
           9
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -8377,6 +8715,19 @@
           7,
           8,
           9
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
         ]
       }
     },
@@ -8399,6 +8750,19 @@
           7
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -8411,6 +8775,19 @@
           5,
           6,
           7
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
         ]
       }
     },
@@ -8431,6 +8808,19 @@
           5
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -8441,6 +8831,19 @@
           3,
           4,
           5
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
         ]
       }
     },
@@ -8462,6 +8865,19 @@
           6
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -8473,6 +8889,19 @@
           4,
           5,
           6
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
         ]
       }
     },
@@ -8492,6 +8921,19 @@
           4
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -8501,6 +8943,19 @@
           2,
           3,
           4
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
         ]
       }
     },
@@ -8525,6 +8980,19 @@
           9
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -8539,6 +9007,19 @@
           7,
           8,
           9
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
         ]
       }
     },
@@ -8563,6 +9044,19 @@
           9
         ]
       },
+      "Character1": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
+        ]
+      },
       "Option2": {
         "type": "select",
         "value": 0,
@@ -8577,6 +9071,19 @@
           7,
           8,
           9
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "cheshire"
         ]
       }
     },
