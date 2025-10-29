@@ -501,24 +501,24 @@ Island1:
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
-  Option3:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
-  Option4:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
   Character1:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
   Character2:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option3:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
   Character3:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option4:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
   Character4:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
@@ -527,24 +527,24 @@ Island2:
   Option1:
     value: 0
     option: [ 0, 1 ]
-  Option2:
-    value: 0
-    option: [ 0, 2 ]
-  Option3:
-    value: 0
-    option: [ 0, 3 ]
-  Option4:
-    value: 0
-    option: [ 0, 4 ]
   Character1:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option2:
+    value: 0
+    option: [ 0, 2 ]
   Character2:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option3:
+    value: 0
+    option: [ 0, 3 ]
   Character3:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option4:
+    value: 0
+    option: [ 0, 4 ]
   Character4:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
@@ -553,24 +553,24 @@ Island3:
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6 ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6 ]
-  Option3:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6 ]
-  Option4:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6 ]
   Character1:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6 ]
   Character2:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option3:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6 ]
   Character3:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option4:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6 ]
   Character4:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
@@ -579,24 +579,24 @@ Island4:
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4 ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4 ]
-  Option3:
-    value: 0
-    option: [ 0, 1, 2, 3, 4 ]
-  Option4:
-    value: 0
-    option: [ 0, 1, 2, 3, 4 ]
   Character1:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4 ]
   Character2:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option3:
+    value: 0
+    option: [ 0, 1, 2, 3, 4 ]
   Character3:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option4:
+    value: 0
+    option: [ 0, 1, 2, 3, 4 ]
   Character4:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
@@ -605,24 +605,24 @@ Island5:
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-  Option3:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-  Option4:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Character1:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Character2:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option3:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Character3:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option4:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Character4:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
@@ -631,12 +631,12 @@ Island6:
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
   Character1:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
   Character2:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
@@ -645,12 +645,12 @@ Island7:
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Character1:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Character2:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
@@ -659,12 +659,12 @@ Island8:
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
   Character1:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
   Character2:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
@@ -673,12 +673,12 @@ Island9:
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Character1:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Character2:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
@@ -687,12 +687,12 @@ Island10:
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
   Character1:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
   Character2:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
@@ -701,12 +701,12 @@ Island11:
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5 ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5 ]
   Character1:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5 ]
   Character2:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
@@ -715,12 +715,12 @@ Island12:
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6 ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6 ]
   Character1:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6 ]
   Character2:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
@@ -729,12 +729,12 @@ Island13:
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4 ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4 ]
   Character1:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4 ]
   Character2:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
@@ -743,12 +743,12 @@ Island14:
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Character1:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Character2:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
@@ -757,12 +757,12 @@ Island15:
   Option1:
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Character1:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
+  Option2:
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   Character2:
     value: manjuu
     option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, unicorn, cheshire, amagi_chan ]
