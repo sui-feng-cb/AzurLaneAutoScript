@@ -85,8 +85,7 @@ class Coalition(CoalitionCombat, CampaignEvent):
             return True
         # Oil limit
         if oil_check:
-            _oil = self.get_oil()
-            if _oil < max(500, self.config.StopCondition_OilLimit):
+            if self.check_oil():
                 logger.hr('Triggered stop condition: Oil limit')
                 self.config.task_delay(minute=(120, 240))
                 return True
@@ -136,11 +135,12 @@ class Coalition(CoalitionCombat, CampaignEvent):
             self.coalition_map_exit(event)
             raise
 
-        oil_check_boolean = True if self.config.SERVER not in ['tw'] else False
-        if self.triggered_stop_condition(oil_check=oil_check_boolean):
-            self.coalition_map_exit(event)
-            raise ScriptEnd
+        
         self.enter_map(event=event, stage=stage, mode=fleet, map_mode=map_mode)
+        oil_check_boolean = True if self.config.SERVER not in ['tw'] else False
+        # if self.triggered_stop_condition(oil_check=oil_check_boolean):
+        #     self.coalition_map_exit(event)
+        #     raise ScriptEnd
         self.coalition_combat()
 
     @staticmethod
