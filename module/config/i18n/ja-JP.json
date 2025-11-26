@@ -66,6 +66,10 @@
       "name": "イベント共通設定",
       "help": ""
     },
+    "Coalition": {
+      "name": "ネオンシティの探索者",
+      "help": ""
+    },
     "Event": {
       "name": "イベント海域",
       "help": ""
@@ -80,10 +84,6 @@
     },
     "Hospital": {
       "name": "病院探訪ストーリー",
-      "help": ""
-    },
-    "Coalition": {
-      "name": "ネオンシティの探索者",
       "help": ""
     },
     "MaritimeEscort": {
@@ -1398,11 +1398,18 @@
     "Mode": {
       "name": "Coalition.Mode.name",
       "help": "Coalition.Mode.help",
-      "easy": "easy",
-      "normal": "normal",
-      "hard": "hard",
-      "sp": "sp",
-      "ex": "ex"
+      "area1-normal": "area1-normal",
+      "area1-hard": "area1-hard",
+      "area2-normal": "area2-normal",
+      "area2-hard": "area2-hard",
+      "area3-normal": "area3-normal",
+      "area3-hard": "area3-hard",
+      "area4-normal": "area4-normal",
+      "area4-hard": "area4-hard",
+      "area5-normal": "area5-normal",
+      "area5-hard": "area5-hard",
+      "area6-normal": "area6-normal",
+      "area6-hard": "area6-hard"
     },
     "Fleet": {
       "name": "Coalition.Fleet.name",
