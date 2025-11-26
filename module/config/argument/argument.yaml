@@ -337,11 +337,8 @@ MaritimeEscort:
   Enable: true
 Coalition:
   Mode:
-    value: AREA-1
-    option: [ AREA-1, AREA-2, AREA-3, AREA-4, AREA-5, AREA-6 ]
-  MapMode:
-    value: normal
-    option: [ normal, hard ]
+    value: hard
+    option: [ easy, normal, hard, sp, ex ]
   Fleet:
     value: single
     option: [ single, multi ]
