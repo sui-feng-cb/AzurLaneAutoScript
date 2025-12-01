@@ -3,6 +3,10 @@ import shutil
 
 from tqdm import tqdm
 
+import module.config.server as server
+
+server.server = 'cn'
+
 from module.base.decorator import cached_property
 from module.base.utils import load_image
 from module.logger import logger
