@@ -5,7 +5,7 @@ from tqdm import tqdm
 
 import module.config.server as server
 
-server.server = 'cn'
+server.server = 'cn' # Don't need to edit, it's used to avoid error.
 
 from module.base.decorator import cached_property
 from module.base.utils import load_image
@@ -62,6 +62,21 @@ class DropStatistics:
                 os.remove(self.csv_file)
         return True
 
+    def check_server(self, campaign):
+        """
+        Call server.set_server() by folder name
+
+        Args:
+            campaign (str):
+        """
+        name = campaign.split()
+        target_server = 'cn'
+        if len(name) >= 3:
+            target_server = name[-1]
+
+        if server.server != target_server:
+            server.set_server(target_server)
+
     def parse_template(self, file):
         """
         Extract template from a single file.
@@ -115,6 +130,7 @@ class DropStatistics:
         """
         print('')
         logger.hr(f'Extract templates from {campaign}', level=1)
+        self.check_server(campaign)
         for ts, file in tqdm(load_folder(self.drop_folder(campaign)).items()):
             try:
                 self.parse_template(file)
@@ -135,6 +151,7 @@ class DropStatistics:
         """
         print('')
         logger.hr(f'extract drops from {campaign}', level=1)
+        self.check_server(campaign)
         _ = self.csv_overwrite_check
 
         with open(self.csv_file, 'a', newline='', encoding=DropStatistics.CSV_ENCODING) as csv_file:
