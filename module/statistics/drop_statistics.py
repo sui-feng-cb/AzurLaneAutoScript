@@ -82,11 +82,13 @@ class DropStatistics:
         Extract template from a single file.
         New templates will be given an auto-increased ID.
         """
-        images = unpack(load_image(file))[-1::]
+        image = load_image(file)
+        similarity = get_similarity(image)
+        images = unpack(image)[-1::]
         for image in images:
             # if self.get_items.appear_on(image):
             #     self.get_items.extract_template(image, folder=self.template_folder)
-            if self.campaign_bonus.appear_on(image):
+            if self.campaign_bonus.appear_on(image, similarity=similarity):
                 for button in [CAMPAIGN_BONUS_SINGLE, CAMPAIGN_BONUS]:
                     self.campaign_bonus.bonus_button = button
                     self.campaign_bonus.extract_template(image, folder=self.template_folder)
@@ -105,7 +107,9 @@ class DropStatistics:
         """
         ts = os.path.splitext(os.path.basename(file))[0]
         campaign = os.path.basename(os.path.abspath(os.path.join(file, '../')))
-        images = unpack(load_image(file))[-1::]
+        image = load_image(file)
+        similarity = get_similarity(image)
+        images = unpack(image)[-1::]
         enemy_name = 'unknown'
         for image in images:
             # if self.battle_status.appear_on(image):
@@ -113,7 +117,7 @@ class DropStatistics:
             # if self.get_items.appear_on(image):
             #     for item in self.get_items.stats_get_items(image):
             #         yield [ts, campaign, enemy_name, 'GET_ITEMS', item.name, item.amount]
-            if self.campaign_bonus.appear_on(image):
+            if self.campaign_bonus.appear_on(image, similarity=similarity):
                 for button in [CAMPAIGN_BONUS_SINGLE, CAMPAIGN_BONUS]:
                     self.campaign_bonus.bonus_button = button
                     for item in self.campaign_bonus.stats_get_items(image):

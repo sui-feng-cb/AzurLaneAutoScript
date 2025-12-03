@@ -68,7 +68,29 @@ def unpack(image):
     size = image_size(image)
     if size == (1280, 720):
         return [image]
+    elif size[0] / 1280 == size[1] / 720:
+        return [cv2.resize(image, (1280, 720), interpolation=cv2.INTER_LANCZOS4)]
     else:
         if size[0] != 1280 or size[1] % 720 != 0:
             raise ImageInvalidResolution(f'Unexpected image size: {size}')
         return [crop(image, (0, n * 720, 1280, (n + 1) * 720)) for n in range(size[1] // 720)]
+
+def get_similarity(image):
+    """
+    Get similarity to.
+
+    Args:
+        image:
+
+    Returns:
+        float: 0-1. Similarity.
+    """
+    size = image_size(image)
+    if size == (1280, 720):
+        return 0.85
+    elif size[0] / 1280 == size[1] / 720:
+        return 0.7
+    else:
+        if size[0] != 1280 or size[1] % 720 != 0:
+            raise ImageInvalidResolution(f'Unexpected image size: {size}')
+        return 0.85
