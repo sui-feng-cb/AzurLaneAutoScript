@@ -9,7 +9,13 @@ from module.statistics.utils import *
 
 class BonusItem(Item):
     def predict_valid(self):
-        return np.mean(rgb2gray(self.image) > 160) > 0.3
+        image = rgb2gray(self.image)
+        width, height = image_size(image)
+        wm, hm = width // 2, height // 2
+        row_center = image[hm: hm + 5, :]
+        info_bar = image[64: 69, :]
+        column_center = image[:, wm: wm + 5]
+        return all(np.mean(img > 160) > 0.1 for img in [image, row_center, info_bar, column_center])
 
 
 class CampaignBonusStatistics(GetItemsStatistics):

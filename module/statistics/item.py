@@ -217,13 +217,15 @@ class ItemGrid:
             self.next_cost_template_index += 1
         self.next_cost_template_index = max(self.next_cost_template_index, max_digit + 1)
 
-    def match_template(self, image, similarity=None):
+    def match_template(self, image, similarity=None, mode='all'):
         """
         Match templates, try most frequent hit templates first.
 
         Args:
             image (np.ndarray):
             similarity (float):
+            mode (str): 'all' for all templates, may create new templates
+                        'known' for known templates only, which will skip images named with digit
 
         Returns:
             str: Template name.
@@ -234,7 +236,10 @@ class ItemGrid:
         # Match frequently hit templates first
         names = np.array(list(self.templates.keys()))[np.argsort(list(self.templates_hit.values()))][::-1]
         # Match known templates first
-        names = [name for name in names if not name.isdigit()] + [name for name in names if name.isdigit()]
+        tmp = [name for name in names if not name.isdigit()]
+        if mode == 'all':
+            tmp.extend([name for name in names if name.isdigit()])
+        names = tmp
         for name in names:
             if color_similar(color1=color, color2=self.colors[name], threshold=30):
                 res = cv2.matchTemplate(image, self.templates[name], cv2.TM_CCOEFF_NORMED)
@@ -243,6 +248,8 @@ class ItemGrid:
                     self.templates_hit[name] += 1
                     return name
 
+        if mode == 'known':
+            return 'unknown'
         self.next_template_index += 1
         name = str(self.next_template_index)
         logger.info(f'New template: {name}')
@@ -334,7 +341,7 @@ class ItemGrid:
         else:
             return None
 
-    def predict(self, image, name=True, amount=True, cost=False, price=False, tag=False):
+    def predict(self, image, name=True, amount=True, cost=False, price=False, tag=False, mode='all'):
         """
         Args:
             image (np.ndarray):
@@ -343,6 +350,7 @@ class ItemGrid:
             cost (bool): If predict the cost to buy item.
             price (bool): If predict item price.
             tag (bool): If predict item tag. Tags are like `catchup`, `bonus`.
+            mode (str): 'all' or 'known'
 
         Returns:
             list[Item]:
@@ -354,7 +362,7 @@ class ItemGrid:
             for item, a in zip(self.items, amount_list):
                 item.amount = a
         if name:
-            name_list = [self.match_template(item.image) for item in self.items]
+            name_list = [self.match_template(item.image, mode=mode) for item in self.items]
             for item, n in zip(self.items, name_list):
                 item.name = n
         if cost:

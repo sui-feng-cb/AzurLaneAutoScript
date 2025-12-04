@@ -120,7 +120,7 @@ class DropStatistics:
             if self.campaign_bonus.appear_on(image, similarity=similarity):
                 for button in [CAMPAIGN_BONUS_SINGLE, CAMPAIGN_BONUS]:
                     self.campaign_bonus.bonus_button = button
-                    for item in self.campaign_bonus.stats_get_items(image):
+                    for item in self.campaign_bonus.stats_get_items(image, mode='known'):
                         yield [ts, campaign, enemy_name, button.name, item.name, item.amount]
             else:
                 raise ImageError('No campaign bonus on image.')
@@ -135,7 +135,7 @@ class DropStatistics:
         print('')
         logger.hr(f'Extract templates from {campaign}', level=1)
         self.check_server(campaign)
-        for ts, file in tqdm(load_folder(self.drop_folder(campaign)).items()):
+        for ts, file in tqdm(load_folder(self.drop_folder(campaign), ext=['.png', '.jpg']).items()):
             try:
                 self.parse_template(file)
             except ImageError as e:
@@ -160,7 +160,7 @@ class DropStatistics:
 
         with open(self.csv_file, 'a', newline='', encoding=DropStatistics.CSV_ENCODING) as csv_file:
             writer = csv.writer(csv_file)
-            for ts, file in tqdm(load_folder(self.drop_folder(campaign)).items()):
+            for ts, file in tqdm(load_folder(self.drop_folder(campaign), ext=['.png', '.jpg']).items()):
                 try:
                     rows = list(self.parse_drop(file))
                     writer.writerows(rows)
