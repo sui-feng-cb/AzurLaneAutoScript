@@ -66,10 +66,6 @@
       "name": "活动通用设置",
       "help": ""
     },
-    "Coalition": {
-      "name": "DATE A LANE",
-      "help": ""
-    },
     "Event": {
       "name": "活动图",
       "help": ""
@@ -84,6 +80,10 @@
     },
     "Hospital": {
       "name": "深谷来信",
+      "help": ""
+    },
+    "Coalition": {
+      "name": "DATE A LANE",
       "help": ""
     },
     "MaritimeEscort": {

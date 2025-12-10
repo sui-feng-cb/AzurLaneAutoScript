@@ -66,10 +66,6 @@
       "name": "イベント共通設定",
       "help": ""
     },
-    "Coalition": {
-      "name": "ネオンシティの探索者",
-      "help": ""
-    },
     "Event": {
       "name": "イベント海域",
       "help": ""
@@ -84,6 +80,10 @@
     },
     "Hospital": {
       "name": "病院探訪ストーリー",
+      "help": ""
+    },
+    "Coalition": {
+      "name": "ネオンシティの探索者",
       "help": ""
     },
     "MaritimeEscort": {
