@@ -25,8 +25,8 @@ class CampaignBonusStatistics(GetItemsStatistics):
         if CAMPAIGN_BONUS_STRATEGY_CHECK.match(image, offset=(200, 500), similarity=similarity):
             return False
         if AUTO_SEARCH_MENU_EXIT.match(image, offset=(200, 20), similarity=similarity) \
-                and (CAMPAIGN_BONUS.match(image, offset=(200, 500), similarity=similarity) \
-                and CAMPAIGN_BONUS_SINGLE.match(image, offset=(200, 500), similarity=similarity)):
+                and CAMPAIGN_BONUS_SINGLE.match(image, offset=(200, 100), similarity=similarity) \
+                and CAMPAIGN_BONUS.match(image, offset=(200, 500), similarity=similarity):
             return True
 
         return False

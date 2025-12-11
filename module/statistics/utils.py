@@ -66,18 +66,48 @@ def unpack(image):
         list: List of np.ndarray.
     """
     size = image_size(image)
-    if size == (1280, 720):
+    if size == (1280, 720) or size[0] == round(size[1] * 16 / 9) \
+            or size[0] != 1280 or size[1] % 720 != 0:
         return [image]
-    elif size[0] / 1280 == size[1] / 720:
-        return [cv2.resize(image, (1280, 720), interpolation=cv2.INTER_LANCZOS4)]
     else:
-        if size[0] != 1280 or size[1] % 720 != 0:
-            raise ImageInvalidResolution(f'Unexpected image size: {size}')
         return [crop(image, (0, n * 720, 1280, (n + 1) * 720)) for n in range(size[1] // 720)]
+
+
+def resize_image(image):
+    """
+    Crop and resize to 1280x720.
+
+    Args:
+        image:
+
+    Returns:
+        np.ndarray:
+    """
+    size = image_size(image)
+    width, height = size
+    if size == (1280, 720):
+        return image
+    elif width == round(height * 16 / 9):
+        return cv2.resize(image, (1280, 720), interpolation=cv2.INTER_LANCZOS4)
+    elif width != 1280 or height % 720 != 0:
+        if width / height < 16 / 9:
+            crop_height = width * 9 / 16
+            y1 = round(height / 2 - crop_height / 2)
+            y2 = round(height / 2 + crop_height / 2)
+            crop_img = crop(image, (0, y1, width, y2))
+        else:
+            crop_width = height * 16 / 9
+            x1 = round(width / 2 - crop_width / 2)
+            x2 = round(width / 2 + crop_width / 2)
+            crop_img = crop(image, (x1, 0, x2, height))
+        return cv2.resize(crop_img, (1280, 720), interpolation=cv2.INTER_LANCZOS4)
+    else:
+        raise ImageInvalidResolution(f'Unexpected image size: {size}')
+
 
 def get_similarity(image):
     """
-    Get similarity to.
+    Get similarity from a image.
 
     Args:
         image:
@@ -88,9 +118,7 @@ def get_similarity(image):
     size = image_size(image)
     if size == (1280, 720):
         return 0.85
-    elif size[0] / 1280 == size[1] / 720:
-        return 0.7
+    elif size[0] == round(size[1] * 16 / 9) or size[0] != 1280 or size[1] % 720 != 0:
+        return 0.69
     else:
-        if size[0] != 1280 or size[1] % 720 != 0:
-            raise ImageInvalidResolution(f'Unexpected image size: {size}')
         return 0.85

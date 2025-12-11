@@ -24,6 +24,7 @@ class DropStatistics:
     TEMPLATE_FOLDER = 'item_templates'
     TEMPLATE_BASIC = './assets/stats_basic'
     SKIP_IMAGE_FOLDER = 'skip_images'
+    IMAGE_EXTENSION = '.png'
     CNOCR_CONTEXT = 'cpu'
     CSV_FILE = 'drop_result.csv'
     CSV_OVERWRITE = True
@@ -94,6 +95,8 @@ class DropStatistics:
         """
         Move a image file to {SKIP_IMAGE_FOLDER}/{CAMPAIGN}.
         """
+        if not self.SKIP_IMAGE_FOLDER:
+            return False
         campaign = os.path.basename(os.path.abspath(os.path.join(file, '../')))
         folder = self.skip_file_folder(campaign)
         os.makedirs(folder, exist_ok=True)
@@ -104,10 +107,10 @@ class DropStatistics:
         Extract template from a single file.
         New templates will be given an auto-increased ID.
         """
-        image = load_image(file)
-        similarity = get_similarity(image)
-        images = unpack(image)[-1::]
-        for image in images:
+        images = unpack(load_image(file))[-1::]
+        similarities = [get_similarity(image) for image in images]
+        images = [resize_image(image) for image in images]
+        for image, similarity in zip(images, similarities):
             # if self.get_items.appear_on(image):
             #     self.get_items.extract_template(image, folder=self.template_folder)
             if self.campaign_bonus.appear_on(image, similarity=similarity):
@@ -129,11 +132,11 @@ class DropStatistics:
         """
         ts = os.path.splitext(os.path.basename(file))[0]
         campaign = os.path.basename(os.path.abspath(os.path.join(file, '../')))
-        image = load_image(file)
-        similarity = get_similarity(image)
-        images = unpack(image)[-1::]
+        images = unpack(load_image(file))[-1::]
+        similarities = [get_similarity(image) for image in images]
+        images = [resize_image(image) for image in images]
         enemy_name = 'unknown'
-        for image in images:
+        for image, similarity in zip(images, similarities):
             # if self.battle_status.appear_on(image):
             #     enemy_name = self.battle_status.stats_battle_status(image)
             # if self.get_items.appear_on(image):
@@ -157,7 +160,8 @@ class DropStatistics:
         print('')
         logger.hr(f'Extract templates from {campaign}', level=1)
         self.check_server(campaign)
-        for ts, file in tqdm(load_folder(self.drop_folder(campaign), ext=['.png', '.jpg']).items()):
+        drop_folder = load_folder(self.drop_folder(campaign), ext=DropStatistics.IMAGE_EXTENSION)
+        for ts, file in tqdm(drop_folder.items()):
             try:
                 self.parse_template(file)
             except ImageError as e:
@@ -184,7 +188,8 @@ class DropStatistics:
 
         with open(self.csv_file, 'a', newline='', encoding=DropStatistics.CSV_ENCODING) as csv_file:
             writer = csv.writer(csv_file)
-            for ts, file in tqdm(load_folder(self.drop_folder(campaign), ext=['.png', '.jpg']).items()):
+            drop_folder = load_folder(self.drop_folder(campaign), ext=DropStatistics.IMAGE_EXTENSION)
+            for ts, file in tqdm(drop_folder.items()):
                 try:
                     rows = list(self.parse_drop(file))
                     writer.writerows(rows)
@@ -210,6 +215,8 @@ if __name__ == '__main__':
     # This will save images {DROP_FOLDER}/{SKIP_IMAGE_FOLDER}/{CAMPAIGN}.
     # If folder doesn't exist, auto create
     DropStatistics.SKIP_IMAGE_FOLDER = 'skip_images'
+    # image file extension suck as '.png', '.jpg'
+    DropStatistics.IMAGE_EXTENSION = ['.png', '.jpg', '.PNG']
     # 'cpu' or 'gpu', default to 'cpu'.
     # Use 'gpu' for faster prediction, but you must have the gpu version of mxnet installed.
     DropStatistics.CNOCR_CONTEXT = 'cpu'
