@@ -1,6 +1,8 @@
 import cv2
 import numpy as np
 
+import module.config.server as server
+
 from module.base.button import ButtonGrid
 from module.base.decorator import cached_property, del_cached_property
 from module.base.timer import Timer
@@ -15,7 +17,24 @@ from module.statistics.item import Item, ItemGrid
 from module.ui.page import page_island_storage
 
 
-AMOUNT_OCR = Digit([], lang='cnocr', letter=(218, 218, 218), name='Amount_ocr')
+class AmountOcr(Digit):
+    def pre_process(self, image):
+        mask = color_similarity_2d(image, color=(75, 76, 78))
+        bg = np.mean(mask > 230, axis=0)
+        match = np.where(bg > 0.8)[0]
+        if len(match):
+            left = match[0]
+            total = mask.shape[1]
+            if left < total:
+                image = image[:, left:]
+        image = super().pre_process(image)
+        return image
+
+
+if server.server == 'jp':
+    AMOUNT_OCR = AmountOcr([], letter=(255, 255, 255), name='Amount_ocr')
+else:
+    AMOUNT_OCR = AmountOcr([], lang='cnocr', letter=(218, 218, 218), name='Amount_ocr')
 
 
 class StorageItem(Item):
@@ -180,7 +199,7 @@ class IslandStorage(IslandUI):
             storage_grid,
             templates={},
             template_area=(0, 15, 96, 80),
-            amount_area=(36, 85, 95, 100),
+            amount_area=(36, 85, 95, 102),
         )
         storage_items.load_template_folder(self.storage_template_folder)
         storage_items.amount_ocr = AMOUNT_OCR
