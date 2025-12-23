@@ -6,7 +6,7 @@ import module.config.server as server
 from module.base.button import ButtonGrid
 from module.base.decorator import cached_property, del_cached_property
 from module.base.timer import Timer
-from module.base.utils import color_similar, color_similarity_2d, crop, rgb2gray, xywh2xyxy
+from module.base.utils import color_similarity_2d, rgb2gray, xywh2xyxy
 from module.island.assets import *
 from module.island.data import DIC_ISLAND_ITEM
 from module.island.ui import IslandUI, ISLAND_STORAGE_SCROLL
@@ -45,41 +45,8 @@ class StorageItem(Item):
 class StorageItemGrid(ItemGrid):
     item_class = StorageItem
 
-    def match_template(self, image, similarity=None):
-        """
-        Match templates, try most frequent hit templates first.
-
-        Args:
-            image (np.ndarray):
-            similarity (float):
-
-        Returns:
-            str: Template name.
-        """
-        if similarity is None:
-            similarity = self.similarity
-        color = cv2.mean(crop(image, self.template_area))[:3]
-        # Match frequently hit templates first
-        names = np.array(list(self.templates.keys()))[np.argsort(list(self.templates_hit.values()))][::-1]
-        # Match known templates first
-        names = [name for name in names if not name.isdigit()] + [name for name in names if name.isdigit()]
-        for name in names:
-            # threshold=5 to match items in same shape but with different colors
-            if color_similar(color1=color, color2=self.colors[name], threshold=5):
-                res = cv2.matchTemplate(image, self.templates[name], cv2.TM_CCOEFF_NORMED)
-                _, sim, _, _ = cv2.minMaxLoc(res)
-                if sim > similarity:
-                    self.templates_hit[name] += 1
-                    return name
-
-        self.next_template_index += 1
-        name = str(self.next_template_index)
-        logger.info(f'New template: {name}')
-        image = crop(image, self.template_area)
-        self.colors[name] = cv2.mean(image)[:3]
-        self.templates[name] = image
-        self.templates_hit[name] = self.templates_hit.get(name, 0) + 1
-        return name
+    def match_template(self, image, similarity=None, threshold=5):
+        return super().match_template(self, image, similarity=similarity, threshold=threshold)
 
     @staticmethod
     def item_id_parse(string):
@@ -119,7 +86,7 @@ class IslandStorage(IslandUI):
             if rect[3] - rect[1] < 10:
                 continue
             # Check item grid should be in the area
-            if rect[1] < 105:
+            if rect[1] < 93:
                 continue
             bars.append(rect)
         bars = Points([(0., b[1]) for b in bars]).group(threshold=5)
@@ -132,19 +99,16 @@ class IslandStorage(IslandUI):
         items are not loaded that fast,
         wait until any bar icon appears
         """
-        timeout = Timer(1, count=3).start()
-        while 1:
-            if skip_first_screenshot:
-                skip_first_screenshot = False
-            else:
-                self.device.screenshot()
-
+        confirm_timer = Timer(1.5, count=3).start()
+        for _ in self.loop(skip_first=skip_first_screenshot):
             bars = self._get_bars()
-
-            if timeout.reached():
-                break
             if len(bars):
-                break
+                if confirm_timer.reached():
+                    return
+                else:
+                    pass
+            else:
+                confirm_timer.reset()
 
     @cached_property
     def storage_grid(self):
@@ -159,29 +123,29 @@ class IslandStorage(IslandUI):
         count = len(bars)
         if count == 0:
             logger.warning('Unable to find bar icon, assume task list is at top')
-            origin_y = 157
+            origin_y = 169
             delta_y = 167
             row = 2
         elif count == 1:
             y_list = bars[:, 1]
-            # -105 to adjust the bar position to grid position
-            origin_y = y_list[0] - 105 + 135
+            # -93 to adjust the bar position to grid position
+            origin_y = y_list[0] - 93 + 135
             delta_y = 167
             row = 1
         elif count == 2:
             y_list = bars[:, 1]
-            origin_y = min(y_list) - 105 + 135
+            origin_y = min(y_list) - 93 + 135
             delta_y = abs(y_list[1] - y_list[0])
             row = 2
         else:
             logger.warning(f'Too many bars found ({count}), assume max rows')
             y_list = bars[:, 1]
-            origin_y = min(y_list) - 105 + 135
+            origin_y = min(y_list) - 93 + 135
             delta_y = abs(y_list[1] - y_list[0])
             row = 2
         storage_grid = ButtonGrid(
-            origin=(303, origin_y), delta=(142, delta_y),
-            button_shape=(102, 102), grid_shape=(6, row),
+            origin=(321, origin_y), delta=(142, delta_y),
+            button_shape=(64, 64), grid_shape=(6, row),
             name='STORAGE_ITEM_GRID'
         )
         return storage_grid
@@ -198,8 +162,8 @@ class IslandStorage(IslandUI):
         storage_items = StorageItemGrid(
             storage_grid,
             templates={},
-            template_area=(0, 15, 96, 80),
-            amount_area=(36, 85, 95, 102),
+            template_area=(0, 0, 64, 54),
+            amount_area=(18, 74, 77, 91),
         )
         storage_items.load_template_folder(self.storage_template_folder)
         storage_items.amount_ocr = AMOUNT_OCR
