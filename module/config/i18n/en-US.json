@@ -862,6 +862,16 @@
       "help": ""
     }
   },
+  "InterceptiveCheck": {
+    "_info": {
+      "name": "Dynamic Verification",
+      "help": "Judge whether the current task settings meet the requirements through in-game information to avoid problems caused by forgetting to adjust the task settings.\nAfter any of the following conditions is triggered, the current battle will be exited and the task will be closed."
+    },
+    "OilThreshold": {
+      "name": "Single Battle Oil Consumption Upper Limit",
+      "help": "If the oil consumption of a single battle is greater than or equal to X, the setting is deemed incorrect.\n0 means no limit on oil consumption."
+    }
+  },
   "StopCondition": {
     "_info": {
       "name": "Stop Condition Settings",

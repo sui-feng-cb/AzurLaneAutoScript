@@ -3,6 +3,7 @@ from module.campaign.campaign_status import CampaignStatus
 from module.combat.assets import *
 from module.combat.combat import Combat
 from module.exception import CampaignEnd
+from module.exercise.assets import QUIT_RECONFIRM
 from module.handler.assets import AUTO_SEARCH_MAP_OPTION_ON, GET_MISSION
 from module.logger import logger
 from module.map.assets import WITHDRAW
@@ -10,8 +11,10 @@ from module.map.map_operation import MapOperation
 
 
 class AutoSearchCombat(MapOperation, Combat, CampaignStatus):
+    _prev_oil = 0
     _auto_search_in_stage_timer = Timer(3, count=6)
     _auto_search_status_confirm = False
+    _interrupt = False
     _withdraw = False
     auto_search_oil_limit_triggered = False
     auto_search_coin_limit_triggered = False
@@ -201,6 +204,81 @@ class AutoSearchCombat(MapOperation, Combat, CampaignStatus):
             if self.is_in_auto_search_menu() or self._handle_auto_search_menu_missing():
                 raise CampaignEnd
 
+    def interrupt_auto_search(self, emotion_reduce, fleet_index, skip_first_screenshot=True):
+        """
+        Raises:
+            TaskEnd: If auto search interrupted
+
+        Pages:
+            in: Any, usually to be is_combat_executing
+            out: page_campaign or page_event or page_sp
+        """
+        logger.info('Interrupting auto search')
+        is_loading = False
+        pause_interval = Timer(0.5, count=1)
+        in_map_timer = Timer(1, count=6)
+        while 1:
+            if skip_first_screenshot:
+                skip_first_screenshot = False
+            else:
+                self.device.screenshot()
+
+            # End
+            if self.is_in_map():
+                if in_map_timer.reached():
+                    logger.info('Auto search interrupted')
+                    break
+
+            if self.handle_combat_automation_confirm():
+                in_map_timer.reset()
+                continue
+            if self.handle_story_skip():
+                in_map_timer.reset()
+                continue
+            if self.handle_vote_popup():
+                in_map_timer.reset()
+                continue
+
+            if pause_interval.reached():
+                pause = self.is_combat_executing()
+                if pause:
+                    self.device.click(pause)
+                    is_loading = False
+                    pause_interval.reset()
+                    in_map_timer.reset()
+                    continue
+            if self.handle_combat_quit():
+                pause_interval.reset()
+                in_map_timer.reset()
+                continue
+            if self.appear_then_click(QUIT_RECONFIRM, offset=True, interval=5):
+                pause_interval.reset()
+                in_map_timer.reset()
+                continue
+
+            # Only print once when detected
+            if not is_loading:
+                if self.is_combat_loading():
+                    is_loading = True
+                    in_map_timer.clear()
+                    continue
+            elif self.is_combat_executing():
+                is_loading = False
+                in_map_timer.clear()
+                continue
+
+        if emotion_reduce:
+            self.emotion.reduce(fleet_index)
+
+        try:
+            self._interrupt = False
+            self.withdraw()
+        except CampaignEnd:
+            logger.warning("Disable current task due to abnormal oil consumption. "
+                           "Please check your oil settings")
+            self.config.Scheduler_Enable = False
+            self.config.task_stop()
+
     def auto_search_combat_execute(self, emotion_reduce, fleet_index, battle=None, expected_end=None):
         """
         Args:
@@ -300,7 +378,6 @@ class AutoSearchCombat(MapOperation, Combat, CampaignStatus):
                 if expected_end():
                     self.device.screenshot_interval_set()
                     break
-            
 
     def auto_search_combat_status(self):
         """
@@ -315,7 +392,6 @@ class AutoSearchCombat(MapOperation, Combat, CampaignStatus):
         get_urgent_commission = False
 
         for _ in self.loop():
-
             # End
             if self.is_auto_search_running():
                 self._auto_search_status_confirm = False

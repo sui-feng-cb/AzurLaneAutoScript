@@ -4145,6 +4145,12 @@
         "display": "hide"
       }
     },
+    "InterceptiveCheck": {
+      "OilThreshold": {
+        "type": "input",
+        "value": 0
+      }
+    },
     "StopCondition": {
       "OilLimit": {
         "type": "input",

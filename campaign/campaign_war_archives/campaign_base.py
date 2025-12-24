@@ -134,3 +134,64 @@ class CampaignBase(CampaignBase_):
         to target sp event in page_archives
         """
         return self.ui_goto_archives_campaign(mode='sp')
+
+    def check_oil_threshold(self, oil):
+        oil_threshold = self.config.InterceptiveCheck_OilThreshold
+        if not oil_threshold:
+            return False
+        logger.attr('Oil Threshold', oil_threshold)
+        if oil_threshold <= 3:
+            logger.info('Oil Threshold should be at least 4, set to default')
+            self.config.InterceptiveCheck_OilThreshold = 0
+            return False
+
+        checked = False
+        self._prev_oil = self._prev_oil or oil
+        diff = abs(self._prev_oil - oil) if self._prev_oil else 0
+        if diff > 0:
+            logger.attr('Oil Consumption', diff)
+            if diff >= 500:
+                logger.warning(f"Wrong oil consumption {diff}, assuming it is an ocr error")
+                self._prev_oil = 0
+                return False
+            if diff >= oil_threshold:
+                logger.warning("Abnormal oil consumption detected, Withdrawing")
+                checked = True
+        self._prev_oil = oil
+        return checked
+
+    def auto_search_watch_oil(self, checked=False):
+        """
+        Watch oil.
+        This will set auto_search_oil_limit_triggered.
+        """
+        if not checked:
+            oil = self.get_oil()
+            if oil == 0:
+                logger.warning('Oil not found')
+            else:
+                if self.check_oil_threshold(oil):
+                    self._interrupt = True
+                if oil < max(500, self.config.StopCondition_OilLimit):
+                    logger.info('Reach oil limit')
+                    self.auto_search_oil_limit_triggered = True
+                else:
+                    if self.auto_search_oil_limit_triggered:
+                        logger.warning('auto_search_oil_limit_triggered but oil recovered, '
+                                       'probably because of wrong OCR result before')
+                    self.auto_search_oil_limit_triggered = False
+                checked = True
+
+        return checked
+
+    def auto_search_combat(self, emotion_reduce=None, fleet_index=1, battle=None):
+        """
+        Execute a combat.
+
+        Note that fleet index == 1 is mob fleet, 2 is boss fleet.
+        It's not the fleet index in fleet preparation or auto search setting.
+        """
+        emotion_reduce = emotion_reduce if emotion_reduce is not None else self.emotion.is_calculate
+        if self._interrupt:
+            self.interrupt_auto_search(emotion_reduce, fleet_index)
+        super().auto_search_combat(emotion_reduce, fleet_index, battle)

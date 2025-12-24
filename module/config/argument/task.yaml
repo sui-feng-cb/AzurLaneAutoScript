@@ -114,6 +114,7 @@ Event:
     WarArchives:
       - Scheduler
       - Campaign
+      - InterceptiveCheck
       - StopCondition
       - Fleet
       - Submarine

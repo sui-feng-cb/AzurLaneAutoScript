@@ -862,6 +862,16 @@
       "help": "Campaign.AmbushEvade.help"
     }
   },
+  "InterceptiveCheck": {
+    "_info": {
+      "name": "InterceptiveCheck._info.name",
+      "help": "InterceptiveCheck._info.help"
+    },
+    "OilThreshold": {
+      "name": "InterceptiveCheck.OilThreshold.name",
+      "help": "InterceptiveCheck.OilThreshold.help"
+    }
+  },
   "StopCondition": {
     "_info": {
       "name": "StopCondition._info.name",
