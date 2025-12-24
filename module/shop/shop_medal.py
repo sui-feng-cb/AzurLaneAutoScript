@@ -40,6 +40,10 @@ class ShopAdaptiveScroll(AdaptiveScroll):
         mask[peaks] = 1
         return mask
 
+    def position_to_screen(self, position, random_range=(-0.05, 0.05)):
+        area = super().position_to_screen(position, random_range)
+        center_x = int((area[0] + area[2]) / 2 + 0.5)  # 1064
+        return (center_x, area[1], center_x, area[3])
 
 MEDAL_SHOP_SCROLL_250814 = ShopAdaptiveScroll(
     MEDAL_SHOP_SCROLL_AREA_250814.button,
