@@ -43,7 +43,7 @@ class ShopAdaptiveScroll(AdaptiveScroll):
 
 MEDAL_SHOP_SCROLL_250814 = ShopAdaptiveScroll(
     MEDAL_SHOP_SCROLL_AREA_250814.button,
-    background=1,
+    background=3,
     name="MEDAL_SHOP_SCROLL_250814"
 )
 MEDAL_SHOP_SCROLL_250814.drag_threshold = 0.1
