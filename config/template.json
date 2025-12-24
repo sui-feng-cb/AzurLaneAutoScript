@@ -791,6 +791,9 @@
       "Use2xBook": false,
       "AmbushEvade": true
     },
+    "InterceptiveCheck": {
+      "OilThreshold": 0
+    },
     "StopCondition": {
       "OilLimit": 1000,
       "RunCount": 0,

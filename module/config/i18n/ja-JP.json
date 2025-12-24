@@ -862,6 +862,16 @@
       "help": "Campaign.AmbushEvade.help"
     }
   },
+  "InterceptiveCheck": {
+    "_info": {
+      "name": "ダイナミックチェック",
+      "help": "ゲーム内情報を通じて現在のタスク設定がニーズに合致するか判断し、タスク設定の調整を忘れることで引き起こされる問題を回避します。\n以下のいずれかの条件がトリガーされた後、現在の作戦を退出してタスクを閉じます。"
+    },
+    "OilThreshold": {
+      "name": "単戦闘燃料消費上限 X",
+      "help": "ゲーム内の単戦闘燃料消費量が X 以上の場合、設定が誤りであると判断します。\n0は燃料消費量に制限なしを意味します。"
+    }
+  },
   "StopCondition": {
     "_info": {
       "name": "StopCondition._info.name",

@@ -15,6 +15,8 @@ class AutoSearchCombat(MapOperation, Combat, CampaignStatus):
     _withdraw = False
     auto_search_oil_limit_triggered = False
     auto_search_coin_limit_triggered = False
+    _prev_oil = None
+    _abort = False
 
     def _handle_auto_search_menu_missing(self):
         """
@@ -100,6 +102,15 @@ class AutoSearchCombat(MapOperation, Combat, CampaignStatus):
             if oil == 0:
                 logger.warning('Oil not found')
             else:
+                oil_threshold = self.config.InterceptiveCheck_OilThreshold
+                if oil_threshold > 0:
+                    logger.attr('Oil Threshold', oil_threshold)
+                    self._prev_oil = self._prev_oil or oil
+                    diff = self._prev_oil - oil if self._prev_oil else 0
+                    if diff and diff >= oil_threshold:
+                        logger.attr('Oil Consumption', diff)
+                        logger.warning(f"Abnormal oil consumption detected. Now proceed to withdrawal.")
+                        self._abort = True
                 if oil < max(500, self.config.StopCondition_OilLimit):
                     logger.info('Reach oil limit')
                     self.auto_search_oil_limit_triggered = True
@@ -232,6 +243,31 @@ class AutoSearchCombat(MapOperation, Combat, CampaignStatus):
             if pause:
                 logger.attr('BattleUI', pause)
                 break
+        if self._abort:
+            logger.warning("Executing withdrawal and stop current task.")
+
+            from module.exercise.assets import QUIT_RECONFIRM
+            from module.config.config import TaskEnd
+            self.device.screenshot_interval_set()
+            for _ in self.loop():
+
+                pause = self.is_combat_executing()
+                if pause:
+                    self.device.click(pause)
+                if self.handle_combat_quit():
+                    continue
+                if self.appear_then_click(QUIT_RECONFIRM, offset=(20, 20), interval=2):
+                    continue
+                if self.is_in_map():
+                    break
+
+            try:
+                self.withdraw()
+            except CampaignEnd:
+                logger.warning("Disable current task due to abnormal oil consumption. "
+                            "Please check settings whether correct.")
+                self.config.Scheduler_Enable = False
+                raise TaskEnd
 
         logger.info('Auto Search combat execute')
         self.submarine_call_reset()
