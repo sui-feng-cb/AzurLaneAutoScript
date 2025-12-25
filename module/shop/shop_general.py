@@ -125,12 +125,15 @@ class GeneralShop_250814(ShopClerk, ShopUI, ShopStatus):
             if item.cost == 'Coins':
                 return True
 
-        if self.config.GeneralShop_BuySkinBox:
+        mode = self.config.GeneralShop_BuySkinBox
+        if (mode == 'unlimited' or (mode == 'specified' and self.config.GeneralShop_BuySkinBoxAmount > 0)):
             if (not item.is_known_item()) and item.amount == 1 and item.cost == 'Coins' and item.price == 7000:
                 # check a custom item that cannot be template matched as color
                 # and design constantly changes i.e. equip skin box
                 logger.info(f'Item {item} is considered to be an equip skin box')
                 if self._currency >= item.price:
+                    if mode == 'specified':
+                        self.config.GeneralShop_BuySkinBoxAmount -= 1
                     return True
 
         return False

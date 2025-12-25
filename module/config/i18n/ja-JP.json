@@ -2981,7 +2981,14 @@
     },
     "BuySkinBox": {
       "name": "GeneralShop.BuySkinBox.name",
-      "help": "GeneralShop.BuySkinBox.help"
+      "help": "GeneralShop.BuySkinBox.help",
+      "disabled": "disabled",
+      "unlimited": "unlimited",
+      "specified": "specified"
+    },
+    "BuySkinBoxAmount": {
+      "name": "GeneralShop.BuySkinBoxAmount.name",
+      "help": "GeneralShop.BuySkinBoxAmount.help"
     },
     "ConsumeCoins": {
       "name": "GeneralShop.ConsumeCoins.name",
