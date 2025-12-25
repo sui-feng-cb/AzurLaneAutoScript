@@ -136,6 +136,8 @@ class CampaignBase(CampaignUI, Map, AutoSearchCombat):
             self.lv_reset()
             self.lv_get()
 
+        self._prev_oil = 0
+
         # Run
         for _ in range(20):
             try:
