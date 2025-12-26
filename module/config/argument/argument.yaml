@@ -763,7 +763,10 @@ Island15:
 GeneralShop:
   UseGems: false
   Refresh: false
-  BuySkinBox: false
+  BuySkinBox:
+    value: disabled
+    option: [ disabled, unlimited, specified ]
+  BuySkinBoxAmount: 0
   ConsumeCoins: false
   Filter: |-
     BookRedT3 > BookYellowT3 > BookBlueT3 > BookRedT2

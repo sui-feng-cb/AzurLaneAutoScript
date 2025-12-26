@@ -2981,7 +2981,14 @@
     },
     "BuySkinBox": {
       "name": "Buy Equip Skin Boxes",
-      "help": "In order to reduce maintenance costs, the skin box selectors in the filter will not be updated with the game, but Alas will consider any unknown items with a quantity of 1 and consume 7000 coins as skin boxes and buy them."
+      "help": "In order to reduce maintenance costs, the skin box selectors in the filter will not be updated with the game, but Alas will consider any unknown items with a quantity of 1 and consume 7000 coins as skin boxes and buy them.",
+      "disabled": "Do Not Purchase",
+      "unlimited": "Unlimited Purchases",
+      "specified": "Purchase Specified Quantity"
+    },
+    "BuySkinBoxAmount": {
+      "name": "Purchase X Skin Boxes",
+      "help": "Takes effect when \"Purchase Specified Quantity\" is selected."
     },
     "ConsumeCoins": {
       "name": "Consume Spilled Coins",

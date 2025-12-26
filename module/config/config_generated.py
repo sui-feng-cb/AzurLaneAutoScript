@@ -403,7 +403,8 @@ class GeneratedConfig:
     # Group `GeneralShop`
     GeneralShop_UseGems = False
     GeneralShop_Refresh = False
-    GeneralShop_BuySkinBox = False
+    GeneralShop_BuySkinBox = 'disabled'  # disabled, unlimited, specified
+    GeneralShop_BuySkinBoxAmount = 0
     GeneralShop_ConsumeCoins = False
     GeneralShop_Filter = 'BookRedT3 > BookYellowT3 > BookBlueT3 > BookRedT2\n> Cube\n> FoodT6 > FoodT5'
 

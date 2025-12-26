@@ -9475,8 +9475,17 @@
         "value": false
       },
       "BuySkinBox": {
-        "type": "checkbox",
-        "value": false
+        "type": "select",
+        "value": "disabled",
+        "option": [
+          "disabled",
+          "unlimited",
+          "specified"
+        ]
+      },
+      "BuySkinBoxAmount": {
+        "type": "input",
+        "value": 0
       },
       "ConsumeCoins": {
         "type": "checkbox",
