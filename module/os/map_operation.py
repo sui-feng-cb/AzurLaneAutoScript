@@ -57,6 +57,7 @@ class OSMapOperation(MapOrderHandler, MissionHandler, PortHandler, StorageHandle
         name = ocr.ocr(self.device.image)
         name = "".join(name.split())
         name = name.lower()
+        name = name.strip('\\/-')
         if '-' in name:
             name = name.split('-')[0]
         if 'é' in name:  # Méditerranée name maps
@@ -89,6 +90,7 @@ class OSMapOperation(MapOrderHandler, MissionHandler, PortHandler, StorageHandle
         # For JP only
         ocr = Ocr(MAP_NAME, lang='jp', letter=(157, 173, 192), threshold=127, name='OCR_OS_MAP_NAME')
         name = ocr.ocr(self.device.image)
+        name = name.strip('\\/-')
         self.is_zone_name_hidden = '安全' in name
         # Remove punctuations
         for char in '・':
@@ -117,6 +119,7 @@ class OSMapOperation(MapOrderHandler, MissionHandler, PortHandler, StorageHandle
         # For TW only
         ocr = Ocr(MAP_NAME, lang='tw', letter=(198, 215, 239), threshold=127, name='OCR_OS_MAP_NAME')
         name = ocr.ocr(self.device.image)
+        name = name.strip('\\/-')
         self.is_zone_name_hidden = '安全' in name
         # Remove '塞壬要塞海域'
         if '塞' in name:
@@ -130,6 +133,7 @@ class OSMapOperation(MapOrderHandler, MissionHandler, PortHandler, StorageHandle
         # For CN only
         ocr = Ocr(MAP_NAME, lang='cnocr', letter=(214, 231, 255), threshold=127, name='OCR_OS_MAP_NAME')
         name = ocr.ocr(self.device.image)
+        name = name.strip('\\/-')
         self.is_zone_name_hidden = '安全' in name
         if '-' in name:
             name = name.split('-')[0]
