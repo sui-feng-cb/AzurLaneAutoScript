@@ -88,7 +88,8 @@ class ConfigGenerator:
         """
         data = {}
         raw = read_file(filepath_argument('argument'))
-        for path, value in deep_iter(raw, depth=2):
+        filtered_raw = {k: v for k, v in raw.items() if not k.startswith('_')}
+        for path, value in deep_iter(filtered_raw, depth=2):
             arg = {
                 'type': 'input',
                 'value': '',
