@@ -490,276 +490,164 @@ Awaken:
     option: [ level120, level125 ]
   Favourite:
     value: false
+_Island:
+  IslandOption4: &IslandOption4
+    value: 0
+    option: [ 0, 1, 2, 3, 4]
+  IslandOption5: &IslandOption5
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5]
+  IslandOption6: &IslandOption6
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6]
+  IslandOption7: &IslandOption7
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7]
+  IslandOption8: &IslandOption8
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+  IslandOption9: &IslandOption9
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+  IslandOption10: &IslandOption10
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+  IslandOption11: &IslandOption11
+    value: 0
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
+  IslandCharacter: &IslandCharacter
+    value: manjuu
+    option:
+      - manjuu
+      - saratoga
+      - new_jersey
+      - tashkent
+      - lemalin
+      - shimakaze
+      - akashi
+      - ying_swei
+      - chao_ho
+      - unicorn
+      - cheshire
+      - amagi_chan
 Island1:
   Receive: false
-  Option1:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
-  Character1:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
-  Character2:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
-  Option3:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
-  Character3:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
-  Option4:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
-  Character4:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
+  Option1: *IslandOption8
+  Character1: *IslandCharacter
+  Option2: *IslandOption8
+  Character2: *IslandCharacter
+  Option3: *IslandOption8
+  Character3: *IslandCharacter
+  Option4: *IslandOption8
+  Character4: *IslandCharacter
 Island2:
   Receive: false
   Option1:
     value: 0
     option: [ 0, 1 ]
-  Character1:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
+  Character1: *IslandCharacter
   Option2:
     value: 0
     option: [ 0, 2 ]
-  Character2:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
+  Character2: *IslandCharacter
   Option3:
     value: 0
     option: [ 0, 3 ]
-  Character3:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
+  Character3: *IslandCharacter
   Option4:
     value: 0
     option: [ 0, 4 ]
-  Character4:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
+  Character4: *IslandCharacter
 Island3:
   Receive: false
-  Option1:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6 ]
-  Character1:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6 ]
-  Character2:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
-  Option3:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6 ]
-  Character3:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
-  Option4:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6 ]
-  Character4:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
+  Option1: *IslandOption6
+  Character1: *IslandCharacter
+  Option2: *IslandOption6
+  Character2: *IslandCharacter
+  Option3: *IslandOption6
+  Character3: *IslandCharacter
+  Option4: *IslandOption6
+  Character4: *IslandCharacter
 Island4:
   Receive: false
-  Option1:
-    value: 0
-    option: [ 0, 1, 2, 3, 4 ]
-  Character1:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4 ]
-  Character2:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
-  Option3:
-    value: 0
-    option: [ 0, 1, 2, 3, 4 ]
-  Character3:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
-  Option4:
-    value: 0
-    option: [ 0, 1, 2, 3, 4 ]
-  Character4:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
+  Option1: *IslandOption4
+  Character1: *IslandCharacter
+  Option2: *IslandOption4
+  Character2: *IslandCharacter
+  Option3: *IslandOption4
+  Character3: *IslandCharacter
+  Option4: *IslandOption4
+  Character4: *IslandCharacter
 Island5:
   Receive: false
-  Option1:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-  Character1:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-  Character2:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
-  Option3:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-  Character3:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
-  Option4:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-  Character4:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
+  Option1: *IslandOption9
+  Character1: *IslandCharacter
+  Option2: *IslandOption9
+  Character2: *IslandCharacter
+  Option3: *IslandOption9
+  Character3: *IslandCharacter
+  Option4: *IslandOption9
+  Character4: *IslandCharacter
 Island6:
   Receive: false
-  Option1:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
-  Character1:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
-  Character2:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
+  Option1: *IslandOption7
+  Character1: *IslandCharacter
+  Option2: *IslandOption7
+  Character2: *IslandCharacter
 Island7:
   Receive: false
-  Option1:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-  Character1:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-  Character2:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
+  Option1: *IslandOption9
+  Character1: *IslandCharacter
+  Option2: *IslandOption9
+  Character2: *IslandCharacter
 Island8:
   Receive: false
-  Option1:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
-  Character1:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
-  Character2:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
+  Option1: *IslandOption11
+  Character1: *IslandCharacter
+  Option2: *IslandOption11
+  Character2: *IslandCharacter
 Island9:
   Receive: false
-  Option1:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-  Character1:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-  Character2:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
+  Option1: *IslandOption9
+  Character1: *IslandCharacter
+  Option2: *IslandOption9
+  Character2: *IslandCharacter
 Island10:
   Receive: false
-  Option1:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
-  Character1:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
-  Character2:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
+  Option1: *IslandOption7
+  Character1: *IslandCharacter
+  Option2: *IslandOption7
+  Character2: *IslandCharacter
 Island11:
   Receive: false
-  Option1:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5 ]
-  Character1:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5 ]
-  Character2:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
+  Option1: *IslandOption5
+  Character1: *IslandCharacter
+  Option2: *IslandOption5
+  Character2: *IslandCharacter
 Island12:
   Receive: false
-  Option1:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6 ]
-  Character1:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6 ]
-  Character2:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
+  Option1: *IslandOption6
+  Character1: *IslandCharacter
+  Option2: *IslandOption6
+  Character2: *IslandCharacter
 Island13:
   Receive: false
-  Option1:
-    value: 0
-    option: [ 0, 1, 2, 3, 4 ]
-  Character1:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4 ]
-  Character2:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
+  Option1: *IslandOption4
+  Character1: *IslandCharacter
+  Option2: *IslandOption4
+  Character2: *IslandCharacter
 Island14:
   Receive: false
-  Option1:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-  Character1:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-  Character2:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
+  Option1: *IslandOption9
+  Character1: *IslandCharacter
+  Option2: *IslandOption9
+  Character2: *IslandCharacter
 Island15:
   Receive: false
-  Option1:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-  Character1:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
-  Option2:
-    value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-  Character2:
-    value: manjuu
-    option: [ manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, unicorn, cheshire, amagi_chan ]
+  Option1: *IslandOption9
+  Character1: *IslandCharacter
+  Option2: *IslandOption9
+  Character2: *IslandCharacter
 GeneralShop:
   UseGems: false
   Refresh: false
