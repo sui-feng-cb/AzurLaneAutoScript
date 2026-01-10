@@ -56,6 +56,7 @@ class Config(ConfigBase):
     MAP_HAS_FLEET_STEP = False
     MAP_HAS_AMBUSH = True
     # ===== End of generated config =====
+
     INTERNAL_LINES_FIND_PEAKS_PARAMETERS = {
         'height': (120, 255 - 17),
         'width': (0.9, 10),
@@ -70,20 +71,45 @@ class Config(ConfigBase):
     }
     INTERNAL_LINES_HOUGHLINES_THRESHOLD = 25
     EDGE_LINES_HOUGHLINES_THRESHOLD = 25
+    MAP_WALK_USE_CURRENT_FLEET = True
 
 
 class Campaign(CampaignBase):
     MAP = MAP
 
-    def battle_0(self):
-        if not self.map_is_clear_mode:
-            self.destroy_land_base(C1, D1, D1)
-
+    def battle_default(self):
         if self.clear_roadblocks(roads):
             return True
         if self.clear_potential_roadblocks(roads):
             return True
         if self.clear_filter_enemy(self.ENEMY_FILTER, preserve=1):
+            return True
+
+        return super().battle_default()
+
+    def battle_0(self):
+        if self.clear_chosen_enemy(D4):
+            return True
+
+        return self.battle_default()
+
+    def battle_1(self):
+        if not self.map_is_clear_mode:
+            self.destroy_land_base(C1, D1, D1)
+
+        if self.clear_chosen_enemy(F5):
+            return True
+
+        return self.battle_default()
+
+    def battle_2(self):
+        if self.clear_chosen_enemy(G4):
+            return True
+
+        return self.battle_default()
+
+    def battle_3(self):
+        if self.clear_chosen_enemy(H3):
             return True
 
         return self.battle_default()
@@ -103,5 +129,5 @@ class Campaign(CampaignBase):
             return True
         if self.clear_filter_enemy(self.ENEMY_FILTER, preserve=0):
             return True
-        
+
         return self.battle_default()

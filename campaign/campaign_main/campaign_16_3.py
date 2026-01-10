@@ -49,6 +49,7 @@ class Config(ConfigBase):
     MAP_HAS_FLEET_STEP = False
     MAP_HAS_AMBUSH = True
     # ===== End of generated config =====
+
     INTERNAL_LINES_FIND_PEAKS_PARAMETERS = {
         'height': (120, 255 - 17),
         'width': (0.9, 10),
@@ -63,6 +64,7 @@ class Config(ConfigBase):
     }
     INTERNAL_LINES_HOUGHLINES_THRESHOLD = 25
     EDGE_LINES_HOUGHLINES_THRESHOLD = 25
+    MAP_WALK_USE_CURRENT_FLEET = True
 
 
 class Campaign(CampaignBase):
