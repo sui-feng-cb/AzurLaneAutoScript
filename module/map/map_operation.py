@@ -211,6 +211,9 @@ class MapOperation(MysteryHandler, FleetPreparation, Retirement, FastForwardHand
                 if self.handle_2x_book_popup():
                     continue
 
+                if self.handle_submarine_cost_popup():
+                    continue
+
                 # Story skip
                 if self.handle_story_skip():
                     campaign_timer.reset()

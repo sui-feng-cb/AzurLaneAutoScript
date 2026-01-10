@@ -259,3 +259,59 @@ class StrategyHandler(InfoHandler):
 
             if self.appear_then_click(MOB_MOVE_CANCEL, offset=(20, 20), interval=5):
                 continue
+
+    def is_in_strategy_air_attack(self):
+        """
+        Returns:
+            bool:
+        """
+        return self.appear(AIR_ATTACK_CONFIRM, offset=(20, 20))
+
+    def strategy_has_air_attack(self):
+        """
+        Pages:
+            in: STRATEGY_OPENED
+            out: STRATEGY_OPENED
+        """
+        if self.match_template_color(AIR_ATTACK_ENTER, offset=MOB_MOVE_OFFSET):
+            return True
+        else:
+            return False
+
+    def strategy_air_attack_enter(self, skip_first_screenshot=True):
+        """
+        Pages:
+            in: STRATEGY_OPENED, AIR_ATTACK_ENTER
+            out: AIR_ATTACK_CONFIRM
+        """
+        logger.info('Air attack enter')
+        while 1:
+            if skip_first_screenshot:
+                skip_first_screenshot = False
+            else:
+                self.device.screenshot()
+
+            if self.appear(AIR_ATTACK_CONFIRM, offset=(20, 20)):
+                break
+
+            if self.appear_then_click(AIR_ATTACK_ENTER, offset=MOB_MOVE_OFFSET, interval=5):
+                continue
+
+    def strategy_air_attack_confirm(self, skip_first_screenshot=True):
+        """
+        Pages:
+            in: AIR_ATTACK_CONFIRM
+            out: STRATEGY_OPENED, AIR_ATTACK_ENTER
+        """
+        logger.info('Air attack confirm')
+        while 1:
+            if skip_first_screenshot:
+                skip_first_screenshot = False
+            else:
+                self.device.screenshot()
+
+            if self.appear(AIR_ATTACK_ENTER, offset=MOB_MOVE_OFFSET):
+                break
+
+            if self.appear_then_click(AIR_ATTACK_CONFIRM, offset=(20, 20), interval=5):
+                continue

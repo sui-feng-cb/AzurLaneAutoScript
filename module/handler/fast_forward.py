@@ -572,3 +572,9 @@ class FastForwardHandler(AutoSearchHandler):
                 self.device.click(MAP_WALK_SPEEDUP)
                 interval.reset()
                 continue
+
+    def handle_submarine_cost_popup(self):
+        if self.config.MAP_HAS_SUBMARINE_SUPPORT and self.handle_popup_confirm('SUBMARINE_COST'):
+            return True
+
+        return False
