@@ -12,7 +12,6 @@ jobs:
     sync_with_upstream:
         name: Sync with Upstream
         runs-on: ubuntu-latest
-        if: ${{ github.event.repository.fork }}
 
         steps:
             - name: Checkout target repo
