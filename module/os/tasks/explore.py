@@ -1,9 +1,6 @@
-from datetime import timedelta
-
-from module.config.utils import get_os_next_reset, DEFAULT_TIME, get_os_reset_remain
+from module.config.utils import get_os_next_reset, DEFAULT_TIME
 from module.exception import GameStuckError, ScriptError
 from module.logger import logger
-from module.map.map_grids import SelectedGrids
 from module.os.globe_operation import OSExploreError
 from module.os.map import OSMap
 
@@ -20,7 +17,7 @@ class OpsiExplore(OSMap):
         with self.config.multi_set():
             next_run = self.config.Scheduler_NextRun
             for task in ['OpsiObscure', 'OpsiAbyssal', 'OpsiArchive', 'OpsiStronghold', 'OpsiMeowfficerFarming',
-                         'OpsiMonthBoss', 'OpsiShop', 'OpsiHazard1Leveling']:
+                         'OpsiMonthBoss', 'OpsiShop']:
                 keys = f'{task}.Scheduler.NextRun'
                 current = self.config.cross_get(keys=keys, default=DEFAULT_TIME)
                 if current < next_run:

@@ -47,7 +47,7 @@ class OpsiAbyssal(OSMap):
         if not result:
             raise RequestHumanTakeover
 
-        self.fleet_repair(revert=False)
+        self.handle_fleet_repair_by_config(revert=False)
         self.delay_abyssal()
 
     def os_abyssal(self):

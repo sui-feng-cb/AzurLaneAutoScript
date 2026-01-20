@@ -22,12 +22,20 @@ class OpsiHazard1Leveling(OSMap):
                 self.config.OS_ACTION_POINT_PRESERVE = 0
             logger.attr('OS_ACTION_POINT_PRESERVE', self.config.OS_ACTION_POINT_PRESERVE)
 
-            if self.get_yellow_coins() < self.config.OS_CL1_YELLOW_COINS_PRESERVE:
-                logger.info(f'Reach the limit of yellow coins, preserve={self.config.OS_CL1_YELLOW_COINS_PRESERVE}')
+            if self.get_yellow_coins() < self.config.OpsiHazard1Leveling_OperationCoinsPreserve:
+                logger.info(f'Reach the limit of yellow coins, preserve={self.config.OpsiHazard1Leveling_OperationCoinsPreserve}')
                 with self.config.multi_set():
-                    self.config.task_delay(server_update=True)
+                    self.config.task_delay(minute=27, server_update=True)
                     if not self.is_in_opsi_explore():
-                        self.config.task_call('OpsiMeowfficerFarming')
+                        if self.nearest_task_cooling_down is None:
+                            for task in ['OpsiAbyssal', 'OpsiObscure']:
+                                self.config.task_call(task, force_call=False)
+                            if self.config.is_task_enabled('OpsiStronghold'):
+                                if self.config.cross_get(keys='OpsiStronghold.OpsiStronghold.HasStronghold'):
+                                    self.config.task_call('OpsiStronghold')
+                                else:
+                                    logger.info('No stronghold left, skip task call')
+                        self.config.task_call('OpsiMeowfficerFarming', force_call=False)
                 self.config.task_stop()
 
             self.get_current_zone()
@@ -38,12 +46,6 @@ class OpsiHazard1Leveling(OSMap):
             if self.config.OpsiGeneral_BuyActionPointLimit > 0:
                 keep_current_ap = False
             self.action_point_set(cost=70, keep_current_ap=keep_current_ap, check_rest_ap=True)
-            if self._action_point_total >= 3000:
-                with self.config.multi_set():
-                    self.config.task_delay(server_update=True)
-                    if not self.is_in_opsi_explore():
-                        self.config.task_call('OpsiMeowfficerFarming')
-                self.config.task_stop()
 
             if self.config.OpsiHazard1Leveling_TargetZone != 0:
                 zone = self.config.OpsiHazard1Leveling_TargetZone
@@ -54,6 +56,8 @@ class OpsiHazard1Leveling(OSMap):
                 self.globe_goto(self.name_to_zone(zone), types='SAFE', refresh=True)
             self.fleet_set(self.config.OpsiFleet_Fleet)
             self.run_strategic_search()
-
+            self.get_current_zone()
+            if self.is_zone_name_hidden and not len(self._solved_map_event):
+                self.fleets_clear_question()
             self.handle_after_auto_search()
             self.config.check_task_switch()

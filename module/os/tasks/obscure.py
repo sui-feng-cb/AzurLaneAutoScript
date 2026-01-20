@@ -14,7 +14,8 @@ class OpsiObscure(OSMap):
         if self.config.OpsiObscure_ForceRun:
             logger.info('OS obscure finish is under force run')
 
-        result = self.storage_get_next_item('OBSCURE', use_logger=self.config.OpsiGeneral_UseLogger)
+        result = self.storage_get_next_item('OBSCURE', use_logger=self.config.OpsiGeneral_UseLogger,
+                                            skip_obscure_hazard_2=self.config.OpsiObscure_SkipHazard2Obscure)
         if not result:
             # No obscure coordinates, delay next run to tomorrow.
             if get_os_reset_remain() > 0:
