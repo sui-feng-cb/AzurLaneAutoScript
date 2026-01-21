@@ -861,6 +861,10 @@
     "AmbushEvade": {
       "name": "规避伏击",
       "help": ""
+    },
+    "ClearAfterSinking": {
+      "name": "沉船后继续自律",
+      "help": "在周回模式自律作战沉船后不撤退，而是使用另一队继续作战"
     }
   },
   "InterceptiveCheck": {

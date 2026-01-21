@@ -164,7 +164,8 @@
       "UseFleetLock": true,
       "UseAutoSearch": true,
       "Use2xBook": false,
-      "AmbushEvade": true
+      "AmbushEvade": true,
+      "ClearAfterSinking": false
     },
     "StopCondition": {
       "OilLimit": 1000,
@@ -240,7 +241,8 @@
       "UseFleetLock": true,
       "UseAutoSearch": true,
       "Use2xBook": false,
-      "AmbushEvade": true
+      "AmbushEvade": true,
+      "ClearAfterSinking": false
     },
     "StopCondition": {
       "OilLimit": 1000,
@@ -316,7 +318,8 @@
       "UseFleetLock": true,
       "UseAutoSearch": true,
       "Use2xBook": false,
-      "AmbushEvade": true
+      "AmbushEvade": true,
+      "ClearAfterSinking": false
     },
     "StopCondition": {
       "OilLimit": 1000,
@@ -405,7 +408,8 @@
       "UseFleetLock": true,
       "UseAutoSearch": true,
       "Use2xBook": false,
-      "AmbushEvade": true
+      "AmbushEvade": true,
+      "ClearAfterSinking": false
     },
     "StopCondition": {
       "OilLimit": 1000,
@@ -482,7 +486,8 @@
       "UseFleetLock": true,
       "UseAutoSearch": true,
       "Use2xBook": false,
-      "AmbushEvade": true
+      "AmbushEvade": true,
+      "ClearAfterSinking": false
     },
     "StopCondition": {
       "OilLimit": 1000,
@@ -558,7 +563,8 @@
       "UseFleetLock": true,
       "UseAutoSearch": true,
       "Use2xBook": false,
-      "AmbushEvade": true
+      "AmbushEvade": true,
+      "ClearAfterSinking": false
     },
     "StopCondition": {
       "OilLimit": 1000,
@@ -638,7 +644,8 @@
       "UseFleetLock": true,
       "UseAutoSearch": false,
       "Use2xBook": false,
-      "AmbushEvade": true
+      "AmbushEvade": true,
+      "ClearAfterSinking": false
     },
     "StopCondition": {
       "OilLimit": 1000,
@@ -723,7 +730,8 @@
       "UseFleetLock": true,
       "UseAutoSearch": false,
       "Use2xBook": false,
-      "AmbushEvade": true
+      "AmbushEvade": true,
+      "ClearAfterSinking": false
     },
     "Coalition": {
       "Mode": "area1-normal",
@@ -789,7 +797,8 @@
       "UseFleetLock": true,
       "UseAutoSearch": true,
       "Use2xBook": false,
-      "AmbushEvade": true
+      "AmbushEvade": true,
+      "ClearAfterSinking": false
     },
     "InterceptiveCheck": {
       "OilThreshold": 0
@@ -872,7 +881,8 @@
       "UseFleetLock": true,
       "UseAutoSearch": true,
       "Use2xBook": false,
-      "AmbushEvade": true
+      "AmbushEvade": true,
+      "ClearAfterSinking": false
     },
     "StopCondition": {
       "OilLimit": 1000,
@@ -952,7 +962,8 @@
       "UseFleetLock": true,
       "UseAutoSearch": true,
       "Use2xBook": false,
-      "AmbushEvade": true
+      "AmbushEvade": true,
+      "ClearAfterSinking": false
     },
     "StopCondition": {
       "OilLimit": 1000,
@@ -1032,7 +1043,8 @@
       "UseFleetLock": true,
       "UseAutoSearch": true,
       "Use2xBook": false,
-      "AmbushEvade": true
+      "AmbushEvade": true,
+      "ClearAfterSinking": false
     },
     "StopCondition": {
       "OilLimit": 1000,
@@ -1112,7 +1124,8 @@
       "UseFleetLock": true,
       "UseAutoSearch": true,
       "Use2xBook": false,
-      "AmbushEvade": true
+      "AmbushEvade": true,
+      "ClearAfterSinking": false
     },
     "StopCondition": {
       "OilLimit": 1000,
@@ -1188,7 +1201,8 @@
       "UseFleetLock": true,
       "UseAutoSearch": true,
       "Use2xBook": false,
-      "AmbushEvade": true
+      "AmbushEvade": true,
+      "ClearAfterSinking": false
     },
     "StopCondition": {
       "OilLimit": 1000,
@@ -1267,7 +1281,8 @@
       "UseFleetLock": true,
       "UseAutoSearch": false,
       "Use2xBook": false,
-      "AmbushEvade": true
+      "AmbushEvade": true,
+      "ClearAfterSinking": false
     },
     "StopCondition": {
       "OilLimit": 1000,
@@ -1313,7 +1328,8 @@
       "UseFleetLock": true,
       "UseAutoSearch": false,
       "Use2xBook": false,
-      "AmbushEvade": true
+      "AmbushEvade": true,
+      "ClearAfterSinking": false
     },
     "Coalition": {
       "Mode": "area1-normal",

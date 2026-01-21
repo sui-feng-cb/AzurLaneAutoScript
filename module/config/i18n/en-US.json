@@ -861,6 +861,10 @@
     "AmbushEvade": {
       "name": "Evade Ambush(es)",
       "help": ""
+    },
+    "ClearAfterSinking": {
+      "name": "Use Auto Search after fleet sinking",
+      "help": "In clear mode, when a fleet sinked, try to use another fleet to run auto search instead of withdrawing"
     }
   },
   "InterceptiveCheck": {

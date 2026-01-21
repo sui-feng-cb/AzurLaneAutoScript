@@ -83,6 +83,7 @@ class GeneratedConfig:
     Campaign_UseAutoSearch = True
     Campaign_Use2xBook = False
     Campaign_AmbushEvade = True
+    Campaign_ClearAfterSinking = False
 
     # Group `InterceptiveCheck`
     InterceptiveCheck_OilThreshold = 0

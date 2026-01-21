@@ -104,6 +104,7 @@ class FastForwardHandler(AutoSearchHandler):
     map_is_clear_mode = False  # Clear mode == fast forward
     map_is_auto_search = False
     map_is_2x_book = False
+    map_clear_after_sinking = False
 
     STAGE_INCREASE = [
         """
@@ -176,6 +177,7 @@ class FastForwardHandler(AutoSearchHandler):
         text = ', '.join([l for l, n in zip(log_names, names) if self.__getattribute__(n)])
         text = f'{int(self.map_clear_percentage * 100)}%, ' + text
         logger.attr('Map_info', text)
+        logger.attr('Campaign_ClearAfterSinking', self.config.Campaign_ClearAfterSinking)
         logger.attr('StopCondition_MapAchievement', self.config.StopCondition_MapAchievement)
 
     def handle_fast_forward(self):
@@ -183,6 +185,7 @@ class FastForwardHandler(AutoSearchHandler):
             self.map_is_clear_mode = False
             self.map_is_auto_search = False
             self.map_is_2x_book = False
+            self.map_clear_after_sinking = False
             return False
 
         if self.config.Campaign_UseClearMode:
@@ -203,12 +206,14 @@ class FastForwardHandler(AutoSearchHandler):
             else:
                 self.map_is_auto_search = self.config.Campaign_UseAutoSearch
             self.map_is_2x_book = self.config.Campaign_Use2xBook
+            self.map_clear_after_sinking = self.config.Campaign_ClearAfterSinking
         else:
             # When disable fast forward, MAP_HAS_AMBUSH depends on map settings.
             # self.config.MAP_HAS_AMBUSH = True
             self.map_is_clear_mode = False
             self.map_is_auto_search = False
             self.map_is_2x_book = False
+            self.map_clear_after_sinking = False
             pass
 
         state = 'on' if self.config.Campaign_UseClearMode else 'off'

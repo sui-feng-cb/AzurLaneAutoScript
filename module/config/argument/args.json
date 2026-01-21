@@ -724,6 +724,10 @@
       "AmbushEvade": {
         "type": "checkbox",
         "value": true
+      },
+      "ClearAfterSinking": {
+        "type": "checkbox",
+        "value": false
       }
     },
     "StopCondition": {
@@ -1110,6 +1114,10 @@
       "AmbushEvade": {
         "type": "checkbox",
         "value": true
+      },
+      "ClearAfterSinking": {
+        "type": "checkbox",
+        "value": false
       }
     },
     "StopCondition": {
@@ -1496,6 +1504,10 @@
       "AmbushEvade": {
         "type": "checkbox",
         "value": true
+      },
+      "ClearAfterSinking": {
+        "type": "checkbox",
+        "value": false
       }
     },
     "StopCondition": {
@@ -1978,6 +1990,11 @@
         "type": "checkbox",
         "value": true,
         "display": "hide"
+      },
+      "ClearAfterSinking": {
+        "type": "checkbox",
+        "value": false,
+        "display": "hide"
       }
     },
     "StopCondition": {
@@ -2384,6 +2401,10 @@
         "type": "checkbox",
         "value": true,
         "display": "hide"
+      },
+      "ClearAfterSinking": {
+        "type": "checkbox",
+        "value": false
       }
     },
     "StopCondition": {
@@ -2788,6 +2809,10 @@
         "type": "checkbox",
         "value": true,
         "display": "hide"
+      },
+      "ClearAfterSinking": {
+        "type": "checkbox",
+        "value": false
       }
     },
     "StopCondition": {
@@ -3211,6 +3236,11 @@
         "type": "checkbox",
         "value": true,
         "display": "hide"
+      },
+      "ClearAfterSinking": {
+        "type": "checkbox",
+        "value": false,
+        "display": "hide"
       }
     },
     "StopCondition": {
@@ -3630,6 +3660,11 @@
       "AmbushEvade": {
         "type": "checkbox",
         "value": true,
+        "display": "hide"
+      },
+      "ClearAfterSinking": {
+        "type": "checkbox",
+        "value": false,
         "display": "hide"
       }
     },
@@ -4148,6 +4183,10 @@
         "type": "checkbox",
         "value": true,
         "display": "hide"
+      },
+      "ClearAfterSinking": {
+        "type": "checkbox",
+        "value": false
       }
     },
     "InterceptiveCheck": {
@@ -4570,6 +4609,11 @@
         "type": "checkbox",
         "value": true,
         "display": "hide"
+      },
+      "ClearAfterSinking": {
+        "type": "checkbox",
+        "value": false,
+        "display": "hide"
       }
     },
     "StopCondition": {
@@ -4990,6 +5034,11 @@
       "AmbushEvade": {
         "type": "checkbox",
         "value": true,
+        "display": "hide"
+      },
+      "ClearAfterSinking": {
+        "type": "checkbox",
+        "value": false,
         "display": "hide"
       }
     },
@@ -5412,6 +5461,11 @@
         "type": "checkbox",
         "value": true,
         "display": "hide"
+      },
+      "ClearAfterSinking": {
+        "type": "checkbox",
+        "value": false,
+        "display": "hide"
       }
     },
     "StopCondition": {
@@ -5833,6 +5887,11 @@
         "type": "checkbox",
         "value": true,
         "display": "hide"
+      },
+      "ClearAfterSinking": {
+        "type": "checkbox",
+        "value": false,
+        "display": "hide"
       }
     },
     "StopCondition": {
@@ -6243,6 +6302,11 @@
       "AmbushEvade": {
         "type": "checkbox",
         "value": true,
+        "display": "hide"
+      },
+      "ClearAfterSinking": {
+        "type": "checkbox",
+        "value": false,
         "display": "hide"
       }
     },
@@ -6663,6 +6727,11 @@
         "type": "checkbox",
         "value": true,
         "display": "hide"
+      },
+      "ClearAfterSinking": {
+        "type": "checkbox",
+        "value": false,
+        "display": "hide"
       }
     },
     "StopCondition": {
@@ -6899,6 +6968,11 @@
       "AmbushEvade": {
         "type": "checkbox",
         "value": true,
+        "display": "hide"
+      },
+      "ClearAfterSinking": {
+        "type": "checkbox",
+        "value": false,
         "display": "hide"
       }
     },

@@ -15,7 +15,7 @@ class AutoSearchCombat(MapOperation, Combat, CampaignStatus):
     _auto_search_in_stage_timer = Timer(3, count=6)
     _auto_search_status_confirm = False
     _interrupt = False
-    _withdraw = False
+    _sinking = False
     auto_search_oil_limit_triggered = False
     auto_search_coin_limit_triggered = False
 
@@ -34,6 +34,35 @@ class AutoSearchCombat(MapOperation, Combat, CampaignStatus):
                 return True
         else:
             self._auto_search_in_stage_timer.reset()
+
+        return False
+
+    def handle_clear_after_sinking(self, emotion_reduce, fleet_index):
+        """
+        Args:
+            emotion_reduce(bool):
+            fleet_index (int):
+
+        Pages:
+            in: in_map
+            out: is_combat_loading
+
+        Raise:
+            CampaignEnd: withdraw
+
+        Returns:
+            bool: If handled
+        """
+        if not self._sinking:
+            return False
+
+        if self.appear(WITHDRAW, offset=(30, 30)):
+            if self.map_clear_after_sinking:
+                if emotion_reduce:
+                    self.emotion.reduce_sink(fleet_index)
+                return True
+            else:
+                self.withdraw()
 
         return False
 
@@ -341,7 +370,7 @@ class AutoSearchCombat(MapOperation, Combat, CampaignStatus):
             # bunch of popup handlers
             if self.handle_popup_confirm('AUTO_SEARCH_COMBAT_EXECUTE'):
                 continue
-            if not self._withdraw and self.handle_urgent_commission():
+            if not self._sinking and self.handle_urgent_commission():
                 continue
             if self.handle_story_skip():
                 continue
@@ -362,10 +391,10 @@ class AutoSearchCombat(MapOperation, Combat, CampaignStatus):
             if self.handle_get_ship():
                 continue
             if self.appear_then_click(OPTS_INFO_D, offset=(30, 30), interval=2):
-                self._withdraw = True
+                self._sinking = True
                 continue
             if confirm_timer.reached():
-                self._withdraw = True
+                self._sinking = True
                 self.device.click(OPTS_INFO_D)
                 confirm_timer.reset()
                 continue
@@ -379,8 +408,12 @@ class AutoSearchCombat(MapOperation, Combat, CampaignStatus):
                     self.device.screenshot_interval_set()
                     break
 
-    def auto_search_combat_status(self):
+    def auto_search_combat_status(self, emotion_reduce, fleet_index):
         """
+        Args:
+            emotion_reduce (bool):
+            fleet_index (int):
+
         Pages:
             in: any
             out: is_auto_search_running()
@@ -399,16 +432,14 @@ class AutoSearchCombat(MapOperation, Combat, CampaignStatus):
             if self.is_in_auto_search_menu() or self._handle_auto_search_menu_missing():
                 raise CampaignEnd
 
-            # Withdraw
-            if self._withdraw and get_urgent_commission and self.appear(WITHDRAW, offset=(30, 30)):
-                self._withdraw = False
-                self.withdraw()
-                break
+            if get_urgent_commission and self.handle_clear_after_sinking(emotion_reduce, fleet_index):
+                self._sinking = False
+                continue
 
             # Combat status
             if self.handle_get_ship():
                 continue
-            if not self._withdraw and self.handle_auto_search_map_option():
+            if not self._sinking and self.handle_auto_search_map_option():
                 self._auto_search_status_confirm = False
                 continue
             # bunch of popup handlers
@@ -451,6 +482,6 @@ class AutoSearchCombat(MapOperation, Combat, CampaignStatus):
         emotion_reduce = emotion_reduce if emotion_reduce is not None else self.emotion.is_calculate
 
         self.auto_search_combat_execute(emotion_reduce=emotion_reduce, fleet_index=fleet_index, battle=battle)
-        self.auto_search_combat_status()
+        self.auto_search_combat_status(emotion_reduce=emotion_reduce, fleet_index=fleet_index)
 
         logger.info('Combat end.')

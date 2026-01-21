@@ -161,6 +161,7 @@ Campaign:
   UseAutoSearch: true
   Use2xBook: false
   AmbushEvade: true
+  ClearAfterSinking: false
 InterceptiveCheck:
   OilThreshold: 0
 StopCondition:

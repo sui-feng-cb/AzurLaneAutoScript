@@ -215,6 +215,10 @@ class Emotion:
         else:
             return 2
 
+    @property
+    def reduce_per_sinking(self):
+        return 10
+
     def _check_reduce(self, battle):
         """
         Returns:
@@ -302,6 +306,23 @@ class Emotion:
         fleet = self.fleets[fleet_index - 1]
         fleet.current -= self.reduce_per_battle
         self.total_reduced += self.reduce_per_battle
+        self.record()
+        self.show()
+
+    def reduce_sink(self, fleet_index):
+        """
+        Reduce emotion of specific fleet.
+        Should be called after failing a battle
+
+        Args:
+            fleet_index (int): 1 or 2.
+        """
+        logger.hr('Emotion reduce after sinking')
+        self.update()
+
+        fleet = self.fleets[fleet_index - 1]
+        fleet.current -= self.reduce_per_sinking
+        self.total_reduced += self.reduce_per_sinking
         self.record()
         self.show()
 
