@@ -52,6 +52,10 @@ class CoalitionUI(Combat):
         elif event == 'coalition_20251120':
             logger.info('Coalition event coalition_20251120 has no mode switch')
             return
+        elif event == 'coalition_20260122':
+            mode_switch = Switch('CoalitionMode', offset=(20, 20))
+            mode_switch.add_state('story', FASHION_MODE_STORY)
+            mode_switch.add_state('battle', FASHION_MODE_BATTLE)
         else:
             logger.error(f'MODE_SWITCH is not defined in event {event}')
             raise ScriptError
@@ -85,6 +89,9 @@ class CoalitionUI(Combat):
         elif event == 'coalition_20251120':
             fleet_switch.add_state('single', DAL_SWITCH_SINGLE)
             fleet_switch.add_state('multi', DAL_SWITCH_MULTI)
+        elif event == 'coalition_20260122':
+            fleet_switch.add_state('single', FASHION_SWITCH_SINGLE)
+            fleet_switch.add_state('multi', FASHION_SWITCH_MULTI)
         else:
             logger.error(f'FLEET_SWITCH is not defined in event {event}')
             raise ScriptError
@@ -137,6 +144,12 @@ class CoalitionUI(Combat):
             ('coalition_20251120', 'area4-hard'): DAL_AREA4,
             ('coalition_20251120', 'area5-hard'): DAL_AREA5,
             ('coalition_20251120', 'area6-hard'): DAL_AREA6,
+
+            ('coalition_20260122', 'easy'): FASHION_EASY,
+            ('coalition_20260122', 'normal'): FASHION_NORMAL,
+            ('coalition_20260122', 'hard'): FASHION_HARD,
+            ('coalition_20260122', 'sp'): FASHION_SP,
+            ('coalition_20260122', 'ex'): FASHION_EX,
         }
         stage = stage.lower()
         try:
@@ -216,6 +229,12 @@ class CoalitionUI(Combat):
             ('coalition_20251120', 'area4-hard'): 3,
             ('coalition_20251120', 'area5-hard'): 3,
             ('coalition_20251120', 'area6-hard'): 4,
+
+            ('coalition_20260122', 'easy'): 1,
+            ('coalition_20260122', 'normal'): 2,
+            ('coalition_20260122', 'hard'): 3,
+            ('coalition_20260122', 'sp'): 4,
+            ('coalition_20260122', 'ex'): 5,
         }
         stage = stage.lower()
         try:
@@ -241,6 +260,8 @@ class CoalitionUI(Combat):
             return NEONCITY_FLEET_PREPARATION
         elif event == 'coalition_20251120':
             return DAL_FLEET_PREPARATION
+        elif event == 'coalition_20260122':
+            return FASHION_FLEET_PREPARATION
         else:
             logger.error(f'FLEET_PREPARATION is not defined in event {event}')
             raise ScriptError
@@ -265,6 +286,9 @@ class CoalitionUI(Combat):
             if stage in ['easy', 'sp', 'ex']:
                 return False
         if event == 'coalition_20250626':
+            if stage in ['easy', 'sp', 'ex']:
+                return False
+        if event == 'coalition_20260122':
             if stage in ['easy', 'sp', 'ex']:
                 return False
 
@@ -403,6 +427,11 @@ class CoalitionUI(Combat):
 
             # Story skip
             if self.handle_story_skip():
+                campaign_timer.reset()
+                continue
+
+            # Fleet import
+            if self.handle_popup_confirm('FLEET_IMPORT'):
                 campaign_timer.reset()
                 continue
 

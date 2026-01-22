@@ -130,3 +130,18 @@ def coalition_to_little_academy(value):
         return 'hard'
     else:
         return value
+
+
+def coalition_to_fashion_shoot(value: str):
+    """
+    Redirect Fashion Shoot stage names to DATE A LANE
+    """
+    value = value.split('-')[0]
+    if value == 'area1':
+        return 'easy'
+    elif value in ['area2', 'area3', 'area4', 'area5']:
+        return 'normal'
+    elif value == 'area6':
+        return 'hard'
+    else:
+        return value
