@@ -3610,24 +3610,22 @@
         "type": "state",
         "value": "campaign_main",
         "option": [
-          "coalition_20251120",
-          "coalition_20260122"
+          "coalition_20251120"
         ],
         "option_cn": [
-          "coalition_20260122"
+          "coalition_20251120"
         ],
         "option_en": [
-          "coalition_20260122"
+          "coalition_20251120"
         ],
         "option_jp": [
-          "coalition_20260122"
+          "coalition_20251120"
         ],
         "option_tw": [
           "coalition_20251120"
         ],
         "option_bold": [
-          "coalition_20251120",
-          "coalition_20260122"
+          "coalition_20251120"
         ]
       },
       "Mode": {
@@ -3673,12 +3671,20 @@
     "Coalition": {
       "Mode": {
         "type": "select",
-        "value": "hard",
+        "value": "area1-normal",
         "option": [
-          "easy",
-          "normal",
-          "hard",
-          "ex"
+          "area1-normal",
+          "area1-hard",
+          "area2-normal",
+          "area2-hard",
+          "area3-normal",
+          "area3-hard",
+          "area4-normal",
+          "area4-hard",
+          "area5-normal",
+          "area5-hard",
+          "area6-normal",
+          "area6-hard"
         ]
       },
       "Fleet": {
@@ -6912,24 +6918,22 @@
         "type": "state",
         "value": "campaign_main",
         "option": [
-          "coalition_20251120",
-          "coalition_20260122"
+          "coalition_20251120"
         ],
         "option_cn": [
-          "coalition_20260122"
+          "coalition_20251120"
         ],
         "option_en": [
-          "coalition_20260122"
+          "coalition_20251120"
         ],
         "option_jp": [
-          "coalition_20260122"
+          "coalition_20251120"
         ],
         "option_tw": [
           "coalition_20251120"
         ],
         "option_bold": [
-          "coalition_20251120",
-          "coalition_20260122"
+          "coalition_20251120"
         ]
       },
       "Mode": {
@@ -6975,15 +6979,21 @@
     "Coalition": {
       "Mode": {
         "type": "select",
-        "value": "sp",
+        "value": "area1-normal",
         "option": [
-          "easy",
-          "normal",
-          "hard",
-          "sp",
-          "ex"
-        ],
-        "display": "hide"
+          "area1-normal",
+          "area1-hard",
+          "area2-normal",
+          "area2-hard",
+          "area3-normal",
+          "area3-hard",
+          "area4-normal",
+          "area4-hard",
+          "area5-normal",
+          "area5-hard",
+          "area6-normal",
+          "area6-hard"
+        ]
       },
       "Fleet": {
         "type": "select",

@@ -83,7 +83,7 @@
       "help": ""
     },
     "Coalition": {
-      "name": "光影风尚——拍摄进行时！",
+      "name": "DATE A LANE",
       "help": ""
     },
     "MaritimeEscort": {
@@ -119,7 +119,7 @@
       "help": ""
     },
     "CoalitionSp": {
-      "name": "光影风尚——拍摄进行时！SP",
+      "name": "迷彩都市的寻踪者SP",
       "help": ""
     },
     "Commission": {
@@ -702,7 +702,6 @@
       "coalition_20240627": "欢迎来到童心学院",
       "coalition_20250626": "迷彩都市的寻踪者",
       "coalition_20251120": "DATE A LANE",
-      "coalition_20260122": "光影风尚——拍摄进行时！",
       "event_20200227_cn": "北境序曲",
       "event_20200312_cn": "复刻斯图尔特的硝烟",
       "event_20200326_cn": "微层混合",
@@ -1415,11 +1414,18 @@
     "Mode": {
       "name": "难度",
       "help": "SP图需要使用活动每日SP运行",
-      "easy": "简单",
-      "normal": "普通",
-      "hard": "困难",
-      "sp": "SP",
-      "ex": "EX"
+      "area1-normal": "AREA-1 普通",
+      "area1-hard": "AREA-1 困难",
+      "area2-normal": "AREA-2 普通",
+      "area2-hard": "AREA-2 困难",
+      "area3-normal": "AREA-3 普通",
+      "area3-hard": "AREA-3 困难",
+      "area4-normal": "AREA-4 普通",
+      "area4-hard": "AREA-4 困难",
+      "area5-normal": "AREA-5 普通",
+      "area5-hard": "AREA-5 困难",
+      "area6-normal": "AREA-6 普通",
+      "area6-hard": "AREA-6 困难"
     },
     "Fleet": {
       "name": "出击队伍",

@@ -617,8 +617,6 @@ class ConfigUpdater:
         # ('Coalition.Coalition.Mode', 'Coalition.Coalition.Mode', coalition_to_frostfall),
         # 2025.06.26
         # ('Coalition.Coalition.Mode', 'Coalition.Coalition.Mode', coalition_to_little_academy),
-        # 2026.01.22
-        ('Coalition.Coalition.Mode', 'Coalition.Coalition.Mode', coalition_to_fashion_shoot),
     ]
 
     # redirection += [
@@ -688,7 +686,7 @@ class ConfigUpdater:
         for task in EVENTS + WAR_ARCHIVES:
             default_stage(task, 'D3')
         for task in COALITIONS:
-            default_stage(task, 'hard')
+            default_stage(task, 'area1-normal')
 
         if not is_template:
             new = self.config_redirect(old, new)

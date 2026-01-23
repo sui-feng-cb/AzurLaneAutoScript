@@ -734,7 +734,7 @@
       "ClearAfterSinking": false
     },
     "Coalition": {
-      "Mode": "hard",
+      "Mode": "area1-normal",
       "Fleet": "single"
     },
     "StopCondition": {
@@ -1332,7 +1332,7 @@
       "ClearAfterSinking": false
     },
     "Coalition": {
-      "Mode": "sp",
+      "Mode": "area1-normal",
       "Fleet": "single"
     },
     "StopCondition": {
