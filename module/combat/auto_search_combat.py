@@ -3,7 +3,6 @@ from module.campaign.campaign_status import CampaignStatus
 from module.combat.assets import *
 from module.combat.combat import Combat
 from module.exception import CampaignEnd
-from module.exercise.assets import QUIT_RECONFIRM
 from module.handler.assets import AUTO_SEARCH_MAP_OPTION_ON, GET_MISSION
 from module.logger import logger
 from module.map.assets import WITHDRAW
@@ -280,7 +279,7 @@ class AutoSearchCombat(MapOperation, Combat, CampaignStatus):
                 pause_interval.reset()
                 in_map_timer.reset()
                 continue
-            if self.appear_then_click(QUIT_RECONFIRM, offset=True, interval=5):
+            if self.handle_combat_quit_reconfirm():
                 pause_interval.reset()
                 in_map_timer.reset()
                 continue
