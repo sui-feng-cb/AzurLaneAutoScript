@@ -9,7 +9,6 @@ from module.base.timer import Timer
 from module.base.utils import point_limit
 from module.config.utils import dict_to_kv
 from module.exception import MapWalkError
-from module.exercise.assets import QUIT_RECONFIRM
 from module.handler.assets import MAINTENANCE_ANNOUNCE
 from module.logger import logger
 from module.map.fleet import Fleet
@@ -273,12 +272,7 @@ class OSFleet(OSCamera, Combat, Fleet, OSAsh):
         logger.hr('Wait until camera stable')
         record = None
         confirm_timer = Timer(0.6, count=2).start()
-        while 1:
-            if skip_first_screenshot:
-                skip_first_screenshot = False
-            else:
-                self.device.screenshot()
-
+        for _ in self.loop(skip_first=skip_first_screenshot):
             self.update_os()
             current = self.view.backend.homo_loca
             logger.attr('homo_loca', current)
@@ -325,12 +319,7 @@ class OSFleet(OSCamera, Combat, Fleet, OSAsh):
         clicked_story_count = 0
         stuck_timer = Timer(20, count=5).start()
         confirm_timer.reset()
-        while 1:
-            if skip_first_screenshot:
-                skip_first_screenshot = False
-            else:
-                self.device.screenshot()
-
+        for _ in self.loop(skip_first=skip_first_screenshot):
             # Map event
             event = self.handle_map_event(drop=drop)
             if event:
@@ -762,7 +751,7 @@ class OSFleet(OSCamera, Combat, Fleet, OSAsh):
         button = Button(area=area, color=(), button=area, name='BOSS_LEAVE')
         return button
 
-    def boss_leave(self, skip_first_screenshot=True):
+    def boss_leave(self):
         """
         Pages:
             in: is_in_map(), or combat_appear()
@@ -774,12 +763,7 @@ class OSFleet(OSCamera, Combat, Fleet, OSAsh):
 
         click_timer = Timer(3)
         pause_interval = Timer(0.5, count=1)
-        while 1:
-            if skip_first_screenshot:
-                skip_first_screenshot = False
-            else:
-                self.device.screenshot()
-
+        for _ in self.loop():
             # End
             if self.is_in_map():
                 self.predict_radar()
@@ -804,7 +788,7 @@ class OSFleet(OSCamera, Combat, Fleet, OSAsh):
                 self.interval_reset(MAINTENANCE_ANNOUNCE)
                 pause_interval.reset()
                 continue
-            if self.appear_then_click(QUIT_RECONFIRM, offset=True, interval=5):
+            if self.handle_combat_quit_reconfirm():
                 self.interval_reset(MAINTENANCE_ANNOUNCE)
                 pause_interval.reset()
                 continue

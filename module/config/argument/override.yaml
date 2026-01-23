@@ -257,9 +257,9 @@ Coalition:
     Use2xBook: false
     AmbushEvade: true
     ClearAfterSinking: false
-#  Coalition:
-#    Mode:
-#      option: [ easy, normal, hard, ex ]
+  Coalition:
+    Mode:
+      option: [ easy, normal, hard ]
   StopCondition:
     MapAchievement: non_stop
     StageIncrease: false
