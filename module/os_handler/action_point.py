@@ -401,13 +401,7 @@ class ActionPointHandler(UI, MapEventHandler):
                 raise ActionPointLimit
 
             # Sort action point boxes
-            box = []
-            for index in [1, 2, 3]:
-                if self._action_point_box[index] > 0:
-                    if self._action_point_current + ACTION_POINT_BOX[index] >= 200:
-                        box.append(index)
-                    else:
-                        box.insert(0, index)
+            box = [index for index in range(1, 4) if self._action_point_box[index] > 0]
 
             # Use action point boxes
             if len(box):
