@@ -261,12 +261,15 @@ class Raid(MapOperation, RaidCombat, CampaignEvent):
         # if emotion_reduce:
         #     self.emotion.wait(fleet_index)
 
+        checked = False
         for _ in self.loop():
             if self.appear(BATTLE_PREPARATION, offset=(30, 20)):
                 if self.handle_combat_automation_set(auto=auto == 'combat_auto'):
                     continue
-                if self._raid_has_oil_icon and self.triggered_stop_condition(oil_check=True, coin_check=True):
-                    self.config.task_stop()
+                if not checked and self._raid_has_oil_icon:
+                    checked = True
+                    if self.triggered_stop_condition(oil_check=True, coin_check=True):
+                        self.config.task_stop()
             if self.handle_raid_ticket_use():
                 continue
             if self.handle_retirement():
