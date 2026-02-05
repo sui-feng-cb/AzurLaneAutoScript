@@ -198,11 +198,18 @@ class MissionHandler(GlobeOperation, ZoneManager):
                       offset=(200, 20), retry_wait=3, additional=self.handle_manjuu,
                       skip_first_screenshot=True)
 
+        timeout = 5
+        accept_button_timer = Timer(timeout)
+        self.interval_timer[MISSION_OVERVIEW_ACCEPT_SINGLE.name] = accept_button_timer
+        self.interval_timer[MISSION_OVERVIEW_ACCEPT.name] = accept_button_timer
         # MISSION_OVERVIEW_CHECK
         success = True
         for _ in self.loop():
-            if self.handle_manjuu():
-                continue
+            # End
+            if self.appear(MISSION_OVERVIEW_EMPTY, offset=(20, 20)):
+                logger.info('No more missions to accept')
+                success = True
+                break
             if self.info_bar_count():
                 if skip_siren_mission:
                     logger.info('Unable to accept missions, '
@@ -212,16 +219,13 @@ class MissionHandler(GlobeOperation, ZoneManager):
                     logger.info('Unable to accept missions, because reached the maximum number of missions')
                     success = False
                 break
-            if self.appear(MISSION_OVERVIEW_EMPTY, offset=(20, 20)):
-                logger.info('No more missions to accept')
-                success = True
-                break
 
-            if self.appear_then_click(MISSION_OVERVIEW_ACCEPT, offset=(20, 20), interval=2):
-                self.interval_reset(MISSION_OVERVIEW_ACCEPT_SINGLE)
+            if self.handle_manjuu():
                 continue
-            if self.appear_then_click(MISSION_OVERVIEW_ACCEPT_SINGLE, offset=(20, 20), interval=2):
-                self.interval_reset(MISSION_OVERVIEW_ACCEPT)
+            # Click
+            if self.appear_then_click(MISSION_OVERVIEW_ACCEPT, offset=(20, 20), interval=timeout):
+                continue
+            if self.appear_then_click(MISSION_OVERVIEW_ACCEPT_SINGLE, offset=(20, 20), interval=timeout):
                 continue
 
         # is_in_globe
