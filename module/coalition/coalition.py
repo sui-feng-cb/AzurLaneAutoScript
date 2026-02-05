@@ -96,6 +96,7 @@ class Coalition(CoalitionCombat, CampaignEvent):
             return True
         else:
             return False
+
     @property
     def _coalition_has_oil_icon(self):
         """
