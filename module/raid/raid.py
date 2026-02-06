@@ -5,7 +5,6 @@ import module.config.server as server
 from module.base.timer import Timer
 from module.campaign.campaign_event import CampaignEvent
 from module.combat.assets import *
-from module.event_hospital.assets import *
 from module.exception import ScriptError
 from module.logger import logger
 from module.map.map_operation import MapOperation
