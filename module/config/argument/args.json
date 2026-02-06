@@ -8082,7 +8082,17 @@
           3,
           4,
           5,
-          6
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
         ]
       },
       "Character1": {
@@ -8113,7 +8123,17 @@
           3,
           4,
           5,
-          6
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
         ]
       },
       "Character2": {
@@ -8144,41 +8164,20 @@
           3,
           4,
           5,
-          6
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
         ]
       },
       "Character3": {
-        "type": "select",
-        "value": "manjuu",
-        "option": [
-          "manjuu",
-          "saratoga",
-          "new_jersey",
-          "tashkent",
-          "lemalin",
-          "shimakaze",
-          "akashi",
-          "ying_swei",
-          "chao_ho",
-          "unicorn",
-          "cheshire",
-          "amagi_chan"
-        ]
-      },
-      "Option4": {
-        "type": "select",
-        "value": 0,
-        "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6
-        ]
-      },
-      "Character4": {
         "type": "select",
         "value": "manjuu",
         "option": [
@@ -8210,7 +8209,9 @@
           1,
           2,
           3,
-          4
+          4,
+          5,
+          6
         ]
       },
       "Character1": {
@@ -8239,7 +8240,9 @@
           1,
           2,
           3,
-          4
+          4,
+          5,
+          6
         ]
       },
       "Character2": {
@@ -8268,7 +8271,9 @@
           1,
           2,
           3,
-          4
+          4,
+          5,
+          6
         ]
       },
       "Character3": {
@@ -8297,7 +8302,9 @@
           1,
           2,
           3,
-          4
+          4,
+          5,
+          6
         ]
       },
       "Character4": {
@@ -8332,12 +8339,7 @@
           1,
           2,
           3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
+          4
         ]
       },
       "Character1": {
@@ -8366,12 +8368,7 @@
           1,
           2,
           3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
+          4
         ]
       },
       "Character2": {
@@ -8400,12 +8397,7 @@
           1,
           2,
           3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
+          4
         ]
       },
       "Character3": {
@@ -8434,12 +8426,7 @@
           1,
           2,
           3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
+          4
         ]
       },
       "Character4": {
@@ -8513,6 +8500,70 @@
         ]
       },
       "Character2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "unicorn",
+          "cheshire",
+          "amagi_chan"
+        ]
+      },
+      "Option3": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "Character3": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "unicorn",
+          "cheshire",
+          "amagi_chan"
+        ]
+      },
+      "Option4": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "Character4": {
         "type": "select",
         "value": "manjuu",
         "option": [
@@ -8625,6 +8676,86 @@
           8,
           9,
           10,
+          11,
+          12
+        ]
+      },
+      "Character1": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "unicorn",
+          "cheshire",
+          "amagi_chan"
+        ]
+      },
+      "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "unicorn",
+          "cheshire",
+          "amagi_chan"
+        ]
+      }
+    },
+    "Island9": {
+      "Receive": {
+        "type": "checkbox",
+        "value": false
+      },
+      "Option1": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
           11
         ]
       },
@@ -8683,80 +8814,6 @@
         ]
       }
     },
-    "Island9": {
-      "Receive": {
-        "type": "checkbox",
-        "value": false
-      },
-      "Option1": {
-        "type": "select",
-        "value": 0,
-        "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
-        ]
-      },
-      "Character1": {
-        "type": "select",
-        "value": "manjuu",
-        "option": [
-          "manjuu",
-          "saratoga",
-          "new_jersey",
-          "tashkent",
-          "lemalin",
-          "shimakaze",
-          "akashi",
-          "ying_swei",
-          "chao_ho",
-          "unicorn",
-          "cheshire",
-          "amagi_chan"
-        ]
-      },
-      "Option2": {
-        "type": "select",
-        "value": 0,
-        "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
-        ]
-      },
-      "Character2": {
-        "type": "select",
-        "value": "manjuu",
-        "option": [
-          "manjuu",
-          "saratoga",
-          "new_jersey",
-          "tashkent",
-          "lemalin",
-          "shimakaze",
-          "akashi",
-          "ying_swei",
-          "chao_ho",
-          "unicorn",
-          "cheshire",
-          "amagi_chan"
-        ]
-      }
-    },
     "Island10": {
       "Receive": {
         "type": "checkbox",
@@ -8773,7 +8830,10 @@
           4,
           5,
           6,
-          7
+          7,
+          8,
+          9,
+          10
         ]
       },
       "Character1": {
@@ -8805,7 +8865,10 @@
           4,
           5,
           6,
-          7
+          7,
+          8,
+          9,
+          10
         ]
       },
       "Character2": {
@@ -8841,7 +8904,11 @@
           2,
           3,
           4,
-          5
+          5,
+          6,
+          7,
+          8,
+          9
         ]
       },
       "Character1": {
@@ -8871,7 +8938,11 @@
           2,
           3,
           4,
-          5
+          5,
+          6,
+          7,
+          8,
+          9
         ]
       },
       "Character2": {
@@ -8974,6 +9045,74 @@
           1,
           2,
           3,
+          4,
+          5,
+          6
+        ]
+      },
+      "Character1": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "unicorn",
+          "cheshire",
+          "amagi_chan"
+        ]
+      },
+      "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "Character2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "unicorn",
+          "cheshire",
+          "amagi_chan"
+        ]
+      }
+    },
+    "Island14": {
+      "Receive": {
+        "type": "checkbox",
+        "value": false
+      },
+      "Option1": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
           4
         ]
       },
@@ -9025,7 +9164,7 @@
         ]
       }
     },
-    "Island14": {
+    "Island15": {
       "Receive": {
         "type": "checkbox",
         "value": false
@@ -9099,7 +9238,7 @@
         ]
       }
     },
-    "Island15": {
+    "Island16": {
       "Receive": {
         "type": "checkbox",
         "value": false
