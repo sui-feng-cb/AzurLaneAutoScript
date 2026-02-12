@@ -165,7 +165,7 @@ def raid_ocr(raid, mode):
         if mode == 'ex':
             return Digit(button, letter=(255, 239, 215), threshold=128)
         else:
-            return DigitCounter(button, letter=(154, 148, 133), threshold=128)
+            return DigitCounter(button, lang='cnocr', letter=(154, 148, 133), threshold=128)
 
 
 def pt_ocr(raid):
@@ -206,12 +206,7 @@ class Raid(MapOperation, RaidCombat, CampaignEvent):
         Game devs are too asshole to drop oil display for UI design
         https://github.com/LmeSzinc/AzurLaneAutoScript/issues/5214
         """
-        if self.config.Campaign_Event in [
-            'raid_20240328',
-            'raid_20260212',
-        ]:
-            return False
-        return True
+        return False
 
     def check_oil(self):
         limit = max(500, self.config.StopCondition_OilLimit)
