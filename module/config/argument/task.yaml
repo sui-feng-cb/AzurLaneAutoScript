@@ -365,6 +365,8 @@ Tool:
       - EventStory
     BoxDisassemble:
       - BoxDisassemble
+    IslandPearl:
+      - IslandPearl
     Benchmark:
       - Benchmark
     AzurLaneUncensored:

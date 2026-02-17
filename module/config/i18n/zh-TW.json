@@ -278,6 +278,10 @@
       "name": "拆裝備箱",
       "help": ""
     },
+    "IslandPearl": {
+      "name": "Task.IslandPearl.name",
+      "help": "Task.IslandPearl.help"
+    },
     "Benchmark": {
       "name": "性能測試",
       "help": ""

@@ -13758,6 +13758,16 @@
       }
     }
   },
+  "IslandPearl": {
+    "Storage": {
+      "Storage": {
+        "type": "storage",
+        "value": {},
+        "valuetype": "ignore",
+        "display": "disabled"
+      }
+    }
+  },
   "Benchmark": {
     "Benchmark": {
       "DeviceType": {

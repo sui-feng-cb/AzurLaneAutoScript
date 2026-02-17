@@ -2316,6 +2316,11 @@
       "Storage": {}
     }
   },
+  "IslandPearl": {
+    "Storage": {
+      "Storage": {}
+    }
+  },
   "Benchmark": {
     "Benchmark": {
       "DeviceType": "emulator",
