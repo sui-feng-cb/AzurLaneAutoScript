@@ -274,6 +274,10 @@
       "name": "Box Disassemble",
       "help": ""
     },
+    "IslandPearl": {
+      "name": "Task.IslandPearl.name",
+      "help": "Task.IslandPearl.help"
+    },
     "Benchmark": {
       "name": "Performance Test",
       "help": ""

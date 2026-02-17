@@ -274,6 +274,10 @@
       "name": "Task.BoxDisassemble.name",
       "help": "Task.BoxDisassemble.help"
     },
+    "IslandPearl": {
+      "name": "Task.IslandPearl.name",
+      "help": "Task.IslandPearl.help"
+    },
     "Benchmark": {
       "name": "機能テスト",
       "help": ""

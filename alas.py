@@ -434,6 +434,10 @@ class AzurLaneAutoScript:
         from module.storage.box_disassemble import StorageBox
         StorageBox(config=self.config, device=self.device, task="BoxDisassemble").run()
 
+    def island_pearl(self):
+        from module.island.pearl_daemon import IslandPearl
+        IslandPearl(config=self.config, device=self.device, task="IslandPearl").run()
+
     def azur_lane_uncensored(self):
         from module.daemon.uncensored import AzurLaneUncensored
         AzurLaneUncensored(config=self.config, device=self.device, task="AzurLaneUncensored").run()

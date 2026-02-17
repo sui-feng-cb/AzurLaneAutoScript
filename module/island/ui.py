@@ -28,6 +28,16 @@ class IslandUI(UI):
         """
         return self.match_template_color(ISLAND_TRANSPORT_CHECK, offset=(20, 20), interval=interval)
 
+    def island_in_friend(self, interval=0):
+        """
+        Args:
+            interval (int):
+
+        Returns:
+            bool: if in page ISLAND_FRIEND_CHECK
+        """
+        return self.appear(ISLAND_FRIEND_CHECK, offset=(20, 20), interval=interval)
+
     def island_management_enter(self):
         """
         Enter island management page.
@@ -73,6 +83,27 @@ class IslandUI(UI):
         )
         return True
 
+    def island_friend_enter(self):
+        """
+        Enter island friend page.
+
+        Returns:
+            bool: if success
+
+        Pages:
+            in: page_island_phone
+            out: ISLAND_FRIEND_CHECK
+        """
+        logger.info('Island friend enter')
+        self.ui_click(
+            click_button=ISLAND_FRIEND,
+            check_button=self.island_in_friend,
+            offset=(20, 20),
+            retry_wait=2,
+            skip_first_screenshot=True
+        )
+        return True
+
     def island_ui_back(self):
         """
         Pages:
@@ -82,7 +113,7 @@ class IslandUI(UI):
         logger.info('Island UI back')
         self.ui_click(
             click_button=SHOP_BACK_ARROW,
-            check_button=page_island_phone.check_button,
+            check_button=[page_island_phone.check_button, ISLAND_FRIEND_LEAVE],
             offset=(20, 20),
             retry_wait=2,
             skip_first_screenshot=True
@@ -111,6 +142,17 @@ class IslandUI(UI):
             if self.appear_then_click(ISLAND_MANAGEMENT, offset=(20, 20), interval=2):
                 continue
 
+    def ui_ensure_friend_page(self):
+        """
+        Pages:
+            in: Any
+            out: ISLAND_FRIEND_CHECK
+        """
+        logger.info('UI ensure friend page')
+        if not self.island_in_friend():
+            self.ui_ensure(page_island_phone)
+            self.island_friend_enter()
+
     def handle_get_items(self):
         if self.appear_then_click(GET_ITEMS_ISLAND, offset=(20, 20), interval=2):
             return True
@@ -138,3 +180,23 @@ class IslandUI(UI):
             return True
 
         return super().ui_additional(get_ship=False)
+
+    def move_up(self, hold_time=0):
+        p1 = (217, 507)
+        p2 = (217, 507 - 36)
+        self.device.swipe(p1, p2, hold_time=hold_time)
+
+    def move_down(self, hold_time=0):
+        p1 = (217, 507)
+        p2 = (217, 507 + 36)
+        self.device.swipe(p1, p2, hold_time=hold_time)
+
+    def move_left(self, hold_time=0):
+        p1 = (217, 507)
+        p2 = (217 - 36, 507)
+        self.device.swipe(p1, p2, hold_time=hold_time)
+
+    def move_right(self, hold_time=0):
+        p1 = (217, 507)
+        p2 = (217 + 36, 507)
+        self.device.swipe(p1, p2, hold_time=hold_time)

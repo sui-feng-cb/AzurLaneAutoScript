@@ -85,10 +85,11 @@ class Control(Hermit, Minitouch, Scrcpy, MaaTouch, NemuIpc):
         else:
             self.swipe_adb((x, y), (x, y), duration)
 
-    def swipe(self, p1, p2, duration=(0.1, 0.2), name='SWIPE', distance_check=True):
+    def swipe(self, p1, p2, duration=(0.1, 0.2), hold_time=0, name='SWIPE', distance_check=True):
         self.handle_control_check(name)
         p1, p2 = ensure_int(p1, p2)
         duration = ensure_time(duration)
+        hold_time = ensure_time(hold_time) * 1000
         method = self.config.Emulator_ControlMethod
         if method == 'uiautomator2':
             logger.info('Swipe %s -> %s, %s' % (point2str(*p1), point2str(*p2), duration))
@@ -107,7 +108,7 @@ class Control(Hermit, Minitouch, Scrcpy, MaaTouch, NemuIpc):
                 return
 
         if method == 'minitouch':
-            self.swipe_minitouch(p1, p2)
+            self.swipe_minitouch(p1, p2, hold_time=hold_time)
         elif method == 'uiautomator2':
             self.swipe_uiautomator2(p1, p2, duration=duration)
         elif method == 'scrcpy':

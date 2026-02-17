@@ -274,6 +274,10 @@
       "name": "拆装备箱",
       "help": ""
     },
+    "IslandPearl": {
+      "name": "岛屿珍珠",
+      "help": ""
+    },
     "Benchmark": {
       "name": "性能测试",
       "help": ""
