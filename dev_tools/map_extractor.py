@@ -567,6 +567,11 @@ class MapData:
         lines.append(f'    MAP_HAS_FLEET_STEP = {self.MAP_HAS_FLEET_STEP}')
         lines.append(f'    MAP_HAS_AMBUSH = {self.MAP_HAS_AMBUSH}')
         lines.append(f'    MAP_HAS_MYSTERY = {self.MAP_HAS_MYSTERY}')
+        lines.append(f'    MAP_CHAPTER_SWITCH_20241219 = True')
+        lines.append(f"    STAGE_ENTRANCE = ['half', '20240725']")
+        lines.append(f'    MAP_HAS_MODE_SWITCH = True')
+        lines.append(f'    STAGE_INCREASE_AB = True')
+        lines.append(f'    MAP_WALK_USE_CURRENT_FLEET = True')
         if self.MAP_HAS_PORTAL:
             lines.append(f'    MAP_HAS_PORTAL = {self.MAP_HAS_PORTAL}')
         if self.MAP_HAS_LAND_BASED:
