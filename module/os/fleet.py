@@ -317,6 +317,7 @@ class OSFleet(OSCamera, Combat, Fleet, OSAsh):
         # Record story history to clear click record
         clicked_story = False
         clicked_story_count = 0
+        reset_once = False
         stuck_timer = Timer(20, count=5).start()
         confirm_timer.reset()
 
@@ -342,10 +343,11 @@ class OSFleet(OSCamera, Combat, Fleet, OSAsh):
                     # STORY_OPTION_2_OF_3 -> POPUP_CONFIRM_STORY_SKIP
                     # both of operations return 'story_skip' event
                     # Continuous 2 story_skip means a submission of siren scanning devices
-                    if clicked_story_count >= 11:
+                    # Restrict the fucking unlimited resets
+                    if clicked_story_count >= 11 and not reset_once:
+                        reset_once = True
                         logger.info('Continuous options in story')
                         self.device.click_record_clear()
-                        clicked_story_count = 0
                 elif event == 'map_get_items':
                     # story_skip -> map_get_items means abyssal progress reward is received
                     if clicked_story:
