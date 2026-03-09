@@ -1,3 +1,4 @@
+from module.base.timer import Timer
 from module.campaign.campaign_base import CampaignBase as CampaignBase_
 from module.exception import RequestHumanTakeover
 from module.logger import logger
@@ -58,6 +59,7 @@ class CampaignBase(CampaignBase_):
         Fixed number of scrolls until give up, may need to
         increase as more war archives campaigns are added
         """
+        confirm_timer = Timer(1.5, count=4)
         for _ in range(20):
             if skip_first_screenshot:
                 skip_first_screenshot = False
@@ -80,13 +82,19 @@ class CampaignBase(CampaignBase_):
                 return entrance
 
             if WAR_ARCHIVES_SCROLL.appear(main=self):
+                confirm_timer.clear()
                 if WAR_ARCHIVES_SCROLL.at_bottom(main=self):
                     WAR_ARCHIVES_SCROLL.set_top(main=self)
                 else:
                     WAR_ARCHIVES_SCROLL.next_page(main=self, page=0.66)
                 continue
             else:
-                break
+                confirm_timer.start()
+                if confirm_timer.reached():
+                    logger.warning('WAR_ARCHIVES_SCROLL disappeared')
+                    break
+                else:
+                    continue
 
         logger.warning('Failed to find archives entrance')
         return None
