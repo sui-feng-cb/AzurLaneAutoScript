@@ -1,9 +1,14 @@
+import re
+
 from module.base.decorator import cached_property
+from module.base.filter import Filter
 from module.logger import logger
 from module.shop.base import ShopItemGrid, ShopItemGrid_250814
 from module.shop.clerk import ShopClerk
 from module.shop.shop_status import ShopStatus
 from module.shop.ui import ShopUI
+
+SKINBOX_POSITION_FILTER = Filter(re.compile(r'^(\d+)$'), ('position',))
 
 
 class GeneralShop_250814(ShopClerk, ShopUI, ShopStatus):
@@ -17,6 +22,20 @@ class GeneralShop_250814(ShopClerk, ShopUI, ShopStatus):
             str:
         """
         return self.config.GeneralShop_Filter.strip()
+
+    @cached_property
+    def skinbox_allowed_positions(self):
+        """
+        Returns:
+            set[int]: allowed 1-based positions, or None if unrestricted.
+        """
+        skin_box_filter = self.config.GeneralShop_SkinBoxPositionFilter.strip()
+        if not skin_box_filter:
+            return None
+        SKINBOX_POSITION_FILTER.load(skin_box_filter)
+        allowed = {int(pos) for pos in SKINBOX_POSITION_FILTER.filter_raw if pos.isdigit()}
+        logger.attr('Skin_box_filter', ' > '.join([str(pos) for pos in allowed]))
+        return allowed if allowed else None
 
     # New UI in 2025-08-14
     @cached_property
@@ -132,11 +151,31 @@ class GeneralShop_250814(ShopClerk, ShopUI, ShopStatus):
                 # and design constantly changes i.e. equip skin box
                 logger.info(f'Item {item} is considered to be an equip skin box')
                 if self._currency >= item.price:
+                    if not self.skinbox_position_check():
+                        return False
                     if mode == 'specified':
                         self.config.GeneralShop_BuySkinBoxAmount -= 1
                     return True
 
         return False
+
+    def skinbox_position_check(self, item):
+        """
+        Check if a skin box is in the allowed position where it should be bought.
+
+        Args:
+            item: Item to check
+
+        Returns:
+            bool: whether the skin box is in the allowed position
+        """
+        allowed = self.skinbox_allowed_positions
+        if allowed is None:
+            return True
+
+        grids = self.shop_general_items.grids
+        abs_pos = round((item.button[0] - grids.origin[0]) / grids.delta[0]) + 1
+        return abs_pos in allowed
 
     def run(self):
         """

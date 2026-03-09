@@ -1783,6 +1783,7 @@
       "Refresh": false,
       "BuySkinBox": "disabled",
       "BuySkinBoxAmount": 0,
+      "SkinBoxPositionFilter": "1 > 2 > 3",
       "ConsumeCoins": false,
       "Filter": "BookRedT3 > BookYellowT3 > BookBlueT3 > BookRedT2\n> Cube\n> FoodT6 > FoodT5"
     },

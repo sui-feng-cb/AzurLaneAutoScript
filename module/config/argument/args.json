@@ -9987,6 +9987,10 @@
         "type": "input",
         "value": 0
       },
+      "SkinBoxPositionFilter": {
+        "type": "textarea",
+        "value": "1 > 2 > 3"
+      },
       "ConsumeCoins": {
         "type": "checkbox",
         "value": false

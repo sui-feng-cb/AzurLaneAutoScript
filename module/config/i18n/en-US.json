@@ -3393,6 +3393,10 @@
       "name": "Purchase X Skin Boxes",
       "help": "Takes effect when \"Purchase Specified Quantity\" is selected."
     },
+    "SkinBoxPositionFilter": {
+      "name": "Specific Skin Box Filter",
+      "help": "Used when multiple skin box types are sold simultaneously in the shop. Enter position(s) to target specific skin boxes; positions start from 1 (left to right). Uses the same format as filters, e.g. 1 > 2 > 3.\nLeave empty for no restriction."
+    },
     "ConsumeCoins": {
       "name": "Consume Spilled Coins",
       "help": "Buy all items when the coins exceed 550000"

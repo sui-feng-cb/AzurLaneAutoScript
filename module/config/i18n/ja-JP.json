@@ -3393,6 +3393,10 @@
       "name": "GeneralShop.BuySkinBoxAmount.name",
       "help": "GeneralShop.BuySkinBoxAmount.help"
     },
+    "SkinBoxPositionFilter": {
+      "name": "GeneralShop.SkinBoxPositionFilter.name",
+      "help": "GeneralShop.SkinBoxPositionFilter.help"
+    },
     "ConsumeCoins": {
       "name": "GeneralShop.ConsumeCoins.name",
       "help": "GeneralShop.ConsumeCoins.help"
