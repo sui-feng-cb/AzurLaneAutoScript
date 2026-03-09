@@ -208,6 +208,7 @@ Submarine:
   Fleet:
     value: 0
     option: [ 0, 1, 2 ]
+  AutoRecommend: false
   Mode:
     value: do_not_use
     option: [ do_not_use, hunt_only, boss_only, hunt_and_boss, every_combat ]

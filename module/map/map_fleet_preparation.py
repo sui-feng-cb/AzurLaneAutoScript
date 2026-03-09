@@ -342,6 +342,12 @@ class FleetPreparation(InfoHandler):
             if self.config.Fleet_Fleet2:
                 fleet_2.raise_hard_not_satisfied()
             if self.config.Submarine_Fleet:
+                if self.config.Submarine_AutoRecommend and h3 is False:
+                    logger.info('AutoRecommend enabled, click recommend to form submarine fleet')
+                    submarine.recommend()
+                    self.device.screenshot()
+                    h3 = submarine.is_hard_satisfied()
+                    logger.info(f'Hard satisfied after recommend: Submarine: {h3}')
                 submarine.raise_hard_not_satisfied()
 
         # Skip fleet preparation in hard mode

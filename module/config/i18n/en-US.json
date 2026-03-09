@@ -1023,6 +1023,10 @@
       "1": "1",
       "2": "2"
     },
+    "AutoRecommend": {
+      "name": "Hard Mode Auto-Recommend",
+      "help": "Auto-fills empty submarine fleet if using via recommend button in Hard Mode"
+    },
     "Mode": {
       "name": "Submarine Mode",
       "help": "Effective only when auto search disabled. Reminder: 'Hunt and Boss' is actually a mix of 'Hunt Only' and 'Boss Only', it does hunt and summon submarines at boss if available.",

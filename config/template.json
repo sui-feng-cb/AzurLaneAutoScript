@@ -189,6 +189,7 @@
     },
     "Submarine": {
       "Fleet": 0,
+      "AutoRecommend": false,
       "Mode": "do_not_use",
       "AutoSearchMode": "sub_standby",
       "DistanceToBoss": "2_grid_to_boss"
@@ -266,6 +267,7 @@
     },
     "Submarine": {
       "Fleet": 0,
+      "AutoRecommend": false,
       "Mode": "do_not_use",
       "AutoSearchMode": "sub_standby",
       "DistanceToBoss": "2_grid_to_boss"
@@ -343,6 +345,7 @@
     },
     "Submarine": {
       "Fleet": 0,
+      "AutoRecommend": false,
       "Mode": "do_not_use",
       "AutoSearchMode": "sub_standby",
       "DistanceToBoss": "2_grid_to_boss"
@@ -433,6 +436,7 @@
     },
     "Submarine": {
       "Fleet": 0,
+      "AutoRecommend": false,
       "Mode": "do_not_use",
       "AutoSearchMode": "sub_standby",
       "DistanceToBoss": "2_grid_to_boss"
@@ -511,6 +515,7 @@
     },
     "Submarine": {
       "Fleet": 0,
+      "AutoRecommend": false,
       "Mode": "do_not_use",
       "AutoSearchMode": "sub_standby",
       "DistanceToBoss": "2_grid_to_boss"
@@ -588,6 +593,7 @@
     },
     "Submarine": {
       "Fleet": 0,
+      "AutoRecommend": false,
       "Mode": "do_not_use",
       "AutoSearchMode": "sub_standby",
       "DistanceToBoss": "2_grid_to_boss"
@@ -825,6 +831,7 @@
     },
     "Submarine": {
       "Fleet": 0,
+      "AutoRecommend": false,
       "Mode": "do_not_use",
       "AutoSearchMode": "sub_standby",
       "DistanceToBoss": "2_grid_to_boss"
@@ -906,6 +913,7 @@
     },
     "Submarine": {
       "Fleet": 0,
+      "AutoRecommend": false,
       "Mode": "do_not_use",
       "AutoSearchMode": "sub_standby",
       "DistanceToBoss": "2_grid_to_boss"
@@ -987,6 +995,7 @@
     },
     "Submarine": {
       "Fleet": 0,
+      "AutoRecommend": false,
       "Mode": "do_not_use",
       "AutoSearchMode": "sub_standby",
       "DistanceToBoss": "2_grid_to_boss"
@@ -1068,6 +1077,7 @@
     },
     "Submarine": {
       "Fleet": 0,
+      "AutoRecommend": false,
       "Mode": "do_not_use",
       "AutoSearchMode": "sub_standby",
       "DistanceToBoss": "2_grid_to_boss"
@@ -1149,6 +1159,7 @@
     },
     "Submarine": {
       "Fleet": 0,
+      "AutoRecommend": false,
       "Mode": "do_not_use",
       "AutoSearchMode": "sub_standby",
       "DistanceToBoss": "2_grid_to_boss"
@@ -1226,6 +1237,7 @@
     },
     "Submarine": {
       "Fleet": 0,
+      "AutoRecommend": false,
       "Mode": "do_not_use",
       "AutoSearchMode": "sub_standby",
       "DistanceToBoss": "2_grid_to_boss"

@@ -1023,6 +1023,10 @@
       "1": "1",
       "2": "2"
     },
+    "AutoRecommend": {
+      "name": "Submarine.AutoRecommend.name",
+      "help": "Submarine.AutoRecommend.help"
+    },
     "Mode": {
       "name": "Submarine.Mode.name",
       "help": "Submarine.Mode.help",
