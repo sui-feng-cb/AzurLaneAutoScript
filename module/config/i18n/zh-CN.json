@@ -596,6 +596,14 @@
       "upload": "上传",
       "save_and_upload": "保存并上传"
     },
+    "CL1Record": {
+      "name": "侵蚀一掉落截图",
+      "help": "是否保存侵蚀一掉落截图由该选项单独控制，与 “大世界掉落截图” 选项无关",
+      "do_not": "无操作",
+      "save": "保存",
+      "upload": "上传",
+      "save_and_upload": "保存并上传"
+    },
     "AkashiRecord": {
       "name": "大世界明石商店截图",
       "help": "",

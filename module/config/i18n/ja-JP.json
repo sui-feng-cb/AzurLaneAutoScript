@@ -596,6 +596,14 @@
       "upload": "upload",
       "save_and_upload": "save_and_upload"
     },
+    "CL1Record": {
+      "name": "DropRecord.CL1Record.name",
+      "help": "DropRecord.CL1Record.help",
+      "do_not": "do_not",
+      "save": "save",
+      "upload": "upload",
+      "save_and_upload": "save_and_upload"
+    },
     "AkashiRecord": {
       "name": "DropRecord.AkashiRecord.name",
       "help": "DropRecord.AkashiRecord.help",

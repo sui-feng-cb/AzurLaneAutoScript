@@ -596,6 +596,14 @@
       "upload": "Upload",
       "save_and_upload": "Save and upload"
     },
+    "CL1Record": {
+      "name": "CL1 Record",
+      "help": "Whether to save CL1 drop screenshots is controlled independently by this option",
+      "do_not": "Do nothing",
+      "save": "Save",
+      "upload": "Upload",
+      "save_and_upload": "Save and upload"
+    },
     "AkashiRecord": {
       "name": "Opsi Akashi Shop Record",
       "help": "",

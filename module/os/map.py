@@ -956,9 +956,11 @@ class OSMap(OSFleet, Map, GlobeCamera, StorageHandler, StrategicSearchHandler):
 
         logger.info(f'Run auto search, question={question}, rescan={rescan}')
         finished_combat = 0
+        genre = inflection.underscore(self.config.task.command)
         with self.stat.new(
-                genre=inflection.underscore(self.config.task.command),
-                method=self.config.DropRecord_OpsiRecord
+            genre=genre,
+            method=(self.config.DropRecord_CL1Record if genre == 'opsi_hazard1_leveling' 
+                    else self.config.DropRecord_OpsiRecord)
         ) as drop:
             while 1:
                 combat = self.os_auto_search_run(drop, interrupt=interrupt)
