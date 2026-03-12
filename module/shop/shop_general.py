@@ -151,7 +151,7 @@ class GeneralShop_250814(ShopClerk, ShopUI, ShopStatus):
                 # and design constantly changes i.e. equip skin box
                 logger.info(f'Item {item} is considered to be an equip skin box')
                 if self._currency >= item.price:
-                    if not self.skinbox_position_check():
+                    if not self.skinbox_position_check(item):
                         return False
                     if mode == 'specified':
                         self.config.GeneralShop_BuySkinBoxAmount -= 1
