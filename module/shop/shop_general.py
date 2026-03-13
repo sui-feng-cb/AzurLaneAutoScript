@@ -1,15 +1,11 @@
-import re
-
 from module.base.decorator import cached_property
-from module.base.filter import Filter
 from module.logger import logger
 from module.shop.base import ShopItemGrid, ShopItemGrid_250814
 from module.shop.clerk import ShopClerk
 from module.shop.shop_status import ShopStatus
 from module.shop.ui import ShopUI
 
-SKINBOX_POSITION_FILTER = Filter(re.compile(r'^(\d+)$'), ('position',))
-
+import re
 
 class GeneralShop_250814(ShopClerk, ShopUI, ShopStatus):
     gems = 0
@@ -26,16 +22,40 @@ class GeneralShop_250814(ShopClerk, ShopUI, ShopStatus):
     @cached_property
     def skinbox_allowed_positions(self):
         """
+        The set of configured absolute grid positions (1-based), 
+        or None if no restrictions are applied.
+        If all the input is invalid, returns an empty set which will block all purchases.
+
         Returns:
-            set[int]: allowed 1-based positions, or None if unrestricted.
+            set[int]: 
         """
-        skin_box_filter = self.config.GeneralShop_SkinBoxPositionFilter.strip()
-        if not skin_box_filter:
+        raw_filter = self.config.GeneralShop_SkinBoxPositionFilter.strip()
+        if not raw_filter:
             return None
-        SKINBOX_POSITION_FILTER.load(skin_box_filter)
-        allowed = {int(pos) for pos in SKINBOX_POSITION_FILTER.filter_raw if pos.isdigit()}
-        logger.attr('Skin_box_filter', ' > '.join([str(pos) for pos in allowed]))
-        return allowed if allowed else None
+        raw_filter = re.sub(r'[＞﹥›˃ᐳ❯]', '>', raw_filter)
+        allowed = {int(pos) for pos in raw_filter.split('>') if pos.strip().isdigit()}
+        logger.attr('SkinBox_filter', ' > '.join([str(pos) for pos in allowed]))
+
+        # raw_filter = raw_filter.replace('，', ',')
+        # allowed = {int(pos) for pos in raw_filter.split(',') if pos.strip().isdigit()}
+        # logger.attr('SkinBox_filter', ', '.join([str(pos) for pos in allowed]))
+
+        # raw_filter = raw_filter.replace('，', ',')
+        # allowed = set()
+        # for item in raw_filter.split(','):
+        #     pos_str = item.strip()
+        #     if not pos_str:
+        #         continue
+        #     if pos_str.isdigit():
+        #         allowed.add(int(pos_str))
+        #         continue
+        #     logger.warning(f"Invalid position index: {pos_str}")
+        # logger.attr('SkinBox_filter', ', '.join([str(pos) for pos in allowed]))
+
+        if not allowed:
+            logger.warning("No valid positions found")
+
+        return allowed
 
     # New UI in 2025-08-14
     @cached_property
@@ -130,6 +150,24 @@ class GeneralShop_250814(ShopClerk, ShopUI, ShopStatus):
 
         return False
 
+    def _skinbox_position_check(self, item):
+        """
+        Check if the skin box is at a designated purchase position.
+
+        Args:
+            item: Item to check
+
+        Returns:
+            bool: True if the skin box is targeted for purchase.
+        """
+        allowed = self.skinbox_allowed_positions
+        if allowed is None:
+            return True
+
+        grids = self.shop_general_items.grids
+        abs_pos = round((item.button[0] - grids.origin[0]) / grids.delta[0]) + 1
+        return abs_pos in allowed
+
     def shop_check_custom_item(self, item):
         """
         Check a custom item that should be bought with specific option.
@@ -145,37 +183,20 @@ class GeneralShop_250814(ShopClerk, ShopUI, ShopStatus):
                 return True
 
         mode = self.config.GeneralShop_BuySkinBox
-        if (mode == 'unlimited' or (mode == 'specified' and self.config.GeneralShop_BuySkinBoxAmount > 0)):
-            if (not item.is_known_item()) and item.amount == 1 and item.cost == 'Coins' and item.price == 7000:
+        if (
+            mode == 'unlimited' 
+            or (mode == 'specified' and self.config.GeneralShop_BuySkinBoxAmount > 0)
+        ):
+            if (not item.is_known_item() and item.amount == 1 and item.cost == 'Coins' and item.price == 7000):
                 # check a custom item that cannot be template matched as color
                 # and design constantly changes i.e. equip skin box
                 logger.info(f'Item {item} is considered to be an equip skin box')
-                if self._currency >= item.price:
-                    if not self.skinbox_position_check(item):
-                        return False
+                if self._currency >= item.price and self._skinbox_position_check(item):
                     if mode == 'specified':
                         self.config.GeneralShop_BuySkinBoxAmount -= 1
                     return True
 
         return False
-
-    def skinbox_position_check(self, item):
-        """
-        Check if a skin box is in the allowed position where it should be bought.
-
-        Args:
-            item: Item to check
-
-        Returns:
-            bool: whether the skin box is in the allowed position
-        """
-        allowed = self.skinbox_allowed_positions
-        if allowed is None:
-            return True
-
-        grids = self.shop_general_items.grids
-        abs_pos = round((item.button[0] - grids.origin[0]) / grids.delta[0]) + 1
-        return abs_pos in allowed
 
     def run(self):
         """
