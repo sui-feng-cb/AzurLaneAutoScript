@@ -1,11 +1,15 @@
+import re
+
 from module.base.decorator import cached_property
+from module.base.filter import Filter
 from module.logger import logger
 from module.shop.base import ShopItemGrid, ShopItemGrid_250814
 from module.shop.clerk import ShopClerk
 from module.shop.shop_status import ShopStatus
 from module.shop.ui import ShopUI
 
-import re
+SKINBOX_POSITION_FILTER = Filter(re.compile(r'^(\d+)$'), ('position',))
+
 
 class GeneralShop_250814(ShopClerk, ShopUI, ShopStatus):
     gems = 0
@@ -29,28 +33,12 @@ class GeneralShop_250814(ShopClerk, ShopUI, ShopStatus):
         Returns:
             set[int]: 
         """
-        raw_filter = self.config.GeneralShop_SkinBoxPositionFilter.strip()
-        if not raw_filter:
+        skinbox_filter = self.config.GeneralShop_SkinBoxPositionFilter.strip()
+        if not skinbox_filter:
             return None
-        raw_filter = re.sub(r'[＞﹥›˃ᐳ❯]', '>', raw_filter)
-        allowed = {int(pos) for pos in raw_filter.split('>') if pos.strip().isdigit()}
+        SKINBOX_POSITION_FILTER.load(skinbox_filter)
+        allowed = {int(pos) for pos in SKINBOX_POSITION_FILTER.filter_raw if pos.isdigit()}
         logger.attr('SkinBox_filter', ' > '.join([str(pos) for pos in allowed]))
-
-        # raw_filter = raw_filter.replace('，', ',')
-        # allowed = {int(pos) for pos in raw_filter.split(',') if pos.strip().isdigit()}
-        # logger.attr('SkinBox_filter', ', '.join([str(pos) for pos in allowed]))
-
-        # raw_filter = raw_filter.replace('，', ',')
-        # allowed = set()
-        # for item in raw_filter.split(','):
-        #     pos_str = item.strip()
-        #     if not pos_str:
-        #         continue
-        #     if pos_str.isdigit():
-        #         allowed.add(int(pos_str))
-        #         continue
-        #     logger.warning(f"Invalid position index: {pos_str}")
-        # logger.attr('SkinBox_filter', ', '.join([str(pos) for pos in allowed]))
 
         if not allowed:
             logger.warning("No valid positions found")
