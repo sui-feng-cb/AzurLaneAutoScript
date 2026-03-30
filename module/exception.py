@@ -53,6 +53,10 @@ class GameNotRunningError(Exception):
     pass
 
 
+class EmulatorNetworkError(Exception):
+    pass
+
+
 class GamePageUnknownError(Exception):
     pass
 

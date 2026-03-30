@@ -87,6 +87,20 @@ class AzurLaneAutoScript:
             self.config.task_call('Restart')
             self.device.sleep(10)
             return False
+        except EmulatorNetworkError as e:
+            logger.error(e)
+            self.save_error_log()
+            if self.device.is_emulator:
+                logger.info('Game update stuck 3 times. Checking network status on both ends.')
+                self.checker.check_now()
+                if self.checker.is_available() and not self.device.is_network_available():
+                    logger.critical('Emulator network is disconnected despite host being online.')
+                    logger.warning('Restarting emulator to fix internal network.')
+                    self.device.emulator_start()
+                    deep_set(self.failure_record, keys='Restart', value=1)
+            self.config.task_call('Restart')
+            self.device.sleep(10)
+            return False
         except GameBugError as e:
             logger.warning(e)
             self.save_error_log()
@@ -560,12 +574,8 @@ class AzurLaneAutoScript:
             _ = self.device
             self.device.config = self.config
             # Skip first restart
-            if task == 'Restart':
-                if self.is_first_task:
-                    logger.info('Skip task `Restart` at scheduler start')
-                else:
-                    from module.handler.login import LoginHandler
-                    LoginHandler(self.config, self.device).app_restart()
+            if task == 'Restart' and self.is_first_task:
+                logger.info('Skip task `Restart` at scheduler start')
                 self.config.task_delay(server_update=True)
                 del_cached_property(self, 'config')
                 continue

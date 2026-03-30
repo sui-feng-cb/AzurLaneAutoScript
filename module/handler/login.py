@@ -8,7 +8,8 @@ from uiautomator2.xpath import XPath, XPathSelector
 
 import module.config.server as server
 from module.base.timer import Timer
-from module.base.utils import color_similarity_2d, crop, random_rectangle_point
+from module.base.utils import color_similarity_2d, crop, random_rectangle_point, rgb2luma
+from module.exception import GameNotRunningError, GameTooManyClickError, EmulatorNetworkError
 from module.handler.assets import *
 from module.logger import logger
 from module.map.assets import *
@@ -18,6 +19,8 @@ from module.ui.ui import UI
 
 
 class LoginHandler(UI):
+    _login_update_error_count = 0
+
     def _handle_app_login(self):
         """
         Pages:
@@ -138,11 +141,20 @@ class LoginHandler(UI):
             GameStuckError:
             GameTooManyClickError:
             GameNotRunningError:
+            EmulatorNetworkError:
         """
         logger.info('handle_app_login')
         self.device.screenshot_interval_set(1.0)
         try:
             self._handle_app_login()
+        except GameTooManyClickError as e:
+            if 'LOGIN_GAME_UPDATE' in str(e):
+                self.__class__._login_update_error_count += 1
+                logger.warning(f'Error on LOGIN_GAME_UPDATE: {self.__class__._login_update_error_count} times')
+                if self.__class__._login_update_error_count >= 3:
+                    self.__class__._login_update_error_count = 0
+                    raise EmulatorNetworkError('Emulator network is offline assumed')
+            raise
         finally:
             self.device.screenshot_interval_set()
 
@@ -163,6 +175,7 @@ class LoginHandler(UI):
         self.device.app_start()
         self.handle_app_login()
         # self.ensure_no_unfinished_campaign()
+        self.config.task_delay(server_update=True)
 
     def ensure_no_unfinished_campaign(self, confirm_wait=3):
         """

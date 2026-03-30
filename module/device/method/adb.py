@@ -433,3 +433,20 @@ class Adb(Connection):
         # Parse with lxml
         hierarchy = etree.fromstring(content)
         return hierarchy
+
+    @retry
+    def is_network_available(self) -> bool:
+        """
+        Check if emulator internet connection is available by pinging public DNS.
+
+        Returns:
+            bool: True if network is available
+        """
+        options = ['-c', '4']
+        if self.is_mumu12_family:
+            options.extend(['-i', '0.2'])
+        for ip in ['223.5.5.5', '8.8.8.8']:
+            result = self.adb_shell(['ping', *options, ip]).lower()
+            if 'ttl=' in result:
+                return True
+        return False
