@@ -122,12 +122,13 @@ class FleetOperator:
         # logger.attr('Light_orange_line', lines)
         return lines > 0
 
-    def raise_hard_not_satisfied(self):
-        if self.is_hard_satisfied() is False:
-            stage = self.main.config.Campaign_Name
-            logger.critical(f'Stage "{stage}" is a hard mode, '
-                            f'please prepare your fleet "{str(self)}" in game before running Alas')
-            raise RequestHumanTakeover('Hard not satisfied', str(self))
+    # Remove this function, centralized validation and unified error raising
+    # def raise_hard_not_satisfied(self):
+    #     if self.is_hard_satisfied() is False:
+    #         stage = self.main.config.Campaign_Name
+    #         logger.critical(f'Stage "{stage}" is a hard mode, '
+    #                         f'please prepare your fleet "{str(self)}" in game before running Alas')
+    #         raise RequestHumanTakeover('Hard not satisfied', str(self))
 
     def clear(self, skip_first_screenshot=True):
         """
@@ -337,18 +338,27 @@ class FleetPreparation(InfoHandler):
         h1, h2, h3 = fleet_1.is_hard_satisfied(), fleet_2.is_hard_satisfied(), submarine.is_hard_satisfied()
         logger.info(f'Hard satisfied: Fleet_1: {h1}, Fleet_2: {h2}, Submarine: {h3}')
         if self.config.SERVER in ['cn', 'en', 'jp']:
-            if self.config.Fleet_Fleet1:
-                fleet_1.raise_hard_not_satisfied()
-            if self.config.Fleet_Fleet2:
-                fleet_2.raise_hard_not_satisfied()
-            if self.config.Submarine_Fleet:
-                if self.config.Submarine_AutoRecommend and h3 is False:
-                    logger.info('AutoRecommend enabled, click recommend to form submarine fleet')
+            unsatisfied = []
+            if self.config.Fleet_Fleet1 and h1 is False:
+                unsatisfied.append(str(fleet_1))
+            if self.config.Fleet_Fleet2 and h2 is False:
+                unsatisfied.append(str(fleet_2))
+            if self.config.Submarine_Fleet and h3 is False:
+                auto_recommend = self.config.Submarine_AutoRecommend
+                logger.attr('Submarine AutoRecommend', auto_recommend)
+                if auto_recommend:
+                    logger.info('Form submarine fleet via Recommend')
                     submarine.recommend()
                     self.device.screenshot()
                     h3 = submarine.is_hard_satisfied()
-                    logger.info(f'Hard satisfied after recommend: Submarine: {h3}')
-                submarine.raise_hard_not_satisfied()
+                    logger.info(f'Hard satisfied: Fleet_1: {h1}, Fleet_2: {h2}, Submarine: {h3}')
+                if h3 is False:
+                    unsatisfied.append(str(submarine))
+            if unsatisfied:
+                stage = self.config.Campaign_Name
+                logger.critical(f'Stage "{stage}" is a hard mode, '
+                                f'please prepare your fleet(s): {", ".join(unsatisfied)} in game before running Alas')
+                raise RequestHumanTakeover('Hard not satisfied', *unsatisfied)
 
         # Skip fleet preparation in hard mode
         self.map_is_hard_mode = h1 or h2 or h3

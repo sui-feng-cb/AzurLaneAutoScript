@@ -708,6 +708,7 @@ class GemsFarming(CampaignRun, GemsEquipmentHandler, Retirement):
             total (int):
         """
         self.config.STOP_IF_REACH_LV32 = self.change_flagship
+        ship_change_attempted = False
         while 1:
             self._trigger_lv32 = False
             is_limit = self.config.StopCondition_RunCount
@@ -722,20 +723,39 @@ class GemsFarming(CampaignRun, GemsEquipmentHandler, Retirement):
                 else:
                     raise e
             except RequestHumanTakeover as e:
+                if (not e.args or e.args[0] != 'Hard not satisfied' 
+                    or not (self.change_flagship or self.change_vanguard)):
+                    raise
+                
+                if ship_change_attempted:
+                    logger.critical("Hard mode requirements still not satisfied after ship change")
+                    raise
+
+                attack_fleet = ('FLEET_2' if self.config.Fleet_FleetOrder == 'fleet1_standby_fleet2_all' 
+                                else 'FLEET_1')
+                if e.args[1:] != (attack_fleet, ):
+                    logger.critical("Fleet not meeting requirements is not (or not only) the attack fleet, " \
+                    "please check ALAS settings and in-game fleet preparation")
+                    raise
+
+                logger.warning('Hard mode requirements not satisfied, attempting ship change once')
                 try:
-                    if e.args[0] == 'Hard not satisfied' and self.change_flagship and self.change_vanguard:
-                        self.hard_mode_override()
+                    self.hard_mode_override()
+                    if self.change_flagship:
                         self.flagship_change()
+                    if self.change_vanguard:
                         self.vanguard_change()
-                    else:
-                        raise RequestHumanTakeover
-                except RequestHumanTakeover as e:
-                    raise RequestHumanTakeover
-                except Exception as e:
+                    ship_change_attempted = True
+                    continue
+                except RequestHumanTakeover:
+                    logger.warning("Failed to change ship")
+                    raise
+                except Exception:
                     from module.exception import GameStuckError
                     raise GameStuckError
 
-            # End
+            ship_change_attempted = False
+
             if self._trigger_lv32 or self._trigger_emotion:
                 success = True
                 self.hard_mode_override()
