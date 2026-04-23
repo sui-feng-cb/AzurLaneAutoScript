@@ -33,7 +33,7 @@ class GeneralShop_250814(ShopClerk, ShopUI, ShopStatus):
         Returns:
             set[int]: 
         """
-        skinbox_filter = self.config.GeneralShop_SkinBoxPositionFilter.strip()
+        skinbox_filter = str(self.config.GeneralShop_SkinBoxPositionFilter).strip()
         if not skinbox_filter:
             return None
         SKINBOX_POSITION_FILTER.load(skinbox_filter)
