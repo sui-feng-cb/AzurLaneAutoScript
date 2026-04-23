@@ -439,15 +439,6 @@ class ConfigGenerator:
                                   v
                    args.json -----+-----> args.json
         """
-        def is_concurrent_event(date1, date2):
-            if isinstance(date1, int):
-                date1 = str(date1)
-            if isinstance(date2, int):
-                date2 = str(date2)
-            year1, week1, _ = datetime.strptime(date1, '%Y%m%d').isocalendar()
-            year2, week2, _ = datetime.strptime(date2, '%Y%m%d').isocalendar()
-            return year1 == year2 and week1 == week2
-
         for server in ARCHIVES_PREFIX.keys():
             for event in self.event:
                 name = event.__getattribute__(server)
@@ -462,7 +453,7 @@ class ConfigGenerator:
                     if event.is_raid:
                         if not hasattr(self, f'_{server}_latest_raid_date'):
                             setattr(self, f'_{server}_latest_raid_date', int(event.date))
-                        if is_concurrent_event(int(event.date), getattr(self, f'_{server}_latest_raid_date')):
+                        if int(event.date) == getattr(self, f'_{server}_latest_raid_date'):
                             for task in RAIDS:
                                 insert(task)
                     elif event.is_war_archives:
@@ -471,13 +462,13 @@ class ConfigGenerator:
                     elif event.is_coalition:
                         if not hasattr(self, f'_{server}_latest_coalition_date'):
                             setattr(self, f'_{server}_latest_coalition_date', int(event.date))
-                        if is_concurrent_event(int(event.date), getattr(self, f'_{server}_latest_coalition_date')):
+                        if int(event.date) == getattr(self, f'_{server}_latest_coalition_date'):
                             for task in COALITIONS:
                                 insert(task)
                     else:
                         if not hasattr(self, f'_{server}_latest_event_date'):
                             setattr(self, f'_{server}_latest_event_date', int(event.date))
-                        if is_concurrent_event(int(event.date), getattr(self, f'_{server}_latest_event_date')):
+                        if int(event.date) == getattr(self, f'_{server}_latest_event_date'):
                             for task in EVENTS + GEMS_FARMINGS:
                                 insert(task)
 
