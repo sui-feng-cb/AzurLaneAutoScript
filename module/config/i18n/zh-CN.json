@@ -567,6 +567,12 @@
       "default": "默认 (Cloudflare)",
       "cn_gz_reverse_proxy": "国内反向代理 (广州)"
     },
+    "DailyRecord": {
+      "name": "每日挑战截图",
+      "help": "",
+      "do_not": "无操作",
+      "save": "保存"
+    },
     "ResearchRecord": {
       "name": "科研截图",
       "help": "",
@@ -582,12 +588,6 @@
       "save": "保存",
       "upload": "上传",
       "save_and_upload": "保存并上传"
-    },
-    "DailyRecord": {
-      "name": "每日挑战截图",
-      "help": "",
-      "do_not": "无操作",
-      "save": "保存"
     },
     "CombatRecord": {
       "name": "战斗掉落截图",
@@ -857,9 +857,11 @@
       "war_archives_20220428_cn": "档案 虹彩的终幕曲",
       "war_archives_20220526_cn": "档案 泠誓光庭",
       "war_archives_20220728_cn": "档案 雄鹰的叙事歌",
+      "war_archives_20220818_cn": "档案 远汇点作战",
       "war_archives_20220915_cn": "档案 紫绛槿岚",
       "war_archives_20221222_cn": "档案 定向折叠",
       "war_archives_20230223_cn": "档案 湮烬尘墟",
+      "war_archives_20230803_cn": "档案 奏响鸢尾之歌",
       "war_archives_20231026_cn": "档案 飓风与青春之泉"
     },
     "Mode": {
