@@ -506,7 +506,6 @@ class RewardCommission(UI, InfoHandler):
         logger.hr('Reward receive')
 
         reward = False
-        food = False
         click_timer = Timer(1)
         with self.stat.new(
                 'commission', method=self.config.DropRecord_CommissionRecord
@@ -558,14 +557,12 @@ class RewardCommission(UI, InfoHandler):
                     # click_timer.reset()
                     continue
                 # handle oil maxed
-                # run once to prevent accidental oil consumption
                 if self.config.SERVER in ['cn']:
-                    if not food and self.appear(OIL_MAXED, offset=(20, 20), interval=3):
+                    if self.appear(OIL_MAXED, offset=(20, 20), interval=3):
                         logger.info("Oil maxed, buy food to consume oil")
                         RewardDorm(self.config, self.device).dorm_run(
                             feed=False, collect=False, buy_furniture=False, buy_food=10)
                         self.ui_ensure(page_reward)
-                        food = True
                         continue
                 # Check GET_SHIP at last to handle random white background at page_main
                 for button in [GET_SHIP]:
