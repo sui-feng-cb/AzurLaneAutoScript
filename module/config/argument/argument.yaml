@@ -103,6 +103,9 @@ DropRecord:
   API:
     value: default
     option: [ default, cn_gz_reverse_proxy]
+  DailyRecord:
+    value: do_not
+    option: [ do_not, save ]
   ResearchRecord:
     value: do_not
     option: [ do_not, save, upload, save_and_upload ]

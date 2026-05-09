@@ -454,6 +454,14 @@
           "cn_gz_reverse_proxy"
         ]
       },
+      "DailyRecord": {
+        "type": "select",
+        "value": "do_not",
+        "option": [
+          "do_not",
+          "save"
+        ]
+      },
       "ResearchRecord": {
         "type": "select",
         "value": "do_not",

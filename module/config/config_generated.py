@@ -48,6 +48,7 @@ class GeneratedConfig:
     DropRecord_SaveFolder = './screenshots'
     DropRecord_AzurStatsID = None
     DropRecord_API = 'default'  # default, cn_gz_reverse_proxy
+    DropRecord_DailyRecord = 'do_not'  # do_not, save
     DropRecord_ResearchRecord = 'do_not'  # do_not, save, upload, save_and_upload
     DropRecord_CommissionRecord = 'do_not'  # do_not, save, upload, save_and_upload
     DropRecord_CombatRecord = 'do_not'  # do_not, save

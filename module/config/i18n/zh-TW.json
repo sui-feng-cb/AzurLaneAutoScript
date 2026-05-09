@@ -567,6 +567,12 @@
       "default": "默認 (Cloudflare)",
       "cn_gz_reverse_proxy": "國內反向代理 (廣州)"
     },
+    "DailyRecord": {
+      "name": "每日任務截圖",
+      "help": "",
+      "do_not": "無操作",
+      "save": "保存"
+    },
     "ResearchRecord": {
       "name": "科研截圖",
       "help": "",

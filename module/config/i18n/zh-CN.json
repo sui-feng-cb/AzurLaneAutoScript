@@ -583,6 +583,12 @@
       "upload": "上传",
       "save_and_upload": "保存并上传"
     },
+    "DailyRecord": {
+      "name": "每日挑战截图",
+      "help": "",
+      "do_not": "无操作",
+      "save": "保存"
+    },
     "CombatRecord": {
       "name": "战斗掉落截图",
       "help": "启用后会放缓结算时的点击速度\n在自律寻敌下不生效",

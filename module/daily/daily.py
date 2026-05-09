@@ -153,12 +153,13 @@ class Daily(Combat, DailyEquipment):
         else:
             return 4
 
-    def daily_execute(self, remain=3, stage=1, fleet=1):
+    def daily_execute(self, remain=3, stage=1, fleet=1, drop=None):
         """
         Args:
             remain (int): Remain daily challenge count.
             stage (int): Index of stage counted from top, 1 to 3.
             fleet (int): Index of fleet to use.
+            drop (DropImage):
 
         Returns:
             bool: True if success, False if daily locked.
@@ -189,7 +190,7 @@ class Daily(Combat, DailyEquipment):
         button = DAILY_MISSION_LIST[stage - 1]
         for n in range(remain):
             logger.hr(f'Count {n + 1}')
-            result = self.daily_enter(button)
+            result = self.daily_enter(button, drop=drop)
             if not result:
                 break
             if self.daily_current == self.supply_line_disruption_index:
@@ -199,18 +200,19 @@ class Daily(Combat, DailyEquipment):
             # Execute classic daily run
             self.ui_ensure_index(fleet, letter=OCR_DAILY_FLEET_INDEX, prev_button=DAILY_FLEET_PREV,
                                  next_button=DAILY_FLEET_NEXT, fast=False, skip_first_screenshot=True)
-            self.combat(emotion_reduce=False, save_get_items=False, expected_end=daily_end, balance_hp=False)
+            self.combat(emotion_reduce=False, save_get_items=drop, expected_end=daily_end, balance_hp=False)
 
         self.ui_click(click_button=BACK_ARROW, check_button=DAILY_CHECK, additional=self.handle_daily_additional,
                       skip_first_screenshot=True)
         self.device.sleep((1, 1.2))
         return True
 
-    def daily_enter(self, button, skip_first_screenshot=True):
+    def daily_enter(self, button, skip_first_screenshot=True, drop=None):
         """
         Args:
             button (Button): Daily entrance
             skip_first_screenshot (bool):
+            drop (DropImage):
 
         Returns:
             bool: True if combat appear. False if daily skip unlocked, skipped daily, received rewards.
@@ -229,7 +231,7 @@ class Daily(Combat, DailyEquipment):
             if self.appear(DAILY_ENTER_CHECK, threshold=30, interval=5):
                 self.device.click(button)
                 continue
-            if self.handle_get_items():
+            if self.handle_get_items(drop=drop):
                 reward_received = True
                 continue
             if self.config.Daily_UseDailySkip:
@@ -280,43 +282,49 @@ class Daily(Combat, DailyEquipment):
         while 1:
             if self.daily_current > 7:
                 break
-            if self.daily_current == self.empty_index:
-                logger.info('This daily is not open now')
-                self.daily_check()
-                self.next()
-                continue
-            stage, fleet = self.get_daily_stage_and_fleet()
-            if self.daily_current == self.supply_line_disruption_index and not self.config.Daily_UseDailySkip:
-                logger.info('Skip supply line disruption if UseDailySkip disabled')
-                self.daily_check()
-                self.next()
-                continue
-            if not stage:
-                logger.info(f'No stage set on daily_current: {self.daily_current}, skip')
-                self.daily_check()
-                self.next()
-                continue
-            if self.daily_current != self.supply_line_disruption_index and not fleet:
-                logger.info(f'No fleet set on daily_current: {self.daily_current}, skip')
-                self.daily_check()
-                self.next()
-                continue
-            if not self.is_active():
-                self.daily_check()
-                self.next()
-                continue
-            remain = OCR_REMAIN.ocr(self.device.image)
-            if remain == 0:
-                self.daily_check()
-                self.next()
-                continue
-            else:
-                self.daily_execute(remain=remain, stage=stage, fleet=fleet)
-                self.daily_check()
-                # The order of daily tasks will be disordered after execute a daily, exit and re-enter to reset.
-                # 打完一次之后每日任务的顺序会乱掉, 退出再进入来重置顺序.
-                self.ui_goto(page_campaign_menu)
-                break
+            with self.stat.new(
+                genre='daily', 
+                method=self.config.DropRecord_DailyRecord, 
+                info=f'daily_{self.daily_current}'
+            ) as drop:
+                drop.add(self.device.image)
+                if self.daily_current == self.empty_index:
+                    logger.info('This daily is not open now')
+                    self.daily_check()
+                    self.next()
+                    continue
+                stage, fleet = self.get_daily_stage_and_fleet()
+                if self.daily_current == self.supply_line_disruption_index and not self.config.Daily_UseDailySkip:
+                    logger.info('Skip supply line disruption if UseDailySkip disabled')
+                    self.daily_check()
+                    self.next()
+                    continue
+                if not stage:
+                    logger.info(f'No stage set on daily_current: {self.daily_current}, skip')
+                    self.daily_check()
+                    self.next()
+                    continue
+                if self.daily_current != self.supply_line_disruption_index and not fleet:
+                    logger.info(f'No fleet set on daily_current: {self.daily_current}, skip')
+                    self.daily_check()
+                    self.next()
+                    continue
+                if not self.is_active():
+                    self.daily_check()
+                    self.next()
+                    continue
+                remain = OCR_REMAIN.ocr(self.device.image)
+                if remain == 0:
+                    self.daily_check()
+                    self.next()
+                    continue
+                else:
+                    self.daily_execute(remain=remain, stage=stage, fleet=fleet, drop=drop)
+                    self.daily_check()
+                    # The order of daily tasks will be disordered after execute a daily, exit and re-enter to reset.
+                    # 打完一次之后每日任务的顺序会乱掉, 退出再进入来重置顺序.
+                    self.ui_goto(page_campaign_menu)
+                    break
 
     def daily_run(self):
         self.daily_checked = [0]

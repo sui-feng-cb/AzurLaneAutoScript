@@ -567,6 +567,12 @@
       "default": "default",
       "cn_gz_reverse_proxy": "cn_gz_reverse_proxy"
     },
+    "DailyRecord": {
+      "name": "DropRecord.DailyRecord.name",
+      "help": "DropRecord.DailyRecord.help",
+      "do_not": "do_not",
+      "save": "save"
+    },
     "ResearchRecord": {
       "name": "DropRecord.ResearchRecord.name",
       "help": "DropRecord.ResearchRecord.help",

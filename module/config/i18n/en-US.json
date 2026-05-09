@@ -567,6 +567,12 @@
       "default": "Default (Cloudflare)",
       "cn_gz_reverse_proxy": "Reverse proxy (Guangzhou, South China)"
     },
+    "DailyRecord": {
+      "name": "Daily Record",
+      "help": "",
+      "do_not": "Do nothing",
+      "save": "Save"
+    },
     "ResearchRecord": {
       "name": "Research Record",
       "help": "",

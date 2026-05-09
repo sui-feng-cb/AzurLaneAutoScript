@@ -99,6 +99,7 @@
       "SaveFolder": "./screenshots",
       "AzurStatsID": null,
       "API": "default",
+      "DailyRecord": "do_not",
       "ResearchRecord": "do_not",
       "CommissionRecord": "do_not",
       "CombatRecord": "do_not",
