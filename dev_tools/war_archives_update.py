@@ -260,12 +260,12 @@ if __name__ == '__main__':
     # input strings in YYYYMMDD format for war archives update time
     # use 'today' for today, use a list to input multiple values,
     # such as '20250717', 'today', ['20250619' , '20250717', 'today']
-    WarArchivesUpdater.aired_date = 'today'
+    WarArchivesUpdater.aired_date = ['20260409', '20260507']
     # Event name or date of update of war archives
     # input strings in YYYYMMDD format for event time, or input event name
     # use 'recent' for the latest CN enent, use a list to input multiple values,
     # such as '20220428', '虹彩的终幕曲', 'recent', ['雄鹰的叙事歌' , '20220428', 'recent']
-    WarArchivesUpdater.event = '湮烬尘墟'
+    WarArchivesUpdater.event = ['远汇点作战', '奏响鸢尾之歌']
 
     updater = WarArchivesUpdater()
 
@@ -276,3 +276,16 @@ if __name__ == '__main__':
     # Ensure running in Alas root folder
     os.chdir(os.path.join(os.path.dirname(__file__), '../'))
     updater.run()
+
+    """
+    Step 2:
+        Manually add assets of the same name
+        at the end of module/war_archives/dictionary.py,
+        and then run dev_tools/button_extract.py.
+    """
+
+    """
+    Step 3:
+        Modify campaign/<event name>/campaign_base.py for SP event
+        Modify handle_stage_name() in module/campaign/run.py for T/HT event
+    """
