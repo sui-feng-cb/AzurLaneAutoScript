@@ -337,8 +337,8 @@ class InfoHandler(ModuleBase):
             list[Button]: List of story options, from upper to bottom. If no option found, return an empty list.
         """
         # Area to detect the options, should include at least 3 options.
-        story_option_area = (330, 200, 980, 465)
-        story_detect_area = (330, 200, 355, 465)
+        story_option_area = (315, 130, 965, 555)
+        story_detect_area = (330, 130, 355, 555)
         story_option_color = (247, 247, 247)
 
         image = color_similarity_2d(self.image_crop(story_detect_area, copy=False), color=story_option_color)
