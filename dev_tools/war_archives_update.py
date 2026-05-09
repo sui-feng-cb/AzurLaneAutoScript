@@ -286,6 +286,7 @@ if __name__ == '__main__':
 
     """
     Step 3:
-        Modify campaign/<event name>/campaign_base.py for SP event
+        Modify campaign/<event name>/campaign_base.py for SP event (if file exists)
+            self.ui_goto_event() --> self.ui_goto_sp()
         Modify handle_stage_name() in module/campaign/run.py for T/HT event
     """
