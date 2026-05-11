@@ -481,13 +481,35 @@ class RewardDorm(UI):
             if self.appear_then_click(DORM_BUY_FOOD_CONFIRM, offset=(20, 20), interval=5):
                 continue
 
-    def dorm_run(self, feed=True, collect=True, buy_furniture=False, buy_food=0):
+    def dorm_food_run(self, amount):
+        """
+        Args:
+            amount (int): amount of food to buy
+
+        Pages:
+            in: Any page
+            out: page_dorm
+        """
+        if amount <= 0:
+            return
+
+        self.ui_ensure(page_dormmenu)
+        self.handle_info_bar()
+        self.ui_goto(page_dorm, skip_first_screenshot=True)
+        logger.hr('Dorm buy food', level=1)
+        self.dorm_feed_enter()
+        self.dorm_buy_food_enter()
+        self.dorm_buy_food(amount=amount)
+        self.dorm_buy_food_confirm()
+        self.dorm_feed_quit()
+
+    def dorm_run(self, feed=True, collect=True, buy_furniture=False):
         """
         Pages:
             in: Any page
             out: page_dorm
         """
-        if not feed and not collect and not buy_furniture and buy_food <= 0:
+        if not feed and not collect and not buy_furniture:
             return
 
         self.ui_ensure(page_dormmenu)
@@ -516,19 +538,8 @@ class RewardDorm(UI):
             logger.hr('Dorm buy furniture', level=1)
             BuyFurniture(self.config, self.device).run()
 
-        if buy_food > 0:
-            logger.hr('Dorm buy food', level=1)
-            self.dorm_feed_enter()
-            self.dorm_buy_food_enter()
-            self.dorm_buy_food(amount=buy_food)
-            self.dorm_buy_food_confirm()
-            self.dorm_feed_quit()
-
     def get_dorm_ship_amount(self):
         """
-        Args:
-            skip_first_screenshot:
-
         Returns:
             int: Number of ships in dorm
 

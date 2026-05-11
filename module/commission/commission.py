@@ -12,7 +12,7 @@ from module.commission.project import COMMISSION_FILTER, Commission
 from module.config.config_generated import GeneratedConfig
 from module.config.utils import get_server_last_update, get_server_next_update, nearest_future
 from module.dorm.dorm import RewardDorm
-from module.exception import GameStuckError
+from module.exception import GameStuckError, OilMaxed, RequestHumanTakeover
 from module.handler.info_handler import InfoHandler
 from module.logger import logger
 from module.map.map_grids import SelectedGrids
@@ -491,7 +491,7 @@ class RewardCommission(UI, InfoHandler):
         if not self.daily_choose and not self.urgent_choose:
             logger.info('No commission chose')
 
-    def commission_receive(self, skip_first_screenshot=True):
+    def _commission_receive(self, skip_first_screenshot=True):
         """
         Args:
             skip_first_screenshot:
@@ -559,11 +559,7 @@ class RewardCommission(UI, InfoHandler):
                 # handle oil maxed
                 if self.config.SERVER in ['cn']:
                     if self.appear(OIL_MAXED, offset=(20, 20), interval=3):
-                        logger.info("Oil maxed, buy food to consume oil")
-                        RewardDorm(self.config, self.device).dorm_run(
-                            feed=False, collect=False, buy_furniture=False, buy_food=10)
-                        self.ui_ensure(page_reward)
-                        continue
+                        raise OilMaxed
                 # Check GET_SHIP at last to handle random white background at page_main
                 for button in [GET_SHIP]:
                     if click_timer.reached() and self.appear(button, interval=1):
@@ -580,6 +576,27 @@ class RewardCommission(UI, InfoHandler):
                     continue
 
         return reward
+
+    def commission_receive(self):
+        """
+        Returns:
+            bool: If rewarded.
+
+        Pages:
+            in: page_reward
+            out: page_commission
+        """
+        for _ in range(3):
+            try:
+                reward = self._commission_receive()
+                return reward
+            except OilMaxed:
+                logger.info("Oil maxed, buy food to consume oil")
+                RewardDorm(self.config, self.device).dorm_food_run(amount=10)
+                self.ui_ensure(page_reward)
+
+        logger.critical(f'Failed to handle oil maxed after 3 trial')
+        raise RequestHumanTakeover
 
     def run(self):
         """
