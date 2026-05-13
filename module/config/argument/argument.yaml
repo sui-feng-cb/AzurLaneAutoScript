@@ -541,6 +541,12 @@ _Island:
       - helena
       - atago
       - friedrich_der_grobe
+      - javelin
+      - laffey
+      - takao
+      - yat_sen
+      - fei_yuen
+      - august_von_parseval
 Island1:
   Receive: false
   Option1: *IslandOption8
