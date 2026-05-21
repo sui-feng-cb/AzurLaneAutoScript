@@ -562,132 +562,177 @@ _Island:
       - yat_sen
       - fei_yuen
       - august_von_parseval
+  IslandSecondaryCharacter: &IslandSecondaryCharacter
+    <<: *IslandCharacter
 Island1:
   Receive: false
   Option1: *IslandOption8
-  Character1: *IslandCharacter
   Option2: *IslandOption8
-  Character2: *IslandCharacter
   Option3: *IslandOption8
-  Character3: *IslandCharacter
   Option4: *IslandOption8
+  Character1: *IslandCharacter
+  SecondaryCharacter1: *IslandSecondaryCharacter
+  Character2: *IslandCharacter
+  SecondaryCharacter2: *IslandSecondaryCharacter
+  Character3: *IslandCharacter
+  SecondaryCharacter3: *IslandSecondaryCharacter
   Character4: *IslandCharacter
+  SecondaryCharacter4: *IslandSecondaryCharacter
 Island2:
   Receive: false
   Option1:
     value: 0
     option: [ 0, 1 ]
-  Character1: *IslandCharacter
   Option2:
     value: 0
     option: [ 0, 2 ]
-  Character2: *IslandCharacter
   Option3:
     value: 0
     option: [ 0, 3 ]
-  Character3: *IslandCharacter
   Option4:
     value: 0
     option: [ 0, 4 ]
+  Character1: *IslandCharacter
+  SecondaryCharacter1: *IslandSecondaryCharacter
+  Character2: *IslandCharacter
+  SecondaryCharacter2: *IslandSecondaryCharacter
+  Character3: *IslandCharacter
+  SecondaryCharacter3: *IslandSecondaryCharacter
   Character4: *IslandCharacter
+  SecondaryCharacter4: *IslandSecondaryCharacter
 Island3:
   Receive: false
   Option1: *IslandOption16
-  Character1: *IslandCharacter
   Option2: *IslandOption16
-  Character2: *IslandCharacter
   Option3: *IslandOption16
+  Character1: *IslandCharacter
+  SecondaryCharacter1: *IslandSecondaryCharacter
+  Character2: *IslandCharacter
+  SecondaryCharacter2: *IslandSecondaryCharacter
   Character3: *IslandCharacter
+  SecondaryCharacter3: *IslandSecondaryCharacter
 Island4:
   Receive: false
   Option1: *IslandOption6
-  Character1: *IslandCharacter
   Option2: *IslandOption6
-  Character2: *IslandCharacter
   Option3: *IslandOption6
-  Character3: *IslandCharacter
   Option4: *IslandOption6
+  Character1: *IslandCharacter
+  SecondaryCharacter1: *IslandSecondaryCharacter
+  Character2: *IslandCharacter
+  SecondaryCharacter2: *IslandSecondaryCharacter
+  Character3: *IslandCharacter
+  SecondaryCharacter3: *IslandSecondaryCharacter
   Character4: *IslandCharacter
+  SecondaryCharacter4: *IslandSecondaryCharacter
 Island5:
   Receive: false
   Option1: *IslandOption4
-  Character1: *IslandCharacter
   Option2: *IslandOption4
-  Character2: *IslandCharacter
   Option3: *IslandOption4
-  Character3: *IslandCharacter
   Option4: *IslandOption4
+  Character1: *IslandCharacter
+  SecondaryCharacter1: *IslandSecondaryCharacter
+  Character2: *IslandCharacter
+  SecondaryCharacter2: *IslandSecondaryCharacter
+  Character3: *IslandCharacter
+  SecondaryCharacter3: *IslandSecondaryCharacter
   Character4: *IslandCharacter
+  SecondaryCharacter4: *IslandSecondaryCharacter
 Island6:
   Receive: false
   Option1: *IslandOption7
-  Character1: *IslandCharacter
   Option2: *IslandOption7
-  Character2: *IslandCharacter
   Option3: *IslandOption7
-  Character3: *IslandCharacter
   Option4: *IslandOption7
+  Character1: *IslandCharacter
+  SecondaryCharacter1: *IslandSecondaryCharacter
+  Character2: *IslandCharacter
+  SecondaryCharacter2: *IslandSecondaryCharacter
+  Character3: *IslandCharacter
+  SecondaryCharacter3: *IslandSecondaryCharacter
   Character4: *IslandCharacter
+  SecondaryCharacter4: *IslandSecondaryCharacter
 Island7:
   Receive: false
   Option1: *IslandOption9
-  Character1: *IslandCharacter
   Option2: *IslandOption9
+  Character1: *IslandCharacter
+  SecondaryCharacter1: *IslandSecondaryCharacter
   Character2: *IslandCharacter
+  SecondaryCharacter2: *IslandSecondaryCharacter
 Island8:
   Receive: false
   Option1: *IslandOption12
-  Character1: *IslandCharacter
   Option2: *IslandOption12
+  Character1: *IslandCharacter
+  SecondaryCharacter1: *IslandSecondaryCharacter
   Character2: *IslandCharacter
+  SecondaryCharacter2: *IslandSecondaryCharacter
 Island9:
   Receive: false
   Option1: *IslandOption11
-  Character1: *IslandCharacter
   Option2: *IslandOption11
+  Character1: *IslandCharacter
+  SecondaryCharacter1: *IslandSecondaryCharacter
   Character2: *IslandCharacter
+  SecondaryCharacter2: *IslandSecondaryCharacter
 Island10:
   Receive: false
   Option1: *IslandOption10
-  Character1: *IslandCharacter
   Option2: *IslandOption10
+  Character1: *IslandCharacter
+  SecondaryCharacter1: *IslandSecondaryCharacter
   Character2: *IslandCharacter
+  SecondaryCharacter2: *IslandSecondaryCharacter
 Island11:
   Receive: false
   Option1: *IslandOption9
-  Character1: *IslandCharacter
   Option2: *IslandOption9
+  Character1: *IslandCharacter
+  SecondaryCharacter1: *IslandSecondaryCharacter
   Character2: *IslandCharacter
+  SecondaryCharacter2: *IslandSecondaryCharacter
 Island12:
   Receive: false
   Option1: *IslandOption6
-  Character1: *IslandCharacter
   Option2: *IslandOption6
+  Character1: *IslandCharacter
+  SecondaryCharacter1: *IslandSecondaryCharacter
   Character2: *IslandCharacter
+  SecondaryCharacter2: *IslandSecondaryCharacter
 Island13:
   Receive: false
   Option1: *IslandOption6
-  Character1: *IslandCharacter
   Option2: *IslandOption6
+  Character1: *IslandCharacter
+  SecondaryCharacter1: *IslandSecondaryCharacter
   Character2: *IslandCharacter
+  SecondaryCharacter2: *IslandSecondaryCharacter
 Island14:
   Receive: false
   Option1: *IslandOption4
-  Character1: *IslandCharacter
   Option2: *IslandOption4
+  Character1: *IslandCharacter
+  SecondaryCharacter1: *IslandSecondaryCharacter
   Character2: *IslandCharacter
+  SecondaryCharacter2: *IslandSecondaryCharacter
 Island15:
   Receive: false
   Option1: *IslandOption9
-  Character1: *IslandCharacter
   Option2: *IslandOption9
+  Character1: *IslandCharacter
+  SecondaryCharacter1: *IslandSecondaryCharacter
   Character2: *IslandCharacter
+  SecondaryCharacter2: *IslandSecondaryCharacter
 Island16:
   Receive: false
   Option1: *IslandOption9
-  Character1: *IslandCharacter
   Option2: *IslandOption9
+  Character1: *IslandCharacter
+  SecondaryCharacter1: *IslandSecondaryCharacter
   Character2: *IslandCharacter
+  SecondaryCharacter2: *IslandSecondaryCharacter
 GeneralShop:
   UseGems: false
   Refresh: false

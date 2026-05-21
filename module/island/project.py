@@ -511,33 +511,53 @@ class IslandProjectRun(IslandUI):
         Returns:
             bool: if selected
         """
-        logger.info('Island select role')
+        logger.info(f'Island select role: {character}')
         ROLE_SORTING.set('Descending', main=self)
         timeout = Timer(5, count=3).start()
-        count = 0
+        
+        sort_switched = False 
+        
         for _ in self.loop():
             if timeout.reached():
-                self.ui_ensure_management_page()
                 return False
 
             image = self.image_crop((0, 0, 910, 1280), copy=False)
             sim, click_button = self.get_character_template(character).match_result(image)
+            
             if sim > 0.9:
                 check_button = self.get_character_check_button(character)
                 return self._project_character_select(click_button, check_button)
             else:
-                name = ' '.join(map(lambda x: x.capitalize(), character.split('_')))
-                # retry 2 times for character select
-                if 1 <= count < 3:
-                    logger.info(f'No character {name} was found, try reversed order')
+                if not sort_switched:
+                    logger.info(f'Character {character} not found or not available, switching sort to retry')
                     ROLE_SORTING.set('Ascending', main=self)
-                # select manjuu after 4 trials
-                elif count >= 3:
-                    logger.info(f'No character {name} was found, use manjuu')
-                    ROLE_SORTING.set('Ascending', main=self)
-                    character = 'manjuu'
-                count += 1
+                    sort_switched = True
                 continue
+
+    def retry_character_select(self, button, secondary_character=None):
+        """
+        Retry selecting a character when primary is not available.
+        Directly try secondary or manjuu in the current role select page.
+
+        Args:
+            button (Button): project button to click to re-enter (reserved for re-entering from main page)
+            secondary_character (str): secondary character name to select
+
+        Returns:
+            tuple(bool, str): (if selected, character selected)
+        """
+        # Try secondary character if provided
+        if secondary_character and secondary_character != 'manjuu':
+            logger.info(f'Trying secondary character: {secondary_character}')
+            if self.project_character_select(secondary_character):
+                return True, secondary_character
+
+        # Fallback to manjuu
+        logger.info('Falling back to manjuu')
+        if self.project_character_select('manjuu'):
+            return True, 'manjuu'
+
+        return False, None
 
     @staticmethod
     def get_character_template(character):
@@ -676,7 +696,7 @@ class IslandProjectRun(IslandUI):
                 if self.island_in_management():
                     return True
 
-    def project_receive_and_start(self, proj, button, character, option, project_id, ensure=True):
+    def project_receive_and_start(self, proj, button, character, secondary_character, option, project_id, ensure=True):
         """
         Receive and start a project is in the current page.
 
@@ -684,35 +704,64 @@ class IslandProjectRun(IslandUI):
             proj (IslandProject): the project to ensure
             button (Button): project button to click
             character (str): character to select
+            secondary_character (str): secondary character to select
             option (str): option to select
             ensure (bool): whether to call ensure_project() after project start
         """
         if not self.project_receive(button):
             return True
+        
+        selected_character = character
         if not self.project_character_select(character):
-            logger.warning('Island select role failed due to game bug, retrying')
-            return False
+            # Primary character failed, directly try secondary or manjuu in current page
+            success, selected_character = self.retry_character_select(button, secondary_character)
+            if not success:
+                logger.warning('Island select role failed completely, retrying project')
+                return False
+            self.character = selected_character
+
         if not self.product_select(option, project_id):
             return True
+            
         if not self.product_select_confirm():
-            self.character = 'manjuu'
-            self.ensure_project(proj)
-            return False
+            # Confirm failed (gray button), game has returned to main page
+            # Retry with secondary or manjuu by re-entering role select page
+            logger.warning('Product confirm failed, retrying character selection')
+            if not self.project_receive(button):
+                return True
+            
+            success, selected_character = self.retry_character_select(button, secondary_character)
+            if not success:
+                self.character = 'manjuu'
+                self.ensure_project(proj)
+                return False
+            self.character = selected_character
+            
+            # Re-select product and confirm
+            if not self.product_select(option, project_id):
+                return True
+            if not self.product_select_confirm():
+                self.character = 'manjuu'
+                self.ensure_project(proj)
+                return False
+
         self.ui_ensure_management_page()
         if ensure:
             self.ensure_project(proj)
         return True
 
-    def island_project_character(self, project: IslandProject):
+    def island_project_character(self, project: IslandProject, secondary=False):
         """
         Args:
             project (IslandProject):
+            secondary (bool): If True, get secondary character config
         
         Returns:
             list[str]: a list of options of characters
         """
         proj_id = project.id
-        return [self.config.__getattribute__(f'Island{proj_id}_Character{proj_slot}')
+        prefix = 'Secondary' if secondary else ''
+        return [self.config.__getattribute__(f'Island{proj_id}_{prefix}Character{proj_slot}')
                 for proj_slot in range(1, project.slot + 1)]
 
     def island_project_option(self, project: IslandProject):
@@ -767,17 +816,18 @@ class IslandProjectRun(IslandUI):
                     end = True
                 
                 character_config = self.island_project_character(proj)
+                secondary_character_config = self.island_project_character(proj, secondary=True)
                 option_config = self.island_project_option(proj)
                 option_num = len(option_config)
-                for button, character, option, index in zip(
-                        proj.slot_buttons.buttons, character_config, option_config, range(option_num)):
+                for button, character, secondary_character, option, index in zip(
+                        proj.slot_buttons.buttons, character_config, secondary_character_config, option_config, range(option_num)):
                     if option is None:
                         continue
                     self.character = character
                     # retry 3 times because of a game bug
                     for _ in range(3):
                         ensure = not end or index != option_num - 1
-                        if self.project_receive_and_start(proj, button, self.character, option, proj.id, ensure):
+                        if self.project_receive_and_start(proj, button, self.character, secondary_character, option, proj.id, ensure):
                             break
                 timeout.reset()
 
