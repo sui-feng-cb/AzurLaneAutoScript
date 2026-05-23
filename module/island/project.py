@@ -501,38 +501,65 @@ class IslandProjectRun(IslandUI):
                 self.interval_clear(ISLAND_MANAGEMENT_CHECK)
                 continue
 
-    def project_character_select(self, character='manjuu'):
+    def match_and_select_character(self, character, image):
+        """
+        Match character template and select if found.
+
+        Args:
+            character (str): character name to select
+            image: cropped image
+
+        Returns:
+            bool: True if matched and selected, False otherwise
+        """
+        sim, click_button = self.get_character_template(character).match_result(image)
+        if sim > 0.9:
+            check_button = self.get_character_check_button(character)
+            return self._project_character_select(click_button, check_button)
+        return False
+
+    def project_character_select(self, character='manjuu', reset_swipe=False):
         """
         Select a role to produce.
 
         Args:
             character (str): character name to select
+            reset_swipe (bool): if drag page to top before selecting
 
         Returns:
             bool: if selected
         """
         logger.info(f'Island select role: {character}')
-        ROLE_SORTING.set('Descending', main=self)
-        timeout = Timer(5, count=3).start()
         
-        sort_switched = False 
+        if reset_swipe:
+            logger.info('Resetting role page to top')
+            for _ in range(2):
+                self.drag_page((0, 350), ISLAND_PROJECT_CHARACTER.area, 0.6)
+            self.device.screenshot()
+            image = self.image_crop((0, 0, 1280, 720), copy=False)
+            if self.match_and_select_character(character, image):
+                return True
+        
+        timeout = Timer(5, count=3).start()
+        max_swipe = 2
+        swipe_count = 0
         
         for _ in self.loop():
             if timeout.reached():
                 return False
 
-            image = self.image_crop((0, 0, 910, 1280), copy=False)
-            sim, click_button = self.get_character_template(character).match_result(image)
+            image = self.image_crop((0, 0, 1280, 720), copy=False)
+            if self.match_and_select_character(character, image):
+                return True
             
-            if sim > 0.9:
-                check_button = self.get_character_check_button(character)
-                return self._project_character_select(click_button, check_button)
+            if swipe_count < max_swipe:
+                logger.info(f'Character {character} not found, dragging down to find')
+                self.drag_page((0, -300), ISLAND_PROJECT_CHARACTER.area, 0.6)
+                swipe_count += 1
+                timeout.reset()
             else:
-                if not sort_switched:
-                    logger.info(f'Character {character} not found or not available, switching sort to retry')
-                    ROLE_SORTING.set('Ascending', main=self)
-                    sort_switched = True
-                continue
+                logger.warning(f'Character {character} not found after {max_swipe} swipes')
+                return False
 
     def retry_character_select(self, button, secondary_character=None):
         """
@@ -546,18 +573,21 @@ class IslandProjectRun(IslandUI):
         Returns:
             tuple(bool, str): (if selected, character selected)
         """
-        # Try secondary character if provided
+        # Try secondary character if provided, reset swipe to top before searching
         if secondary_character and secondary_character != 'manjuu':
             logger.info(f'Trying secondary character: {secondary_character}')
-            if self.project_character_select(secondary_character):
+            if self.project_character_select(secondary_character, reset_swipe=True):
                 return True, secondary_character
 
-        # Fallback to manjuu
+        # Fallback to manjuu directly since page is already at the bottom
         logger.info('Falling back to manjuu')
-        if self.project_character_select('manjuu'):
+        self.device.screenshot()
+        image = self.image_crop((0, 0, 1280, 720), copy=False)
+        if self.match_and_select_character('manjuu', image):
             return True, 'manjuu'
-
-        return False, None
+        else:
+            logger.warning('Manjuu not found')
+            return False, None
 
     @staticmethod
     def get_character_template(character):
