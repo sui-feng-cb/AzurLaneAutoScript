@@ -579,15 +579,12 @@ class IslandProjectRun(IslandUI):
             if self.project_character_select(secondary_character, reset_swipe=True):
                 return True, secondary_character
 
-        # Fallback to manjuu directly since page is already at the bottom
+        # Fallback to manjuu, reset swipe to top before searching
         logger.info('Falling back to manjuu')
-        self.device.screenshot()
-        image = self.image_crop((0, 0, 1280, 720), copy=False)
-        if self.match_and_select_character('manjuu', image):
+        if self.project_character_select('manjuu', reset_swipe=True):
             return True, 'manjuu'
-        else:
-            logger.warning('Manjuu not found')
-            return False, None
+
+        return False, None
 
     @staticmethod
     def get_character_template(character):
