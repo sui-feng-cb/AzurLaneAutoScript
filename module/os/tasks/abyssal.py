@@ -10,12 +10,12 @@ class OpsiAbyssal(OSMap):
         Args:
             result(bool): If still have obscure coordinates.
         """
-        if get_os_reset_remain() == 0:
-            logger.info('Just less than 1 day to OpSi reset, delay 2.5 hours')
-            self.config.task_delay(minute=150, server_update=True)
-            self.config.task_stop()
-        elif not result:
-            self.config.task_delay(server_update=True)
+        if not result:
+            if get_os_reset_remain() > 0:
+                self.config.task_delay(server_update=True)
+            else:
+                logger.info('Just less than 1 day to OpSi reset, delay 2.5 hours')
+                self.config.task_delay(minute=150, server_update=True)
             self.config.task_stop()
 
     def clear_abyssal(self):
