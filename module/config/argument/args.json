@@ -7924,6 +7924,51 @@
           8
         ]
       },
+      "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "Option3": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "Option4": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
       "Character1": {
         "type": "select",
         "value": "manjuu",
@@ -7949,22 +7994,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option2": {
+      "SecondaryCharacter1": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character2": {
@@ -7992,22 +8062,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option3": {
+      "SecondaryCharacter2": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character3": {
@@ -8035,22 +8130,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option4": {
+      "SecondaryCharacter3": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character4": {
@@ -8078,7 +8198,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
+        ]
+      },
+      "SecondaryCharacter4": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       }
     },
@@ -8095,6 +8255,30 @@
           1
         ]
       },
+      "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          2
+        ]
+      },
+      "Option3": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          3
+        ]
+      },
+      "Option4": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          4
+        ]
+      },
       "Character1": {
         "type": "select",
         "value": "manjuu",
@@ -8120,15 +8304,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option2": {
+      "SecondaryCharacter1": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          2
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character2": {
@@ -8156,15 +8372,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option3": {
+      "SecondaryCharacter2": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          3
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character3": {
@@ -8192,15 +8440,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option4": {
+      "SecondaryCharacter3": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          4
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character4": {
@@ -8228,7 +8508,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
+        ]
+      },
+      "SecondaryCharacter4": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       }
     },
@@ -8260,6 +8580,52 @@
           16
         ]
       },
+      "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ]
+      },
+      "Option3": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ]
+      },
       "Character1": {
         "type": "select",
         "value": "manjuu",
@@ -8285,30 +8651,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option2": {
+      "SecondaryCharacter1": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15,
-          16
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character2": {
@@ -8336,30 +8719,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option3": {
+      "SecondaryCharacter2": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15,
-          16
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character3": {
@@ -8387,7 +8787,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
+        ]
+      },
+      "SecondaryCharacter3": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       }
     },
@@ -8409,6 +8849,45 @@
           6
         ]
       },
+      "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "Option3": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "Option4": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
       "Character1": {
         "type": "select",
         "value": "manjuu",
@@ -8434,20 +8913,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option2": {
+      "SecondaryCharacter1": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character2": {
@@ -8475,20 +8981,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option3": {
+      "SecondaryCharacter2": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character3": {
@@ -8516,20 +9049,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option4": {
+      "SecondaryCharacter3": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character4": {
@@ -8557,7 +9117,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
+        ]
+      },
+      "SecondaryCharacter4": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       }
     },
@@ -8577,6 +9177,39 @@
           4
         ]
       },
+      "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "Option3": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "Option4": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
       "Character1": {
         "type": "select",
         "value": "manjuu",
@@ -8602,18 +9235,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option2": {
+      "SecondaryCharacter1": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character2": {
@@ -8641,18 +9303,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option3": {
+      "SecondaryCharacter2": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character3": {
@@ -8680,18 +9371,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option4": {
+      "SecondaryCharacter3": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character4": {
@@ -8719,7 +9439,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
+        ]
+      },
+      "SecondaryCharacter4": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       }
     },
@@ -8742,6 +9502,48 @@
           7
         ]
       },
+      "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "Option3": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "Option4": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
       "Character1": {
         "type": "select",
         "value": "manjuu",
@@ -8767,21 +9569,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option2": {
+      "SecondaryCharacter1": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character2": {
@@ -8809,21 +9637,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option3": {
+      "SecondaryCharacter2": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character3": {
@@ -8851,21 +9705,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option4": {
+      "SecondaryCharacter3": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character4": {
@@ -8893,7 +9773,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
+        ]
+      },
+      "SecondaryCharacter4": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       }
     },
@@ -8918,6 +9838,22 @@
           9
         ]
       },
+      "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Character1": {
         "type": "select",
         "value": "manjuu",
@@ -8943,23 +9879,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option2": {
+      "SecondaryCharacter1": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character2": {
@@ -8987,7 +9947,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
+        ]
+      },
+      "SecondaryCharacter2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       }
     },
@@ -9015,6 +10015,25 @@
           12
         ]
       },
+      "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
       "Character1": {
         "type": "select",
         "value": "manjuu",
@@ -9040,26 +10059,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option2": {
+      "SecondaryCharacter1": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character2": {
@@ -9087,7 +10127,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
+        ]
+      },
+      "SecondaryCharacter2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       }
     },
@@ -9114,6 +10194,24 @@
           11
         ]
       },
+      "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
       "Character1": {
         "type": "select",
         "value": "manjuu",
@@ -9139,25 +10237,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option2": {
+      "SecondaryCharacter1": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character2": {
@@ -9185,7 +10305,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
+        ]
+      },
+      "SecondaryCharacter2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       }
     },
@@ -9211,6 +10371,23 @@
           10
         ]
       },
+      "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
       "Character1": {
         "type": "select",
         "value": "manjuu",
@@ -9236,24 +10413,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option2": {
+      "SecondaryCharacter1": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character2": {
@@ -9281,7 +10481,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
+        ]
+      },
+      "SecondaryCharacter2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       }
     },
@@ -9306,6 +10546,22 @@
           9
         ]
       },
+      "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Character1": {
         "type": "select",
         "value": "manjuu",
@@ -9331,23 +10587,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option2": {
+      "SecondaryCharacter1": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character2": {
@@ -9375,7 +10655,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
+        ]
+      },
+      "SecondaryCharacter2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       }
     },
@@ -9397,6 +10717,19 @@
           6
         ]
       },
+      "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
       "Character1": {
         "type": "select",
         "value": "manjuu",
@@ -9422,20 +10755,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option2": {
+      "SecondaryCharacter1": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character2": {
@@ -9463,7 +10823,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
+        ]
+      },
+      "SecondaryCharacter2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       }
     },
@@ -9485,6 +10885,19 @@
           6
         ]
       },
+      "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
       "Character1": {
         "type": "select",
         "value": "manjuu",
@@ -9510,20 +10923,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option2": {
+      "SecondaryCharacter1": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character2": {
@@ -9551,7 +10991,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
+        ]
+      },
+      "SecondaryCharacter2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       }
     },
@@ -9571,6 +11051,17 @@
           4
         ]
       },
+      "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
       "Character1": {
         "type": "select",
         "value": "manjuu",
@@ -9596,18 +11087,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option2": {
+      "SecondaryCharacter1": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character2": {
@@ -9635,7 +11155,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
+        ]
+      },
+      "SecondaryCharacter2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       }
     },
@@ -9660,6 +11220,22 @@
           9
         ]
       },
+      "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Character1": {
         "type": "select",
         "value": "manjuu",
@@ -9685,23 +11261,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option2": {
+      "SecondaryCharacter1": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character2": {
@@ -9729,7 +11329,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
+        ]
+      },
+      "SecondaryCharacter2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       }
     },
@@ -9754,6 +11394,22 @@
           9
         ]
       },
+      "Option2": {
+        "type": "select",
+        "value": 0,
+        "option": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
       "Character1": {
         "type": "select",
         "value": "manjuu",
@@ -9779,23 +11435,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
-      "Option2": {
+      "SecondaryCharacter1": {
         "type": "select",
-        "value": 0,
+        "value": "manjuu",
         "option": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       },
       "Character2": {
@@ -9823,7 +11503,47 @@
           "amagi_chan",
           "helena",
           "atago",
-          "friedrich_der_grobe"
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
+        ]
+      },
+      "SecondaryCharacter2": {
+        "type": "select",
+        "value": "manjuu",
+        "option": [
+          "manjuu",
+          "saratoga",
+          "new_jersey",
+          "tashkent",
+          "lemalin",
+          "shimakaze",
+          "akashi",
+          "ying_swei",
+          "chao_ho",
+          "william_d_porter",
+          "chen_hai",
+          "hood",
+          "prinz_eugen",
+          "tb",
+          "oceana",
+          "explorer",
+          "unicorn",
+          "cheshire",
+          "amagi_chan",
+          "helena",
+          "atago",
+          "friedrich_der_grobe",
+          "javelin",
+          "laffey",
+          "takao",
+          "yat_sen",
+          "fei_yuen",
+          "august_von_parseval"
         ]
       }
     },
