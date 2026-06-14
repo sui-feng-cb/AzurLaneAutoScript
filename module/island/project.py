@@ -532,16 +532,14 @@ class IslandProjectRun(IslandUI):
         logger.info(f'Island select role: {character}')
         
         if reset_swipe:
-            logger.info('Resetting role page to top')
-            for _ in range(2):
-                self.drag_page((0, 350), ISLAND_PROJECT_CHARACTER.area, 0.6)
+            self.device.click_record_clear()
             self.device.screenshot()
             image = self.image_crop((0, 0, 1280, 720), copy=False)
             if self.match_and_select_character(character, image):
                 return True
         
         timeout = Timer(5, count=3).start()
-        max_swipe = 2
+        max_swipe = 3
         swipe_count = 0
         
         for _ in self.loop():
@@ -559,6 +557,9 @@ class IslandProjectRun(IslandUI):
                 timeout.reset()
             else:
                 logger.warning(f'Character {character} not found after {max_swipe} swipes')
+                logger.info('Resetting role page to top')
+                for _ in range(3):
+                    self.drag_page((0, 350), ISLAND_PROJECT_CHARACTER.area, 0.6)
                 return False
 
     def retry_character_select(self, button, secondary_character=None):
