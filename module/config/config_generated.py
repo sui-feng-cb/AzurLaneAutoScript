@@ -354,10 +354,10 @@ class GeneratedConfig:
 
     # Group `Island6`
     Island6_Receive = False
-    Island6_Option1 = 0  # 0, 1, 2, 3, 4, 5, 6, 7
-    Island6_Option2 = 0  # 0, 1, 2, 3, 4, 5, 6, 7
-    Island6_Option3 = 0  # 0, 1, 2, 3, 4, 5, 6, 7
-    Island6_Option4 = 0  # 0, 1, 2, 3, 4, 5, 6, 7
+    Island6_Option1 = 0  # 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+    Island6_Option2 = 0  # 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+    Island6_Option3 = 0  # 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+    Island6_Option4 = 0  # 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
     Island6_Character1 = 'manjuu'  # manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, william_d_porter, chen_hai, hood, prinz_eugen, tb, oceana, explorer, unicorn, cheshire, amagi_chan, helena, atago, friedrich_der_grobe, javelin, laffey, takao, yat_sen, fei_yuen, august_von_parseval, anchorage, belfast, chang_feng, leonardo_da_vinci, mogador, royal_fortune
     Island6_SecondaryCharacter1 = 'manjuu'  # manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, william_d_porter, chen_hai, hood, prinz_eugen, tb, oceana, explorer, unicorn, cheshire, amagi_chan, helena, atago, friedrich_der_grobe, javelin, laffey, takao, yat_sen, fei_yuen, august_von_parseval, anchorage, belfast, chang_feng, leonardo_da_vinci, mogador, royal_fortune
     Island6_Character2 = 'manjuu'  # manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, william_d_porter, chen_hai, hood, prinz_eugen, tb, oceana, explorer, unicorn, cheshire, amagi_chan, helena, atago, friedrich_der_grobe, javelin, laffey, takao, yat_sen, fei_yuen, august_von_parseval, anchorage, belfast, chang_feng, leonardo_da_vinci, mogador, royal_fortune
@@ -369,8 +369,8 @@ class GeneratedConfig:
 
     # Group `Island7`
     Island7_Receive = False
-    Island7_Option1 = 0  # 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
-    Island7_Option2 = 0  # 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+    Island7_Option1 = 0  # 0, 1, 2, 3, 4, 5, 6, 7
+    Island7_Option2 = 0  # 0, 1, 2, 3, 4, 5, 6, 7
     Island7_Character1 = 'manjuu'  # manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, william_d_porter, chen_hai, hood, prinz_eugen, tb, oceana, explorer, unicorn, cheshire, amagi_chan, helena, atago, friedrich_der_grobe, javelin, laffey, takao, yat_sen, fei_yuen, august_von_parseval, anchorage, belfast, chang_feng, leonardo_da_vinci, mogador, royal_fortune
     Island7_SecondaryCharacter1 = 'manjuu'  # manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, william_d_porter, chen_hai, hood, prinz_eugen, tb, oceana, explorer, unicorn, cheshire, amagi_chan, helena, atago, friedrich_der_grobe, javelin, laffey, takao, yat_sen, fei_yuen, august_von_parseval, anchorage, belfast, chang_feng, leonardo_da_vinci, mogador, royal_fortune
     Island7_Character2 = 'manjuu'  # manjuu, saratoga, new_jersey, tashkent, lemalin, shimakaze, akashi, ying_swei, chao_ho, william_d_porter, chen_hai, hood, prinz_eugen, tb, oceana, explorer, unicorn, cheshire, amagi_chan, helena, atago, friedrich_der_grobe, javelin, laffey, takao, yat_sen, fei_yuen, august_von_parseval, anchorage, belfast, chang_feng, leonardo_da_vinci, mogador, royal_fortune
