@@ -562,6 +562,12 @@ _Island:
       - yat_sen
       - fei_yuen
       - august_von_parseval
+      - anchorage
+      - belfast
+      - chang_feng
+      - leonardo_da_vinci
+      - mogador
+      - royal_fortune
   IslandSecondaryCharacter: &IslandSecondaryCharacter
     <<: *IslandCharacter
 Island1:
