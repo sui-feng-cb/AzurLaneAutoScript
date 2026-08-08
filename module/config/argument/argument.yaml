@@ -503,16 +503,16 @@ Awaken:
 _Island:
   IslandOption4: &IslandOption4
     value: 0
-    option: [ 0, 1, 2, 3, 4]
+    option: [ 0, 1, 2, 3, 4 ]
   IslandOption5: &IslandOption5
     value: 0
-    option: [ 0, 1, 2, 3, 4, 5]
+    option: [ 0, 1, 2, 3, 4, 5 ]
   IslandOption6: &IslandOption6
     value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6]
+    option: [ 0, 1, 2, 3, 4, 5, 6 ]
   IslandOption7: &IslandOption7
     value: 0
-    option: [ 0, 1, 2, 3, 4, 5, 6, 7]
+    option: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
   IslandOption8: &IslandOption8
     value: 0
     option: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
@@ -562,6 +562,12 @@ _Island:
       - yat_sen
       - fei_yuen
       - august_von_parseval
+      - anchorage
+      - belfast
+      - chang_feng
+      - leonardo_da_vinci
+      - mogador
+      - royal_fortune
   IslandSecondaryCharacter: &IslandSecondaryCharacter
     <<: *IslandCharacter
 Island1:
@@ -641,10 +647,10 @@ Island5:
   SecondaryCharacter4: *IslandSecondaryCharacter
 Island6:
   Receive: false
-  Option1: *IslandOption7
-  Option2: *IslandOption7
-  Option3: *IslandOption7
-  Option4: *IslandOption7
+  Option1: *IslandOption9
+  Option2: *IslandOption9
+  Option3: *IslandOption9
+  Option4: *IslandOption9
   Character1: *IslandCharacter
   SecondaryCharacter1: *IslandSecondaryCharacter
   Character2: *IslandCharacter
@@ -655,8 +661,8 @@ Island6:
   SecondaryCharacter4: *IslandSecondaryCharacter
 Island7:
   Receive: false
-  Option1: *IslandOption9
-  Option2: *IslandOption9
+  Option1: *IslandOption7
+  Option2: *IslandOption7
   Character1: *IslandCharacter
   SecondaryCharacter1: *IslandSecondaryCharacter
   Character2: *IslandCharacter
