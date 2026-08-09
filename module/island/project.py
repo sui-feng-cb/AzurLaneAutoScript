@@ -435,6 +435,7 @@ class IslandProjectRun(IslandUI):
                     self.appear_then_click(ROLE_SELECT_ENTER, threshold=10, interval=2):
                 success = True
                 self.interval_clear(GET_ITEMS_ISLAND)
+                self.device.sleep(0.3)
                 click_timer.reset()
                 continue
 
